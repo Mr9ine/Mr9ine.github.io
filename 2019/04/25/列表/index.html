@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="#区别经过总结学习，发现python变量如同类C语言，主观来看更加通俗易懂，包括数字，字符串，运算符和表达式等等。因为之前主要接触为类C语言的缘故，发现一些与类C不同的地方，主要注意每个语句后面不应加‘；’。         输入输出上，要加()，可以支持类似于3+5这类的直接操作,不需要定义变量等等。在内置函数上很多都类似。注意在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语">
+<meta name="description" content="##Tips:  使用 dir(__bulitin__)查看内置函数，用help()查看函数作用。 字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。##（接）列表感觉类似于数组 使用列表：比如   1message=&amp;quot;my bike is a&amp;quot;+bicycle.title()+&amp;quot;.&amp;quot;  列表的增删改：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础总结">
-<meta property="og:url" content="http://yoursite.com/2019/04/22/Python基础/index.html">
+<meta property="og:title" content="Python学习笔记（列表）">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/列表/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="#区别经过总结学习，发现python变量如同类C语言，主观来看更加通俗易懂，包括数字，字符串，运算符和表达式等等。因为之前主要接触为类C语言的缘故，发现一些与类C不同的地方，主要注意每个语句后面不应加‘；’。         输入输出上，要加()，可以支持类似于3+5这类的直接操作,不需要定义变量等等。在内置函数上很多都类似。注意在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语">
+<meta property="og:description" content="##Tips:  使用 dir(__bulitin__)查看内置函数，用help()查看函数作用。 字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。##（接）列表感觉类似于数组 使用列表：比如   1message=&amp;quot;my bike is a&amp;quot;+bicycle.title()+&amp;quot;.&amp;quot;  列表的增删改：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-22T14:49:42.000Z">
+<meta property="og:updated_time" content="2019-04-25T10:26:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python基础总结">
-<meta name="twitter:description" content="#区别经过总结学习，发现python变量如同类C语言，主观来看更加通俗易懂，包括数字，字符串，运算符和表达式等等。因为之前主要接触为类C语言的缘故，发现一些与类C不同的地方，主要注意每个语句后面不应加‘；’。         输入输出上，要加()，可以支持类似于3+5这类的直接操作,不需要定义变量等等。在内置函数上很多都类似。注意在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语">
+<meta name="twitter:title" content="Python学习笔记（列表）">
+<meta name="twitter:description" content="##Tips:  使用 dir(__bulitin__)查看内置函数，用help()查看函数作用。 字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。##（接）列表感觉类似于数组 使用列表：比如   1message=&amp;quot;my bike is a&amp;quot;+bicycle.title()+&amp;quot;.&amp;quot;  列表的增删改：">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Python基础总结 | Mr9ine</title>
+<title>Python学习笔记（列表） | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Python基础" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-列表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/22/Python基础/" class="article-date">
-      <time datetime="2019-04-22T14:49:40.850Z" itemprop="datePublished">2019-04-22</time>
+      <a href="/2019/04/25/列表/" class="article-date">
+      <time datetime="2019-04-25T10:23:40.520Z" itemprop="datePublished">2019-04-25</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础总结
+      Python学习笔记（列表）
     </h1>
   
 
@@ -293,17 +293,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#区别<br><strong>经过总结学习，发现python变量如同类C语言，主观来看更加通俗易懂，包括数字，字符串，运算符和表达式等等。因为之前主要接触为类C语言的缘故，发现一些与类C不同的地方，主要注意每个语句后面不应加‘；’。         <br>输入输出上，要加()，可以支持类似于3+5这类的直接操作,不需要定义变量等等。在内置函数上很多都类似。<br>注意在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语言中都是如此，这与列表操作的底层实现相关。如果结果出乎意料，注意错误。<br>第二个列表元素的索引为1。根据这种简单的计数方式，要访问列表的任何元素，都可将其位置减1，并将结果作为索引。例如，要访问第四个列表元素，可使用索引3。</strong></p>
-<p>#简单的例题<br><strong>例 1 用户输入一个三位自然数，计算并输出其佰位、十位和个位上的数字</strong><br>(<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">x = input(&apos;请输入一个三位数：&apos;)</span><br><span class="line">x = int(x)</span><br><span class="line">a = x // 100</span><br><span class="line">b = x // 10 % 10</span><br><span class="line">c = x % 10</span><br><span class="line">print(a, b, c)(```)</span><br><span class="line">&lt;br&gt;**例2 任意输入三个英文单词，按字典顺序输出**</span><br><span class="line"></span><br><span class="line">(```)</span><br><span class="line">s = input(&apos;x,y,z=&apos;)</span><br><span class="line">x, y, z = s.split(&apos;,&apos;) </span><br><span class="line">x, y, z = sorted([x, y, z])</span><br><span class="line">print(x, y, z)</span><br><span class="line">(```)</span><br><span class="line">#列表</span><br><span class="line">**使用“=”直接将一个列表赋值给变量即可创建列表对象</span><br><span class="line">``` </span><br><span class="line">a_list = [&apos;a&apos;, &apos;b&apos;, &apos;mpilgrim&apos;, &apos;z&apos;, &apos;example&apos;]</span><br><span class="line"> a_list = []                                       #创建空列表</span><br></pre></td></tr></table></figure></p>
-<p><br>也可以使用list()函数将元组、range对象、字符串或其他类型的可迭代对象类型的数据转换为列表。<br><code>a_list = list((3,5,7,9,11))
-a_list
-[3, 5, 7, 9, 11]
-list(range(1,10,2))
-[1, 3, 5, 7, 9]
- list(&#39;hello world&#39;)
-[&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;w&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;]
- x = list()</code>**<br><br>注意列表增删查改语法复习</p>
-<p>##一些例题<br>1 姓名： 将一些朋友的姓名存储在一个列表中，并将其命名为names 。依次访问该列表中的每个元素，从而将每个朋友的姓名都打印出来。<br><br>2 问候语： 继续使用1中的列表，但不打印每个朋友的姓名，而为每人打印一条消息。每条消息都包含相同的问候语，但抬头为相应朋友的姓名。</p>
+        <p>##Tips:</p>
+<ol>
+<li>使用 <code>dir(__bulitin__)</code>查看内置函数，用help()查看函数作用。</li>
+<li>字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。<br>##（接）列表<br>感觉类似于数组</li>
+<li><p>使用列表：比如  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message=&quot;my bike is a&quot;+bicycle.title()+&quot;.&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表的增删改：  </p>
+<ol>
+<li>bicycle.append(circle) #增加circle到末尾</li>
+<li>bicycle.insert(0,’dua’) #选择位置插</li>
+<li>del bicycle[0] #删除 （p.s 如果删除后仍使用，则pop函数，如果不知位置的话，就用bicycle.remove）</li>
+</ol>
+</li>
+<li><strong>（组织列表）使用sort让列表内元素字母顺序（sorted可以临时调整），倒着打印用reverse()。len()确定长度（元素个数）</strong>  </li>
+</ol>
+<p>操作整个列表-&gt;for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cats = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</span><br><span class="line">for cat in cats:</span><br><span class="line">  print(cat)</span><br></pre></td></tr></table></figure></p>
+<p>还可以在for内增加其他操作，比如print。<br><strong>python中，用缩进判断关系</strong></p>
+<ol start="4">
+<li>用range创建数字列表，range()本身是生成一系列数字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for value in range(1,5):</span><br><span class="line">print(value)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后使用 <code>number=list(range(1,5))</code> 生成列表<br>p.s <strong>rang(2,11,2) #从2开始，不断增加2，达到11，也就是偶数</strong><br>可用min max sum进行数字列表的统计。</p>
+<ol start="5">
+<li>切片，如cat[0:3]。还可以复制，比如my friend=mine[:]</li>
+<li>元组：不可变的列表。用()，其他规则跟普通的列表类似。</li>
+</ol>
 
       
     </div>
@@ -312,13 +328,13 @@ list(range(1,10,2))
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/22/Python基础/">Python基础总结</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/25/列表/">Python学习笔记（列表）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-04-22, 22:49:40</p>
-        <p><span>最后更新:</span>2019-04-22, 22:49:42</p>
+        <p><span>发布时间:</span>2019-04-25, 18:23:40</p>
+        <p><span>最后更新:</span>2019-04-25, 18:26:46</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/22/Python基础/" title="Python基础总结">http://yoursite.com/2019/04/22/Python基础/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/22/Python基础/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/25/列表/" title="Python学习笔记（列表）">http://yoursite.com/2019/04/25/列表/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/25/列表/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -330,16 +346,10 @@ list(range(1,10,2))
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/23/网络安全的加密算法/">
-                    网络安全的初级算法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/22/Hello-World-0/">
-                    Hello World
+                <a href="/2019/04/24/安全入门/">
+                    安全
                 </a>
             </div>
         
@@ -387,7 +397,7 @@ list(range(1,10,2))
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Python基础总结　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Python学习笔记（列表）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -407,15 +417,13 @@ list(range(1,10,2))
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/23/网络安全的加密算法/" title="上一篇: 网络安全的初级算法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/22/Hello-World-0/" title="下一篇: Hello World">
+            <a href="/2019/04/24/安全入门/" title="下一篇: 安全">
                 <i class="fa fa-angle-right"></i>
             </a>
         
