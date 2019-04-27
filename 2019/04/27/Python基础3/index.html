@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="##Tips:  使用 dir(__bulitin__)查看内置函数，用help()查看函数作用。 字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。##（接）列表感觉类似于数组 使用列表：比如   1message=&amp;quot;my bike is a&amp;quot;+bicycle.title()+&amp;quot;.&amp;quot;  列表的增删改：">
+<meta name="description" content="#输入 ##example12message = input(&amp;quot;give me some numbers:&amp;quot;)print(message) 分析：input内给与提示，然后指示输入什么内容。  默认为字符，用int()获取数值输入。12height = input(&amp;quot;input height &amp;quot;)height = int(height)   #while用法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习笔记（列表）">
-<meta property="og:url" content="http://yoursite.com/2019/04/25/列表/index.html">
+<meta property="og:title" content="python学习笔记（输入&amp;while&amp;函数）">
+<meta property="og:url" content="http://yoursite.com/2019/04/27/Python基础3/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="##Tips:  使用 dir(__bulitin__)查看内置函数，用help()查看函数作用。 字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。##（接）列表感觉类似于数组 使用列表：比如   1message=&amp;quot;my bike is a&amp;quot;+bicycle.title()+&amp;quot;.&amp;quot;  列表的增删改：">
+<meta property="og:description" content="#输入 ##example12message = input(&amp;quot;give me some numbers:&amp;quot;)print(message) 分析：input内给与提示，然后指示输入什么内容。  默认为字符，用int()获取数值输入。12height = input(&amp;quot;input height &amp;quot;)height = int(height)   #while用法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T10:26:46.000Z">
+<meta property="og:updated_time" content="2019-04-27T15:23:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习笔记（列表）">
-<meta name="twitter:description" content="##Tips:  使用 dir(__bulitin__)查看内置函数，用help()查看函数作用。 字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。##（接）列表感觉类似于数组 使用列表：比如   1message=&amp;quot;my bike is a&amp;quot;+bicycle.title()+&amp;quot;.&amp;quot;  列表的增删改：">
+<meta name="twitter:title" content="python学习笔记（输入&amp;while&amp;函数）">
+<meta name="twitter:description" content="#输入 ##example12message = input(&amp;quot;give me some numbers:&amp;quot;)print(message) 分析：input内给与提示，然后指示输入什么内容。  默认为字符，用int()获取数值输入。12height = input(&amp;quot;input height &amp;quot;)height = int(height)   #while用法">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Python学习笔记（列表） | Mr9ine</title>
+<title>python学习笔记（输入&amp;while&amp;函数） | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-列表" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python基础3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/25/列表/" class="article-date">
-      <time datetime="2019-04-25T10:23:40.520Z" itemprop="datePublished">2019-04-25</time>
+      <a href="/2019/04/27/Python基础3/" class="article-date">
+      <time datetime="2019-04-27T15:23:06.770Z" itemprop="datePublished">2019-04-27</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python学习笔记（列表）
+      python学习笔记（输入&amp;while&amp;函数）
     </h1>
   
 
@@ -293,32 +293,48 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>##Tips:</p>
+        <p>#输入</p>
+<p>##example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = input(&quot;give me some numbers:&quot;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure></p>
+<p>分析：input内给与提示，然后指示输入什么内容。</p>
 <ol>
-<li>使用 <code>dir(__bulitin__)</code>查看内置函数，用help()查看函数作用。</li>
-<li>字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。<br>##（接）列表<br>感觉类似于数组</li>
-<li><p>使用列表：比如  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message=&quot;my bike is a&quot;+bicycle.title()+&quot;.&quot;</span><br></pre></td></tr></table></figure>
+<li>默认为字符，用int()获取数值输入。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">height = input(&quot;input height &quot;)</span><br><span class="line">height = int(height)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>列表的增删改：  </p>
+</ol>
+<p>#while<br>用法类似于类C语言。不展开了</p>
+<p>##用while循环处理列表和字典</p>
 <ol>
-<li>bicycle.append(circle) #增加circle到末尾</li>
-<li>bicycle.insert(0,’dua’) #选择位置插</li>
-<li>del bicycle[0] #删除 （p.s 如果删除后仍使用，则pop函数，如果不知位置的话，就用bicycle.remove）</li>
-</ol>
+<li><p>列表间，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">users = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">new_users = []</span><br><span class="line">while users: </span><br><span class="line">current_user = users.pop()</span><br><span class="line">print(&quot;Verifying user: &quot; + current_user.title()) </span><br><span class="line">new users.append(current_user)</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>（组织列表）使用sort让列表内元素字母顺序（sorted可以临时调整），倒着打印用reverse()。len()确定长度（元素个数）</strong>  </li>
-</ol>
-<p>操作整个列表-&gt;for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cats = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</span><br><span class="line">for cat in cats:</span><br><span class="line">  print(cat)</span><br></pre></td></tr></table></figure></p>
-<p>还可以在for内增加其他操作，比如print。<br><strong>python中，用缩进判断关系</strong></p>
-<ol start="4">
-<li>用range创建数字列表，range()本身是生成一系列数字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for value in range(1,5):</span><br><span class="line">print(value)</span><br></pre></td></tr></table></figure>
+<li><p>删除列表中的特定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pets = [&apos;dog&apos;, &apos;cat&apos;, &apos;dog&apos;, &apos;goldfish&apos;, &apos;cat&apos;, &apos;rabbit&apos;, &apos;cat&apos;]</span><br><span class="line">print(pets)</span><br><span class="line">while &apos;cat&apos; in pets:</span><br><span class="line">  pets.remove(&apos;cat&apos;)</span><br><span class="line">print(pets)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>然后使用 <code>number=list(range(1,5))</code> 生成列表<br>p.s <strong>rang(2,11,2) #从2开始，不断增加2，达到11，也就是偶数</strong><br>可用min max sum进行数字列表的统计。</p>
-<ol start="5">
-<li>切片，如cat[0:3]。还可以复制，比如my friend=mine[:]</li>
-<li>元组：不可变的列表。用()，其他规则跟普通的列表类似。</li>
+<p>#函数</p>
+<ol>
+<li><p>定义函数的格式，如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def users():  #函数名字</span><br><span class="line">  &quot;&quot;&quot;问候用户&quot;&quot;&quot;   #描述函数</span><br><span class="line">  print(&quot;hello&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传递实参，最简单的是位置实参，如<br><code>def describe(a,b)</code></p>
+</li>
+<li>设置默认值，如<br><code>def describe_pet(pet_name, animal_type=&#39;dog&#39;)</code></li>
+<li><p>返回值，类似C，但是有新的内容 如果返回类型为字典</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def build_person(first_name, last_name, age=&apos;&apos;):</span><br><span class="line">&quot;&quot;&quot;返回一个字典&quot;&quot;&quot;</span><br><span class="line">person = &#123;&apos;first&apos;: first_name, &apos;last&apos;: last_name&#125;</span><br><span class="line">if age:</span><br><span class="line">person[&apos;age&apos;] = age</span><br><span class="line">return person</span><br><span class="line">somebody = build_person(&apos;jimi&apos;, &apos;hendrix&apos;, age=27)</span><br><span class="line">print(somebody)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与while结合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def get_formatted_name(first_name, last_name):</span><br><span class="line">&quot;&quot;&quot;返回姓名&quot;&quot;&quot;</span><br><span class="line">full_name = first_name + &apos; &apos; + last_name</span><br><span class="line">return full_name.title()</span><br><span class="line"># 这是一个无限循环!</span><br><span class="line">while True: </span><br><span class="line">print(&quot;\nPlease tell me your name:&quot;)</span><br><span class="line">f_name = input(&quot;First name: &quot;)</span><br><span class="line">l_name = input(&quot;Last name: &quot;)</span><br><span class="line">formatted_name = get_formatted_name(f_name, l_name)</span><br><span class="line">print(&quot;\nHello, &quot; + formatted_name + &quot;!&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与列表相结合，</p>
+<ol>
+<li><p>如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def greet_users(names):</span><br><span class="line">&quot;&quot;&quot;向列表中的每位用户都发出简单的问候&quot;&quot;&quot;</span><br><span class="line">for name in names:</span><br><span class="line">msg = &quot;Hello, &quot; + name.title() + &quot;!&quot;</span><br><span class="line">print(msg)</span><br><span class="line">usernames = [&apos;hannah&apos;, &apos;ty&apos;, &apos;margot&apos;]</span><br><span class="line">greet_users(usernames)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用函数修改列表，pop()</p>
+</li>
+<li>如果不想修改，则使用<strong>副本</strong>。[:]</li>
+</ol>
+</li>
+<li>*<em>如果不知道实参数量，就使用如下语句，<br>` def do(</em>something): `<br>待续。。</li>
 </ol>
 
       
@@ -328,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/25/列表/">Python学习笔记（列表）</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/27/Python基础3/">python学习笔记（输入&amp;while&amp;函数）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-04-25, 18:23:40</p>
-        <p><span>最后更新:</span>2019-04-25, 18:26:46</p>
+        <p><span>发布时间:</span>2019-04-27, 23:23:06</p>
+        <p><span>最后更新:</span>2019-04-27, 23:23:08</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/25/列表/" title="Python学习笔记（列表）">http://yoursite.com/2019/04/25/列表/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/25/列表/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/27/Python基础3/" title="python学习笔记（输入&amp;while&amp;函数）">http://yoursite.com/2019/04/27/Python基础3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/27/Python基础3/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -346,16 +362,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/26/Python基础2/">
-                    python学习笔记（if&amp;字典）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/24/安全入门/">
-                    安全
+                <a href="/2019/04/26/Python基础2/">
+                    python学习笔记（if&amp;字典）
                 </a>
             </div>
         
@@ -403,7 +413,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Python学习笔记（列表）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"python学习笔记（输入&while&函数）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -423,15 +433,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/26/Python基础2/" title="上一篇: python学习笔记（if&amp;字典）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/24/安全入门/" title="下一篇: 安全">
+            <a href="/2019/04/26/Python基础2/" title="下一篇: python学习笔记（if&amp;字典）">
                 <i class="fa fa-angle-right"></i>
             </a>
         

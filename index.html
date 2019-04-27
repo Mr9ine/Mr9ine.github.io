@@ -260,6 +260,104 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Python基础3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/27/Python基础3/" class="article-date">
+      <time datetime="2019-04-27T15:23:06.770Z" itemprop="datePublished">2019-04-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/Python基础3/">python学习笔记（输入&amp;while&amp;函数）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#输入</p>
+<p>##example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = input(&quot;give me some numbers:&quot;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure></p>
+<p>分析：input内给与提示，然后指示输入什么内容。</p>
+<ol>
+<li>默认为字符，用int()获取数值输入。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">height = input(&quot;input height &quot;)</span><br><span class="line">height = int(height)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>#while<br>用法类似于类C语言。不展开了</p>
+<p>##用while循环处理列表和字典</p>
+<ol>
+<li><p>列表间，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">users = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">new_users = []</span><br><span class="line">while users: </span><br><span class="line">current_user = users.pop()</span><br><span class="line">print(&quot;Verifying user: &quot; + current_user.title()) </span><br><span class="line">new users.append(current_user)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除列表中的特定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pets = [&apos;dog&apos;, &apos;cat&apos;, &apos;dog&apos;, &apos;goldfish&apos;, &apos;cat&apos;, &apos;rabbit&apos;, &apos;cat&apos;]</span><br><span class="line">print(pets)</span><br><span class="line">while &apos;cat&apos; in pets:</span><br><span class="line">  pets.remove(&apos;cat&apos;)</span><br><span class="line">print(pets)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>#函数</p>
+<ol>
+<li><p>定义函数的格式，如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def users():  #函数名字</span><br><span class="line">  &quot;&quot;&quot;问候用户&quot;&quot;&quot;   #描述函数</span><br><span class="line">  print(&quot;hello&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传递实参，最简单的是位置实参，如<br><code>def describe(a,b)</code></p>
+</li>
+<li>设置默认值，如<br><code>def describe_pet(pet_name, animal_type=&#39;dog&#39;)</code></li>
+<li><p>返回值，类似C，但是有新的内容 如果返回类型为字典</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def build_person(first_name, last_name, age=&apos;&apos;):</span><br><span class="line">&quot;&quot;&quot;返回一个字典&quot;&quot;&quot;</span><br><span class="line">person = &#123;&apos;first&apos;: first_name, &apos;last&apos;: last_name&#125;</span><br><span class="line">if age:</span><br><span class="line">person[&apos;age&apos;] = age</span><br><span class="line">return person</span><br><span class="line">somebody = build_person(&apos;jimi&apos;, &apos;hendrix&apos;, age=27)</span><br><span class="line">print(somebody)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与while结合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def get_formatted_name(first_name, last_name):</span><br><span class="line">&quot;&quot;&quot;返回姓名&quot;&quot;&quot;</span><br><span class="line">full_name = first_name + &apos; &apos; + last_name</span><br><span class="line">return full_name.title()</span><br><span class="line"># 这是一个无限循环!</span><br><span class="line">while True: </span><br><span class="line">print(&quot;\nPlease tell me your name:&quot;)</span><br><span class="line">f_name = input(&quot;First name: &quot;)</span><br><span class="line">l_name = input(&quot;Last name: &quot;)</span><br><span class="line">formatted_name = get_formatted_name(f_name, l_name)</span><br><span class="line">print(&quot;\nHello, &quot; + formatted_name + &quot;!&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与列表相结合，</p>
+<ol>
+<li><p>如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def greet_users(names):</span><br><span class="line">&quot;&quot;&quot;向列表中的每位用户都发出简单的问候&quot;&quot;&quot;</span><br><span class="line">for name in names:</span><br><span class="line">msg = &quot;Hello, &quot; + name.title() + &quot;!&quot;</span><br><span class="line">print(msg)</span><br><span class="line">usernames = [&apos;hannah&apos;, &apos;ty&apos;, &apos;margot&apos;]</span><br><span class="line">greet_users(usernames)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用函数修改列表，pop()</p>
+</li>
+<li>如果不想修改，则使用<strong>副本</strong>。[:]</li>
+</ol>
+</li>
+<li>*<em>如果不知道实参数量，就使用如下语句，<br>` def do(</em>something): `<br>待续。。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Python基础2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
