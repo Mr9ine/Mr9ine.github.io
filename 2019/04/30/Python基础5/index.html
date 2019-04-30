@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="#Note：if ##example:123456cars = [&amp;apos;audi&amp;apos;,&amp;apos;bmw&amp;apos;,&amp;apos;toyota&amp;apos;]for car in cars:  if car ==&amp;apos;bmw&amp;apos;:    print(car.upper())  else:    print(car.title()) ##  类似于类C语言，if可以判断数字">
+<meta name="description" content="#文件  读文件。作为练习，首先存储一个PI.txt文件，然后在同一目录下，输入如下语句然后存储。 123with open(&amp;apos;PI.txt&amp;apos;)as file_object:    contents = file_object.read()    print(contents) Note：  同一文件夹下。 不同文件夹下，需要给定路径，比如with open(&amp;#39;text">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习笔记（if&amp;字典）">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/Python基础2/index.html">
+<meta property="og:title" content="文件和异常">
+<meta property="og:url" content="http://yoursite.com/2019/04/30/Python基础5/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="#Note：if ##example:123456cars = [&amp;apos;audi&amp;apos;,&amp;apos;bmw&amp;apos;,&amp;apos;toyota&amp;apos;]for car in cars:  if car ==&amp;apos;bmw&amp;apos;:    print(car.upper())  else:    print(car.title()) ##  类似于类C语言，if可以判断数字">
+<meta property="og:description" content="#文件  读文件。作为练习，首先存储一个PI.txt文件，然后在同一目录下，输入如下语句然后存储。 123with open(&amp;apos;PI.txt&amp;apos;)as file_object:    contents = file_object.read()    print(contents) Note：  同一文件夹下。 不同文件夹下，需要给定路径，比如with open(&amp;#39;text">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-26T14:41:26.000Z">
+<meta property="og:updated_time" content="2019-04-30T11:38:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python学习笔记（if&amp;字典）">
-<meta name="twitter:description" content="#Note：if ##example:123456cars = [&amp;apos;audi&amp;apos;,&amp;apos;bmw&amp;apos;,&amp;apos;toyota&amp;apos;]for car in cars:  if car ==&amp;apos;bmw&amp;apos;:    print(car.upper())  else:    print(car.title()) ##  类似于类C语言，if可以判断数字">
+<meta name="twitter:title" content="文件和异常">
+<meta name="twitter:description" content="#文件  读文件。作为练习，首先存储一个PI.txt文件，然后在同一目录下，输入如下语句然后存储。 123with open(&amp;apos;PI.txt&amp;apos;)as file_object:    contents = file_object.read()    print(contents) Note：  同一文件夹下。 不同文件夹下，需要给定路径，比如with open(&amp;#39;text">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>python学习笔记（if&amp;字典） | Mr9ine</title>
+<title>文件和异常 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Python基础2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python基础5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/26/Python基础2/" class="article-date">
-      <time datetime="2019-04-26T14:41:25.770Z" itemprop="datePublished">2019-04-26</time>
+      <a href="/2019/04/30/Python基础5/" class="article-date">
+      <time datetime="2019-04-30T04:25:08.240Z" itemprop="datePublished">2019-04-30</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python学习笔记（if&amp;字典）
+      文件和异常
     </h1>
   
 
@@ -293,39 +293,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#Note：if</p>
-<p>##example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cars = [&apos;audi&apos;,&apos;bmw&apos;,&apos;toyota&apos;]</span><br><span class="line">for car in cars:</span><br><span class="line">  if car ==&apos;bmw&apos;:</span><br><span class="line">    print(car.upper())</span><br><span class="line">  else:</span><br><span class="line">    print(car.title())</span><br></pre></td></tr></table></figure></p>
-<p>##</p>
+        <p>#文件</p>
 <ol>
-<li>类似于类C语言，if可以判断数字相等，不等，或者是多个条件（and和or），<strong>还可以判断特定值是不是在列表里，<code>&#39;mushroom&#39; in vegetables</code>  ，或者不在列表里 not in </strong> </li>
-<li>一些if-else或者elseif 跟类C语言类似</li>
-<li>如果跟列表结合使用，可以延伸出一些用法，比如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">requested = [&apos;mushrooms&apos;, &apos;french fries&apos;, &apos;extra cheese&apos;]</span><br><span class="line">for request in requested: </span><br><span class="line">  if request in available:</span><br><span class="line">     print(&quot;Adding &quot; + requested + &quot;.&quot;) </span><br><span class="line">  else:</span><br><span class="line">     print(&quot;Sorry, we don&apos;t have &quot; + requested + &quot;.&quot;)</span><br><span class="line">print(&quot;\nFinished making your pizza!&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>（写代码时，大于等于小于号两端最好留空）</p>
-<p>#Note： 字典<br>字典：是一系列键—值对 。每个键都与一个值相关联，可以使用键来访问与之相关联的值。</p>
+<li><p>读文件。作为练习，首先存储一个PI.txt文件，然后在同一目录下，输入如下语句然后存储。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(&apos;PI.txt&apos;)as file_object:</span><br><span class="line">    contents = file_object.read()</span><br><span class="line">    print(contents)</span><br></pre></td></tr></table></figure>
+<p>Note：</p>
 <ol>
-<li><p>访问字典，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(animal[&apos;color&apos;])</span><br></pre></td></tr></table></figure>
+<li>同一文件夹下。</li>
+<li>不同文件夹下，需要给定路径，比如<br><code>with open(&#39;text_files/filename.txt&#39;) as file_object:</code></li>
+<li>逐行读取，比如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;pi_digits.txt&apos;</span><br><span class="line">with open(filename) as file_object:</span><br><span class="line"> for line in file_object:</span><br><span class="line"> print(line)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>增删改。</p>
+</ol>
+<p>如果想要去除空白行，使用rstrip函数</p>
+</li>
+<li><p>使用文件内容。当文件读入内存中后，就可以以任何方式使用数据了。<strong>如果代码数目大，也可处理，python没有限制处理量</strong><br>一个例子：判断一串数字在不在所存文件里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;pi.txt&apos;</span><br><span class="line">with open(filename) as file_object:</span><br><span class="line">  lines = file_object.readlines()</span><br><span class="line">pi_string = &apos;&apos;</span><br><span class="line">for line in lines:</span><br><span class="line">pi_string += line.rstrip()</span><br><span class="line">number = input(&quot;Enter some numbers, in the form mmddyy: &quot;) </span><br><span class="line"> if number in pi_string:</span><br><span class="line">print(&quot;Your number appears in the first million digits of pi!&quot;)</span><br><span class="line">else:</span><br><span class="line">print(&quot;Your number does not appear in the first million digits of pi.&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写入文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;program.txt&apos;</span><br><span class="line">with open(filename, &apos;w&apos;) as file_object:</span><br><span class="line">  file_object.write(&quot; Okay.&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>note：第一个实参是打开的文件名称，第二个’w’ <strong>写入模式</strong>打开这个文件。<br>如果写入多行，就多几行write.()，可以仍旧用\n换行。<br>如果要给文件添加内容，而不是覆盖原有的内容，可以附加模式 打开文件。以附加模式打开文件时，Python不会在返回文件对象前清空文件，而写入到文件的行都将添加到文件末尾。如果指定的文件不存在，Python将创建一个空文件，如<br><code>with open(filename, &#39;a&#39;) as file_object:</code></p>
+<p>#异常<br>每当发生让Python不知所措的错误时，它都会创建一个异常对象。<strong>如果编写了处理该异常的代码，程序将继续运行；如果未对异常进行处理，程序将停止，并显示一个traceback，其中包含有关异常的报告。</strong></p>
 <ol>
-<li>增，就直接<code>animal[&#39;age&#39;] = 2</code></li>
-<li>改，直接在原基础上改 <code>animal[&#39;age&#39;] = 3</code></li>
-<li>删，<code>del animal[&#39;age&#39;] = 3</code></li>
-</ol>
-</li>
-<li>遍历，也分几种情况：<ol>
-<li>键-对遍历，如：<code>for k,v in users.iterm()</code></li>
-<li>键的遍历，如：<code>for k in users.keys()</code></li>
-<li>值的遍历，如：<code>for v in users.values()</code></li>
-</ol>
+<li>可以编写try-except代码块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">print(&quot;You can&apos;t divide by zero!&quot;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><strong>如果不想数值重，可以用set，也就是集合</strong></p>
-<ol start="4">
-<li>嵌套，也就是字典存在列表中。<br>待续。</li>
-</ol>
+<p>如果try 代码块中的代码运行起来没有问题，Python将跳过except 代码块；如果try 代码块中的代码导致了错误，Python将查找这样的except 代码块，并运行其中的代码，即其中指定的错误与引发的错误相同</p>
 
       
     </div>
@@ -334,13 +328,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/26/Python基础2/">python学习笔记（if&amp;字典）</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/30/Python基础5/">文件和异常</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-04-26, 22:41:25</p>
-        <p><span>最后更新:</span>2019-04-26, 22:41:26</p>
+        <p><span>发布时间:</span>2019-04-30, 12:25:08</p>
+        <p><span>最后更新:</span>2019-04-30, 19:38:54</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/26/Python基础2/" title="python学习笔记（if&amp;字典）">http://yoursite.com/2019/04/26/Python基础2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/26/Python基础2/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/30/Python基础5/" title="文件和异常">http://yoursite.com/2019/04/30/Python基础5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/30/Python基础5/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +346,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/27/Python基础3/">
-                    python学习笔记（输入&amp;while&amp;函数）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/25/列表/">
-                    Python学习笔记（列表）
+                <a href="/2019/04/29/网络安全原理与应用1/">
+                    网路安全原理与应用（1）
                 </a>
             </div>
         
@@ -409,7 +397,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"python学习笔记（if&字典）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"文件和异常　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -429,15 +417,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/27/Python基础3/" title="上一篇: python学习笔记（输入&amp;while&amp;函数）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/25/列表/" title="下一篇: Python学习笔记（列表）">
+            <a href="/2019/04/29/网络安全原理与应用1/" title="下一篇: 网路安全原理与应用（1）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
