@@ -15,14 +15,17 @@
 
 
 
+<meta name="description" content="#Note:  大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c 程序被其他程序翻译成不同的格式。从源文件到目标文件的转化是由编译器驱动程序完成的主要过程有预处理、编译、汇编、链接阶段。 系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/04/22/Hello-World-0/index.html">
+<meta property="og:title" content="深入理解计算机系统笔记（0）">
+<meta property="og:url" content="http://yoursite.com/2019/05/03/深入理解计算机系统1/index.html">
 <meta property="og:site_name" content="Mr9ine">
+<meta property="og:description" content="#Note:  大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c 程序被其他程序翻译成不同的格式。从源文件到目标文件的转化是由编译器驱动程序完成的主要过程有预处理、编译、汇编、链接阶段。 系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-22T02:32:30.000Z">
+<meta property="og:updated_time" content="2019-05-03T10:03:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
+<meta name="twitter:title" content="深入理解计算机系统笔记（0）">
+<meta name="twitter:description" content="#Note:  大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c 程序被其他程序翻译成不同的格式。从源文件到目标文件的转化是由编译器驱动程序完成的主要过程有预处理、编译、汇编、链接阶段。 系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -54,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | Mr9ine</title>
+<title>深入理解计算机系统笔记（0） | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -254,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Hello-World-0" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-深入理解计算机系统1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/22/Hello-World-0/" class="article-date">
-      <time datetime="2019-04-22T02:32:28.000Z" itemprop="datePublished">2019-04-22</time>
+      <a href="/2019/05/03/深入理解计算机系统1/" class="article-date">
+      <time datetime="2019-05-03T10:03:27.320Z" itemprop="datePublished">2019-05-03</time>
 </a>
 
 
@@ -273,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      深入理解计算机系统笔记（0）
     </h1>
   
 
@@ -290,7 +293,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>#Note:</p>
+<ol>
+<li>大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c</li>
+<li>程序被其他程序翻译成不同的格式。<strong>从源文件到目标文件的转化是由编译器驱动程序完成的</strong><br>主要过程有预处理、编译、汇编、链接阶段。</li>
+<li>系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候，PC都指向主存中的某条机器语言指令，也就是含有该指令的地址）</li>
+<li>运行程序的过程。</li>
+<li>高速缓存作用。之前学习过操作系统，就不展开。<strong>意识到高速缓存存储器存在的应用程序员可以利用高速缓存将程序的性能提高一个数量级</strong>  </li>
+<li>存储设备形成的层次结构：从上到下，设备访问速度越来越慢，容量越来越大，每字节的造价越来越便宜。主要思想是：<strong>上一层的存储器作为低一层存储器的高速缓存</strong></li>
+<li>把操作系统看做应用程序和硬件之间的一层软件。其中进程概念在之前的操作系统学习中学习过，当操作系统决定把控制权从当前进程转移到某个新进程时，就会进行<strong>上下文切换（保存当前进程的上下文，恢复进程的上下文，然后将控制权传递到新进程，新进程就会从上次停止的地方开始）</strong></li>
+<li>虚拟内存。为每个进程提供了一个假象，即每个进程都在独占使用主存。每个进程看到的内存都是一致的，成为虚拟地址空间。</li>
+<li>文件，即字节序列。每个I/O设备，包括磁盘、键盘、显示器，甚至是网络都可以看做文件。<br>##tips：</li>
+<li>Amdahl定律：主要思想，对系统某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度。主要观点：想要显著加速整个系统，必须提升全系统中相当大的部分的速度。</li>
+<li>并发与并行。老概念。并发（同时多个），并行。超线程（同时多线程）：允许一个CPU执行多个控制流技术。通过流水线可以实现指令级并发。如果处理器可以达到比一个周期一条指令更快的执行速率，就称为超标量处理器。还有一种SIMD并行（单指令、多数据）</li>
+<li>抽象。除去之前学习过的一些科目中介绍的抽象，增加<strong>虚拟机</strong>的抽象，即对整个计算机的抽象。</li>
+</ol>
+
       
     </div>
     
@@ -298,13 +316,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/22/Hello-World-0/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/03/深入理解计算机系统1/">深入理解计算机系统笔记（0）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-04-22, 10:32:28</p>
-        <p><span>最后更新:</span>2019-04-22, 10:32:30</p>
+        <p><span>发布时间:</span>2019-05-03, 18:03:27</p>
+        <p><span>最后更新:</span>2019-05-03, 18:03:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/22/Hello-World-0/" title="Hello World">http://yoursite.com/2019/04/22/Hello-World-0/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/22/Hello-World-0/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/03/深入理解计算机系统1/" title="深入理解计算机系统笔记（0）">http://yoursite.com/2019/05/03/深入理解计算机系统1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/03/深入理解计算机系统1/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -316,16 +334,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/22/Python基础/">
-                    Python基础总结
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/21/hello-world/">
-                    Hello World
+                <a href="/2019/04/30/Python基础5/">
+                    文件和异常
                 </a>
             </div>
         
@@ -373,7 +385,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"深入理解计算机系统笔记（0）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -393,15 +405,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/22/Python基础/" title="上一篇: Python基础总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/21/hello-world/" title="下一篇: Hello World">
+            <a href="/2019/04/30/Python基础5/" title="下一篇: 文件和异常">
                 <i class="fa fa-angle-right"></i>
             </a>
         

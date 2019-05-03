@@ -260,6 +260,76 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-深入理解计算机系统1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/03/深入理解计算机系统1/" class="article-date">
+      <time datetime="2019-05-03T10:03:27.320Z" itemprop="datePublished">2019-05-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/03/深入理解计算机系统1/">深入理解计算机系统笔记（0）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#Note:</p>
+<ol>
+<li>大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c</li>
+<li>程序被其他程序翻译成不同的格式。<strong>从源文件到目标文件的转化是由编译器驱动程序完成的</strong><br>主要过程有预处理、编译、汇编、链接阶段。</li>
+<li>系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候，PC都指向主存中的某条机器语言指令，也就是含有该指令的地址）</li>
+<li>运行程序的过程。</li>
+<li>高速缓存作用。之前学习过操作系统，就不展开。<strong>意识到高速缓存存储器存在的应用程序员可以利用高速缓存将程序的性能提高一个数量级</strong>  </li>
+<li>存储设备形成的层次结构：从上到下，设备访问速度越来越慢，容量越来越大，每字节的造价越来越便宜。主要思想是：<strong>上一层的存储器作为低一层存储器的高速缓存</strong></li>
+<li>把操作系统看做应用程序和硬件之间的一层软件。其中进程概念在之前的操作系统学习中学习过，当操作系统决定把控制权从当前进程转移到某个新进程时，就会进行<strong>上下文切换（保存当前进程的上下文，恢复进程的上下文，然后将控制权传递到新进程，新进程就会从上次停止的地方开始）</strong></li>
+<li>虚拟内存。为每个进程提供了一个假象，即每个进程都在独占使用主存。每个进程看到的内存都是一致的，成为虚拟地址空间。</li>
+<li>文件，即字节序列。每个I/O设备，包括磁盘、键盘、显示器，甚至是网络都可以看做文件。<br>##tips：</li>
+<li>Amdahl定律：主要思想，对系统某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度。主要观点：想要显著加速整个系统，必须提升全系统中相当大的部分的速度。</li>
+<li>并发与并行。老概念。并发（同时多个），并行。超线程（同时多线程）：允许一个CPU执行多个控制流技术。通过流水线可以实现指令级并发。如果处理器可以达到比一个周期一条指令更快的执行速率，就称为超标量处理器。还有一种SIMD并行（单指令、多数据）</li>
+<li>抽象。除去之前学习过的一些科目中介绍的抽象，增加<strong>虚拟机</strong>的抽象，即对整个计算机的抽象。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Python基础5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -919,61 +989,6 @@ list(range(1,10,2))
  x = list()</code>**<br><br>注意列表增删查改语法复习</p>
 <p>##一些例题<br>1 姓名： 将一些朋友的姓名存储在一个列表中，并将其命名为names 。依次访问该列表中的每个元素，从而将每个朋友的姓名都打印出来。<br><br>2 问候语： 继续使用1中的列表，但不打印每个朋友的姓名，而为每人打印一条消息。每条消息都包含相同的问候语，但抬头为相应朋友的姓名。</p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hello-World-0" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/22/Hello-World-0/" class="article-date">
-      <time datetime="2019-04-22T02:32:28.000Z" itemprop="datePublished">2019-04-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/22/Hello-World-0/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
       
     </div>
     
