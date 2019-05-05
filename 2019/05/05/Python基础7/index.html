@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="之前从来没有接触过这类知识，决定认真的学习一番。 ##客户端脚本安全通过学习略做笔记在浏览器安全中，主要有同源策略，也就是限制来自不同源的文件或脚本（对于当前页面来说，存放文件的域并不重要，重要的是加载的页面所在的域）此外还有XMLHttpRequest，根据设定的跨域访问标准，通过目标返回HTTP头来授权是否允许跨域访问。还有在网页中插入恶意代码，利用浏览器漏洞执行任意代码攻击。跨站的脚本攻击（">
+<meta name="description" content="Python标准库中的模块unittest 提供了代码测试工具。  单元测试 用于核实函数的某个方面没有问题 测试用例 是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。 全覆盖式测试试 用例包含一整套单元测试，涵盖了各种可能的函数使用方式。##example123456789import unittes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安全">
-<meta property="og:url" content="http://yoursite.com/2019/04/24/安全入门/index.html">
+<meta property="og:title" content="测试函数">
+<meta property="og:url" content="http://yoursite.com/2019/05/05/Python基础7/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="之前从来没有接触过这类知识，决定认真的学习一番。 ##客户端脚本安全通过学习略做笔记在浏览器安全中，主要有同源策略，也就是限制来自不同源的文件或脚本（对于当前页面来说，存放文件的域并不重要，重要的是加载的页面所在的域）此外还有XMLHttpRequest，根据设定的跨域访问标准，通过目标返回HTTP头来授权是否允许跨域访问。还有在网页中插入恶意代码，利用浏览器漏洞执行任意代码攻击。跨站的脚本攻击（">
+<meta property="og:description" content="Python标准库中的模块unittest 提供了代码测试工具。  单元测试 用于核实函数的某个方面没有问题 测试用例 是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。 全覆盖式测试试 用例包含一整套单元测试，涵盖了各种可能的函数使用方式。##example123456789import unittes">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T10:31:40.000Z">
+<meta property="og:updated_time" content="2019-05-05T08:19:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安全">
-<meta name="twitter:description" content="之前从来没有接触过这类知识，决定认真的学习一番。 ##客户端脚本安全通过学习略做笔记在浏览器安全中，主要有同源策略，也就是限制来自不同源的文件或脚本（对于当前页面来说，存放文件的域并不重要，重要的是加载的页面所在的域）此外还有XMLHttpRequest，根据设定的跨域访问标准，通过目标返回HTTP头来授权是否允许跨域访问。还有在网页中插入恶意代码，利用浏览器漏洞执行任意代码攻击。跨站的脚本攻击（">
+<meta name="twitter:title" content="测试函数">
+<meta name="twitter:description" content="Python标准库中的模块unittest 提供了代码测试工具。  单元测试 用于核实函数的某个方面没有问题 测试用例 是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。 全覆盖式测试试 用例包含一整套单元测试，涵盖了各种可能的函数使用方式。##example123456789import unittes">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>安全 | Mr9ine</title>
+<title>测试函数 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-安全入门" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python基础7" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/24/安全入门/" class="article-date">
-      <time datetime="2019-04-24T10:31:38.830Z" itemprop="datePublished">2019-04-24</time>
+      <a href="/2019/05/05/Python基础7/" class="article-date">
+      <time datetime="2019-05-05T08:19:13.040Z" itemprop="datePublished">2019-05-05</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      安全
+      测试函数
     </h1>
   
 
@@ -293,17 +293,42 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>之前从来没有接触过这类知识，决定认真的学习一番。</p>
-<p>##客户端脚本安全<br>通过学习略做笔记<br>在浏览器安全中，主要有同源策略，也就是限制来自不同源的文件或脚本（对于当前页面来说，存放文件的域并不重要，重要的是加载的页面所在的域）此外还有XMLHttpRequest，根据设定的跨域访问标准，通过目标返回HTTP头来授权是否允许跨域访问。还有在网页中插入恶意代码，利用浏览器漏洞执行任意代码攻击。<br><br>跨站的脚本攻击（Cross Site Script）,指的是黑客通过各种方式篡改网页，插入恶意代码，用户在浏览网页时，控制用户浏览器。其中XSS分为三类：1.反射型，简单的用户输入的数据反射给浏览器（一般是连接）。2.存储型：用户输入的数据存储在服务器上（比如恶意的博客）。3.DOM based XSS。<br><br> XSS构造技巧： 比如利用字符编码，比如Unicode组合（百度搜索”%c1\”，可令\被绕过）。还有一种标签使用，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;base href=&quot;http://www.a.com&quot;</span><br><span class="line">&lt;img src=&quot;a/b/c.png&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
-<p>攻击此标签，可以远程控制图片链接与脚本。<br><br>防御方法：</p>
+        <p>Python标准库中的模块unittest 提供了代码测试工具。</p>
 <ol>
-<li>HttpOnly</li>
-<li>输入输出检查</li>
-<li>使用EncodeForCSS（详细查一下）<br>##题型<br>初识一下CTF<br>MISC（安全杂项）、PPC、CRYPTO（密码学）、REVERSE、STEGA、PWN、WEB。</li>
+<li>单元测试 用于核实函数的某个方面没有问题</li>
+<li>测试用例 是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。</li>
+<li>全覆盖式测试试 用例包含一整套单元测试，涵盖了各种可能的函数使用方式。<br>##example<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line">from name_function import get_formatted_name</span><br><span class="line">class NamesTestCase(unittest.TestCase):</span><br><span class="line">&quot;&quot;&quot;测试name_function.py&quot;&quot;&quot;</span><br><span class="line">def test_first_last_name(self):</span><br><span class="line">&quot;&quot;&quot;能够正确地处理像Janis Joplin这样的姓名吗？&quot;&quot;&quot; </span><br><span class="line">formatted_name = get_formatted_name(&apos;janis&apos;, &apos;joplin&apos;) </span><br><span class="line">self.assertEqual(formatted_name, &apos;Janis Joplin&apos;)</span><br><span class="line">unittest.main()</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>PWN、Reserve偏重对汇编、逆向的理解。</p>
-<p>Crypto偏重对数学、算法的深入学习。</p>
-<p>Web编程对技巧沉淀、快速搜索能力的挑战。</p>
+<p>一个<strong>断言</strong>方法。断言方法用来核实得到的结果是否与期望的结果一致。</p>
+<p>#测试类<br>常用断言方法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">assertEqual(a,b)</td>
+<td style="text-align:left">核实a==b</td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotEqual(a,b）</td>
+<td style="text-align:left">核实a!=b</td>
+</tr>
+<tr>
+<td style="text-align:left">assertTrue(x)</td>
+<td style="text-align:left">核实x为True</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIn(item,list)</td>
+<td style="text-align:left">核实item在list中</td>
+</tr>
+</tbody>
+</table>
+<p>还可以编辑setUp()方法。</p>
 
       
     </div>
@@ -312,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/24/安全入门/">安全</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/05/Python基础7/">测试函数</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-04-24, 18:31:38</p>
-        <p><span>最后更新:</span>2019-04-24, 18:31:40</p>
+        <p><span>发布时间:</span>2019-05-05, 16:19:13</p>
+        <p><span>最后更新:</span>2019-05-05, 16:19:14</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/24/安全入门/" title="安全">http://yoursite.com/2019/04/24/安全入门/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/24/安全入门/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/05/Python基础7/" title="测试函数">http://yoursite.com/2019/05/05/Python基础7/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/05/Python基础7/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -331,15 +356,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/25/列表/">
-                    Python学习笔记（列表）
+                <a href="/2019/05/05/深入理解计算机系统2/">
+                    深入理解计算机系统（1）：信息的表示与处理
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/23/网络安全的加密算法/">
-                    网络安全的初级算法
+                <a href="/2019/05/04/Python基础6/">
+                    文件与代码测试
                 </a>
             </div>
         
@@ -387,7 +412,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"安全　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"测试函数　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -407,7 +432,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/25/列表/" title="上一篇: Python学习笔记（列表）">
+            <a href="/2019/05/05/深入理解计算机系统2/" title="上一篇: 深入理解计算机系统（1）：信息的表示与处理">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -415,7 +440,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/23/网络安全的加密算法/" title="下一篇: 网络安全的初级算法">
+            <a href="/2019/05/04/Python基础6/" title="下一篇: 文件与代码测试">
                 <i class="fa fa-angle-right"></i>
             </a>
         

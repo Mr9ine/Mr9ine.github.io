@@ -260,6 +260,135 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-安全入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/24/安全入门/" class="article-date">
+      <time datetime="2019-04-24T10:31:38.830Z" itemprop="datePublished">2019-04-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/24/安全入门/">安全</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>之前从来没有接触过这类知识，决定认真的学习一番。</p>
+<p>##客户端脚本安全<br>通过学习略做笔记<br>在浏览器安全中，主要有同源策略，也就是限制来自不同源的文件或脚本（对于当前页面来说，存放文件的域并不重要，重要的是加载的页面所在的域）此外还有XMLHttpRequest，根据设定的跨域访问标准，通过目标返回HTTP头来授权是否允许跨域访问。还有在网页中插入恶意代码，利用浏览器漏洞执行任意代码攻击。<br><br>跨站的脚本攻击（Cross Site Script）,指的是黑客通过各种方式篡改网页，插入恶意代码，用户在浏览网页时，控制用户浏览器。其中XSS分为三类：1.反射型，简单的用户输入的数据反射给浏览器（一般是连接）。2.存储型：用户输入的数据存储在服务器上（比如恶意的博客）。3.DOM based XSS。<br><br> XSS构造技巧： 比如利用字符编码，比如Unicode组合（百度搜索”%c1\”，可令\被绕过）。还有一种标签使用，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;base href=&quot;http://www.a.com&quot;</span><br><span class="line">&lt;img src=&quot;a/b/c.png&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>攻击此标签，可以远程控制图片链接与脚本。<br><br>防御方法：</p>
+<ol>
+<li>HttpOnly</li>
+<li>输入输出检查</li>
+<li>使用EncodeForCSS（详细查一下）<br>##题型<br>初识一下CTF<br>MISC（安全杂项）、PPC、CRYPTO（密码学）、REVERSE、STEGA、PWN、WEB。</li>
+</ol>
+<p>PWN、Reserve偏重对汇编、逆向的理解。</p>
+<p>Crypto偏重对数学、算法的深入学习。</p>
+<p>Web编程对技巧沉淀、快速搜索能力的挑战。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-网络安全的加密算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/23/网络安全的加密算法/" class="article-date">
+      <time datetime="2019-04-23T08:17:16.830Z" itemprop="datePublished">2019-04-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/网络安全的加密算法/">网络安全的初级算法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>##一、数据存传输储和传输的风险<br>主要损害机密性、完整性、认证、不可否认性等特性。</p>
+<ol>
+<li>为了应对机密性：对称密码（收发人共同拥有单个密钥），公钥。</li>
+<li>为了应对完整性：单向散列函数、消息认证、数字签名（只有发送人才可以产生的别人无法伪造的数字串）。<br><img src="https://images2015.cnblogs.com/blog/546650/201605/546650-20160511230425937-62477460.jpg" alt="加密解密"><br>##二、一些转换算法</li>
+<li>base64<br>通过学习，直白讲为将完整字符先转化成ASCII码，然后每六位，产生一个索引，再根据Base64编码的索引，转化成另一个字符。如果位数不足六，就在最后补0.比如Ma，转换成0100110101100001。</li>
+<li>MD5<br>其实个人感觉类似于hash函数，先通过指定的hash方法把文本变成简单的信息摘要，然后再恢复</li>
+<li>对称与非对称密钥<br>其中非对称利用椭圆曲线，基本公式K=kG. ECC RSA等<br>原理详叙：<a href="https://blog.csdn.net/qq_36411874/article/details/79613814" target="_blank" rel="noopener">https://blog.csdn.net/qq_36411874/article/details/79613814</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Python基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
