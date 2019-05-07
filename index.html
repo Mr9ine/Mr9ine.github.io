@@ -260,6 +260,70 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-深入理解计算机系统3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/06/深入理解计算机系统3/" class="article-date">
+      <time datetime="2019-05-06T10:06:59.850Z" itemprop="datePublished">2019-05-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/06/深入理解计算机系统3/">深入理解计算机系统（2）：</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>补码编码（B2T）。最高位为1则为负。为0则为正。其中，补码的范围是不对称的。|TMin|=|TMax|+1。</li>
+<li>有符号数和无符号数之间的转换。强制类型转换结果保持位值不变，只是改变了解释的方式。</li>
+<li>当创建一个无符号常量，必须加上后缀字符U或者u。在0&lt;=x&lt;=TMax之内的x，数字有相同的无符号和补码表示。对这个范围以外的数值，转换需要加上或者减去2^w。具体公式见P51</li>
+<li>扩展一个数字的位表示。常见的运算是在不同的字长的整数之间转换，同时保持数值不变。显然，从较小的数据类型转换到较大的类型是可能的。<br>比如，无符号转换成更大的数据类型，简单的在开头增加0，称为<strong>零扩展</strong>。<br>将一个补码数字转换为一个更大的数据类型，可以执行一个符号扩展。即在表示中添加最高有效位的值。</li>
+<li>截断数字。当将w位的数截断为一个k位数字时，我们会丢弃稿w-k位。（截断当然可能会改变它的值，发生<strong>溢出</strong>）截断公式见P57</li>
+<li>整数运算。定义一种运算+（u w）:把整数和x+y截断为w位得到的结果，再把这个结果看做一个无符号数。公式见P61（2.11）<br>补码加法：将参数转换为无符号数，执行无符号数加法，再将结果转换为补码。</li>
+<li>补码的非。待续。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-深入理解计算机系统2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -943,88 +1007,6 @@
 <p><strong>如果不想数值重，可以用set，也就是集合</strong></p>
 <ol start="4">
 <li>嵌套，也就是字典存在列表中。<br>待续。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-列表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/25/列表/" class="article-date">
-      <time datetime="2019-04-25T10:23:40.520Z" itemprop="datePublished">2019-04-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/25/列表/">Python学习笔记（列表）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>##Tips:</p>
-<ol>
-<li>使用 <code>dir(__bulitin__)</code>查看内置函数，用help()查看函数作用。</li>
-<li>字符串可以拼接，输出原始字符串加r，比如:r’C:\now’,如果得到多重跨行字符串，就使用三重引号。<br>##（接）列表<br>感觉类似于数组</li>
-<li><p>使用列表：比如  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message=&quot;my bike is a&quot;+bicycle.title()+&quot;.&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>列表的增删改：  </p>
-<ol>
-<li>bicycle.append(circle) #增加circle到末尾</li>
-<li>bicycle.insert(0,’dua’) #选择位置插</li>
-<li>del bicycle[0] #删除 （p.s 如果删除后仍使用，则pop函数，如果不知位置的话，就用bicycle.remove）</li>
-</ol>
-</li>
-<li><strong>（组织列表）使用sort让列表内元素字母顺序（sorted可以临时调整），倒着打印用reverse()。len()确定长度（元素个数）</strong>  </li>
-</ol>
-<p>操作整个列表-&gt;for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cats = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</span><br><span class="line">for cat in cats:</span><br><span class="line">  print(cat)</span><br></pre></td></tr></table></figure></p>
-<p>还可以在for内增加其他操作，比如print。<br><strong>python中，用缩进判断关系</strong></p>
-<ol start="4">
-<li>用range创建数字列表，range()本身是生成一系列数字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for value in range(1,5):</span><br><span class="line">print(value)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>然后使用 <code>number=list(range(1,5))</code> 生成列表<br>p.s <strong>rang(2,11,2) #从2开始，不断增加2，达到11，也就是偶数</strong><br>可用min max sum进行数字列表的统计。</p>
-<ol start="5">
-<li>切片，如cat[0:3]。还可以复制，比如my friend=mine[:]</li>
-<li>元组：不可变的列表。用()，其他规则跟普通的列表类似。</li>
 </ol>
 
       
