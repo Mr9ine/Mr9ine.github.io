@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。  用Unix命令行编译这些代码linux&amp;gt; gcc -Og -o p p1.c p2.c命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/hello-world/index.html">
+<meta property="og:title" content="深入理解计算机系统：程序的机器级表示">
+<meta property="og:url" content="http://yoursite.com/2019/05/09/深入理解计算机系统5/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。  用Unix命令行编译这些代码linux&amp;gt; gcc -Og -o p p1.c p2.c命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T13:38:42.000Z">
+<meta property="og:updated_time" content="2019-05-09T10:20:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="深入理解计算机系统：程序的机器级表示">
+<meta name="twitter:description" content="计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。  用Unix命令行编译这些代码linux&amp;gt; gcc -Og -o p p1.c p2.c命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | Mr9ine</title>
+<title>深入理解计算机系统：程序的机器级表示 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-深入理解计算机系统5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/21/hello-world/" class="article-date">
-      <time datetime="2019-04-21T13:38:41.060Z" itemprop="datePublished">2019-04-21</time>
+      <a href="/2019/05/09/深入理解计算机系统5/" class="article-date">
+      <time datetime="2019-05-09T10:04:58.230Z" itemprop="datePublished">2019-05-09</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      深入理解计算机系统：程序的机器级表示
     </h1>
   
 
@@ -293,15 +293,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。<br>先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。</p>
+<ol>
+<li>用Unix命令行编译这些代码<br><code>linux&gt; gcc -Og -o p p1.c p2.c</code><br>命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的机器代码登记。<br>gcc命令调用了一整套的程序，将源代码转化成可执行代码。step1 预处理器扩展源代码，插入#include命令的文件，扩展#define声明 step2 编译器产生两个源文件的汇编代码，名字分别p1.s p2.s step3汇编器将汇编代码转化成二进制目标代码文件 p1.o p2.o step4 链接器将两个目标代码文件与实现库的代码合并，产生可执行代码文件p。</li>
+<li>机器级代码。ISA，机器级程序使用的内存地址使用虚拟地址。<br>example  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mulstore:</span><br><span class="line">  pushq %rbx</span><br><span class="line">  movq  %rdx, %rbx</span><br><span class="line">  call  mult2</span><br><span class="line">  movq  %rax,(%rbx)</span><br><span class="line">  popq  %rbx</span><br><span class="line">  ret</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>机器执行的程序知识一个字节序列。</p>
+<ol start="3">
+<li>格式的注解。</li>
+<li>数据格式。字（Word）表示16位。32位（双字），64位（四字）<br>C|汇编代码后缀<br>-|-<br>char|b<br>short|w<br>int|l<br>long|q</li>
+</ol>
+<p>数据传输四个变种：movb movw movl movq </p>
+<ol start="5">
+<li>操作数指示符。操作数指示一个操作中使用的源数据及目标放置结果的位置。操作数分为三种类型：立即数、寄存器（用ra表示寄存器a，R[ra]表示值）、内存引用（用有效地址访问M[Addr]表示从地址Addr开始的b个字节的引用）<br>不同的寻址模式，如Imm（r,r,s）。有效地址计算为Imm+R[r]+R[r]</li>
+<li>数据传输指令。<br>最频繁的还是将数据从一个位置到另一个位置。最简单的为 MOV类（movb movw movl movq）。<br>待续。</li>
+</ol>
 
       
     </div>
@@ -310,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/21/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/09/深入理解计算机系统5/">深入理解计算机系统：程序的机器级表示</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-04-21, 21:38:41</p>
-        <p><span>最后更新:</span>2019-04-21, 21:38:42</p>
+        <p><span>发布时间:</span>2019-05-09, 18:04:58</p>
+        <p><span>最后更新:</span>2019-05-09, 18:20:36</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/21/hello-world/" title="Hello World">http://yoursite.com/2019/04/21/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/21/hello-world/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/09/深入理解计算机系统5/" title="深入理解计算机系统：程序的机器级表示">http://yoursite.com/2019/05/09/深入理解计算机系统5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/09/深入理解计算机系统5/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -328,12 +335,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/22/Hello-World-0/">
-                    Hello World
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/05/09/深入理解计算机系统4.1/">
+                    信息表示与处理的总结
                 </a>
             </div>
-        
         
     </nav>
 
@@ -343,7 +350,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -379,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"深入理解计算机系统：程序的机器级表示　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -399,15 +406,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/22/Hello-World-0/" title="上一篇: Hello World">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2019/05/09/深入理解计算机系统4.1/" title="下一篇: 信息表示与处理的总结">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
