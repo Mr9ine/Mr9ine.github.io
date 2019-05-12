@@ -260,6 +260,71 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-网络安全原理与应用1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/29/网络安全原理与应用1/" class="article-date">
+      <time datetime="2019-04-29T10:30:34.770Z" itemprop="datePublished">2019-04-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/29/网络安全原理与应用1/">网路安全原理与应用（1）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#TCP/IP</p>
+<ol>
+<li>协议就是计算机之间通过网络实现通信时事先达成的一种“约定”；这种“约定”使那些由不同厂商的设备，不同CPU及不同操作系统组成的计算机之间，只要遵循相同的协议就可以实现通信。<br>协议可以分很多种，每一种协议都明确界定了它的行为规范：2台计算机之间必须能够支持相同的协议，并且遵循相同的协议进行处理，才能实现相互通信。</li>
+<li>TCP/IP协议族按照层次由上到下，层层包装。最上面的就是应用层，（这里面有http，ftp,等等我们熟悉的协议。）而第二层则是传输层，著名的TCP和UDP协议就在这个层次。第三层是网络层，IP协议就在这里，它负责对数据加上IP地址和其他的数据以确定传输的目标。第四层是叫数据链路层，这个层次为待传送的数据加入一个以太网协议头，并进行CRC编码（它是利用除法及余数的原理来作错误侦测的。实际应用时，发送装置计算出CRC值并随数据一同发送给接收装置，接收装置对收到的数据重新计算CRC并与收到的CRC相比较，若两个CRC值不同，则说明数据通讯出现错误。），为最后的数据传输做准备。再往下则是硬件层次了，负责网络的传输，这个层次的定义包括网线的制式，网卡的定义等等，发送协议的主机<strong>从上自下</strong>将数据按照协议封装，而接收数据的主机则按照协议从得到的数据包解开，最后拿到需要的数据。</li>
+<li>IP地址的定义是网络号+主机号。但是现在所有的主机都要求子网编址，把主机号在细分成子网号+主机号。最终一个IP地址就成为 网络号码+子网号+主机号。例如一个B类地址：210.30.109.134。一般情况下，这个IP地址的红色部分就是网络号，而蓝色部分就是子网号，绿色部分就是主机号。至于有多少位代表子网号这个问题上，这没有一个硬性的规定，取而代之的则是子网掩码，比如校园网，在校园网的设定里面有一个255.255.255.0的东西，这就是子网掩码。子网掩码是由32bit的二进制数字序列,形式为是一连串的1和一连串的0，例如：255.255.255.0(二进制就是11111111.11111111.11111111.00000000)对于刚才的那个B类地址，因为210.30是网络号，那么后面的109.134就是子网号和主机号的组合，又因为子网掩码只有后八bit为0，所以主机号就是IP地址的后八个bit，就是134，而剩下的就是子网号码–109。<br><img src="https://i.imgur.com/OMce3Px.jpg" alt="IP协议数据报的头格式"><br>4.TCP协议<br><img src="https://images2017.cnblogs.com/blog/916092/201801/916092-20180131205722671-233695459.png" alt="TCP头部"><br>第一次握手：（问服务端“你能不能听见我说话？”）<br>客户端主动发送一个TCP报文段，<br>里面SYN字段设为1（表示建立连接，即“询问”），且包含了该报文段的初始“序列号”（记为ISN(c)，该初始序列号是随机产生的）。<br>通常，客户端还会借此发送多个“选项”。<br>第二次握手：（回答客户端说“能听见你说话”，但问客户端“你能不能听见我说话？”）<br>服务端也发送自己的TCP报文段作为响应，<br>里面的SYN和ACK字段设为1（表示建立连接之后的响应，即询问+响应）。<br>该报文段的序列号为它自己的初始“序列号”（记为ISN(c)，该初始序列号是随机产生的）。<br>该报文段还包含“确认号”，为“第一次握手时获得的ISN(c)+1”。（之前讲过，确认号表示：“确认号的发送方希望接收的下一个序列号”。即接收成功的序列号+1）<br>第三次握手：（回答服务端说“能听见你说话”）</li>
+</ol>
+<p>客户端响应服务端，</p>
+<p>里面的ACK字段为1（即响应）。</p>
+<p>该报文段的序列号为ISN(c)+1（刚好与第二次握手的确认号相呼应）。</p>
+<p>确认号为ISN(s)+1（即第二次握手中的序列号+1）</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Python基础4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -760,8 +825,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#区别<br><strong>经过总结学习，发现python变量如同类C语言，主观来看更加通俗易懂，包括数字，字符串，运算符和表达式等等。因为之前主要接触为类C语言的缘故，发现一些与类C不同的地方，主要注意每个语句后面不应加‘；’。         <br>输入输出上，要加()，可以支持类似于3+5这类的直接操作,不需要定义变量等等。在内置函数上很多都类似。<br>注意在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语言中都是如此，这与列表操作的底层实现相关。如果结果出乎意料，注意错误。<br>第二个列表元素的索引为1。根据这种简单的计数方式，要访问列表的任何元素，都可将其位置减1，并将结果作为索引。例如，要访问第四个列表元素，可使用索引3。</strong></p>
-<p>#简单的例题<br><strong>例 1 用户输入一个三位自然数，计算并输出其佰位、十位和个位上的数字</strong><br>(<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">x = input(&apos;请输入一个三位数：&apos;)</span><br><span class="line">x = int(x)</span><br><span class="line">a = x // 100</span><br><span class="line">b = x // 10 % 10</span><br><span class="line">c = x % 10</span><br><span class="line">print(a, b, c)(```)</span><br><span class="line">&lt;br&gt;**例2 任意输入三个英文单词，按字典顺序输出**</span><br><span class="line"></span><br><span class="line">(```)</span><br><span class="line">s = input(&apos;x,y,z=&apos;)</span><br><span class="line">x, y, z = s.split(&apos;,&apos;) </span><br><span class="line">x, y, z = sorted([x, y, z])</span><br><span class="line">print(x, y, z)</span><br><span class="line">(```)</span><br><span class="line">#列表</span><br><span class="line">**使用“=”直接将一个列表赋值给变量即可创建列表对象</span><br><span class="line">``` </span><br><span class="line">a_list = [&apos;a&apos;, &apos;b&apos;, &apos;mpilgrim&apos;, &apos;z&apos;, &apos;example&apos;]</span><br><span class="line"> a_list = []                                       #创建空列表</span><br></pre></td></tr></table></figure></p>
+        <h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>经过总结学习，发现python变量如同类C语言，主观来看更加通俗易懂，包括数字，字符串，运算符和表达式等等。因为之前主要接触为类C语言的缘故，发现一些与类C不同的地方，主要注意每个语句后面不应加‘；’。         <br>输入输出上，要加()，可以支持类似于3+5这类的直接操作,不需要定义变量等等。在内置函数上很多都类似。<br>注意在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语言中都是如此，这与列表操作的底层实现相关。如果结果出乎意料，注意错误。<br>第二个列表元素的索引为1。根据这种简单的计数方式，要访问列表的任何元素，都可将其位置减1，并将结果作为索引。例如，要访问第四个列表元素，可使用索引3。</strong></p>
+<h1 id="简单的例题"><a href="#简单的例题" class="headerlink" title="简单的例题"></a>简单的例题</h1><p><strong>例 1 用户输入一个三位自然数，计算并输出其佰位、十位和个位上的数字</strong><br>(<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">x = input(&apos;请输入一个三位数：&apos;)</span><br><span class="line">x = int(x)</span><br><span class="line">a = x // 100</span><br><span class="line">b = x // 10 % 10</span><br><span class="line">c = x % 10</span><br><span class="line">print(a, b, c)(```)</span><br><span class="line">&lt;br&gt;**例2 任意输入三个英文单词，按字典顺序输出**</span><br><span class="line"></span><br><span class="line">(```)</span><br><span class="line">s = input(&apos;x,y,z=&apos;)</span><br><span class="line">x, y, z = s.split(&apos;,&apos;) </span><br><span class="line">x, y, z = sorted([x, y, z])</span><br><span class="line">print(x, y, z)</span><br><span class="line">(```)</span><br><span class="line"># 列表</span><br><span class="line">**使用“=”直接将一个列表赋值给变量即可创建列表对象</span><br><span class="line">``` </span><br><span class="line">a_list = [&apos;a&apos;, &apos;b&apos;, &apos;mpilgrim&apos;, &apos;z&apos;, &apos;example&apos;]</span><br><span class="line"> a_list = []                                       #创建空列表</span><br></pre></td></tr></table></figure></p>
 <p><br>也可以使用list()函数将元组、range对象、字符串或其他类型的可迭代对象类型的数据转换为列表。<br><code>a_list = list((3,5,7,9,11))
 a_list
 [3, 5, 7, 9, 11]
@@ -770,7 +835,7 @@ list(range(1,10,2))
  list(&#39;hello world&#39;)
 [&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;w&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;]
  x = list()</code>**<br><br>注意列表增删查改语法复习</p>
-<p>##一些例题<br>1 姓名： 将一些朋友的姓名存储在一个列表中，并将其命名为names 。依次访问该列表中的每个元素，从而将每个朋友的姓名都打印出来。<br><br>2 问候语： 继续使用1中的列表，但不打印每个朋友的姓名，而为每人打印一条消息。每条消息都包含相同的问候语，但抬头为相应朋友的姓名。</p>
+<h2 id="一些例题"><a href="#一些例题" class="headerlink" title="一些例题"></a>一些例题</h2><p>1 姓名： 将一些朋友的姓名存储在一个列表中，并将其命名为names 。依次访问该列表中的每个元素，从而将每个朋友的姓名都打印出来。<br><br>2 问候语： 继续使用1中的列表，但不打印每个朋友的姓名，而为每人打印一条消息。每条消息都包含相同的问候语，但抬头为相应朋友的姓名。</p>
 
       
     </div>
