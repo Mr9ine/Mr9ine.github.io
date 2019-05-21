@@ -260,6 +260,81 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-深入理解计算机系统7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/21/深入理解计算机系统7/" class="article-date">
+      <time datetime="2019-05-21T15:54:32.890Z" itemprop="datePublished">2019-05-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/21/深入理解计算机系统7/">（接）程序的机器级表示</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h1><ol>
+<li>条件码</li>
+<li>访问条件码。三种方法。SET语句（将一个字节设置为0或者1）</li>
+<li>跳转指令。跳转会导致执行切换到程序的一个全新位置。其中跳转目标为目的指令的地址。分为直接跳转和间接跳转。间接跳转写法是*后。<br>P139 3-15 jump指令集合。<br><img src="https://i.imgur.com/xTkxtmr.png" alt="jump"></li>
+<li><p>跳转指令的编码  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> movq %rdi,%rax</span><br><span class="line"> jmp  .L2</span><br><span class="line">L2:sarq %rax</span><br><span class="line"> testq %rax,%rax</span><br><span class="line"> rep;ret</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件控制实现条件分支<br>比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void cond(long a,long*p)</span><br><span class="line">&#123; </span><br><span class="line">  if(p&amp;&amp;a&gt;*p)</span><br><span class="line">    *p=a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>汇编代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cond:</span><br><span class="line"> testq %rsi,%rsi</span><br><span class="line"> je    .L1</span><br><span class="line"> cmpq  %rdi,(%rsi)</span><br><span class="line"> jge   .L1</span><br><span class="line"> movq  %rdi,(%rsi)</span><br><span class="line">.L1:</span><br><span class="line"> rep;ret</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>用条件传送来实现条件分支<br>熟悉comv指令</li>
+<li>循环<br>do while   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">     body</span><br><span class="line">     t=test-exp</span><br><span class="line">     if(t)</span><br><span class="line">     goto loop;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>while<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">    body</span><br><span class="line">test:</span><br><span class="line">    t=test-exp</span><br><span class="line">    if(t)    </span><br><span class="line">    goto loop;</span><br></pre></td></tr></table></figure></p>
+<p>for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">init exp</span><br><span class="line">while(test-exp)&#123;</span><br><span class="line">body</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>根据以上逻辑可以写出</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-深入理解计算机系统6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -858,76 +933,6 @@
 </li>
 </ol>
 <p>import json<br>def get_stored_username():<br>“””如果存储了用户名，就获取它”””<br>–snip–<br>def get_new_username():<br>“””提示用户输入用户名”””<br>username = input(“What is your name? “)<br>filename = ‘username.json’<br>with open(filename, ‘w’) as f_obj:<br>json.dump(username, f_obj)<br>return username<br>def greet_user():<br>“””问候用户，并指出其名字”””<br>username = get_stored_username()<br>if username:<br>print(“Welcome back, “ + username + “!”)<br>else:<br>username = get_new_username()<br>print(“We’ll remember you when you come back, “ + username + “!”)<br>greet_user()<br><code>`</code><br>每个函数都执行单一的任务。调用greet_user() ，它打印一条合适的消息：要么欢迎老用户回来，要么问候新用户。为此，它首先调用get_stored_username() ，这个函数只负责获取存储的用户名，再在必要时调用get_new_username() ，这个函数只负责获取并存储新用户的用户名。<br>借此，编写出清晰而易于维护和扩展的代码。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深入理解计算机系统1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/03/深入理解计算机系统1/" class="article-date">
-      <time datetime="2019-05-03T10:03:27.320Z" itemprop="datePublished">2019-05-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/03/深入理解计算机系统1/">深入理解计算机系统笔记（0）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#Note:</p>
-<ol>
-<li>大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c</li>
-<li>程序被其他程序翻译成不同的格式。<strong>从源文件到目标文件的转化是由编译器驱动程序完成的</strong><br>主要过程有预处理、编译、汇编、链接阶段。</li>
-<li>系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候，PC都指向主存中的某条机器语言指令，也就是含有该指令的地址）</li>
-<li>运行程序的过程。</li>
-<li>高速缓存作用。之前学习过操作系统，就不展开。<strong>意识到高速缓存存储器存在的应用程序员可以利用高速缓存将程序的性能提高一个数量级</strong>  </li>
-<li>存储设备形成的层次结构：从上到下，设备访问速度越来越慢，容量越来越大，每字节的造价越来越便宜。主要思想是：<strong>上一层的存储器作为低一层存储器的高速缓存</strong></li>
-<li>把操作系统看做应用程序和硬件之间的一层软件。其中进程概念在之前的操作系统学习中学习过，当操作系统决定把控制权从当前进程转移到某个新进程时，就会进行<strong>上下文切换（保存当前进程的上下文，恢复进程的上下文，然后将控制权传递到新进程，新进程就会从上次停止的地方开始）</strong></li>
-<li>虚拟内存。为每个进程提供了一个假象，即每个进程都在独占使用主存。每个进程看到的内存都是一致的，成为虚拟地址空间。</li>
-<li>文件，即字节序列。每个I/O设备，包括磁盘、键盘、显示器，甚至是网络都可以看做文件。<br>##tips：</li>
-<li>Amdahl定律：主要思想，对系统某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度。主要观点：想要显著加速整个系统，必须提升全系统中相当大的部分的速度。</li>
-<li>并发与并行。老概念。并发（同时多个），并行。超线程（同时多线程）：允许一个CPU执行多个控制流技术。通过流水线可以实现指令级并发。如果处理器可以达到比一个周期一条指令更快的执行速率，就称为超标量处理器。还有一种SIMD并行（单指令、多数据）</li>
-<li>抽象。除去之前学习过的一些科目中介绍的抽象，增加<strong>虚拟机</strong>的抽象，即对整个计算机的抽象。</li>
-</ol>
 
       
     </div>
