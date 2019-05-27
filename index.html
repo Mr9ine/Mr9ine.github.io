@@ -260,6 +260,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/27/计算机网络1/" class="article-date">
+      <time datetime="2019-05-27T14:19:03.690Z" itemprop="datePublished">2019-05-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/27/计算机网络1/">计算机网络（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><ol>
+<li>计算机网络是一些互联的、自治的计算机系统的集合</li>
+<li>计算机网络的组成：<br>从组成部分看，计算机网络主要由硬件、软件和协议组成<br>从工作方式看，计算机网络可分为和边缘部分核心部分。边缘部分由供用户直接使用的主机组成，核心部分由大量的网络和连接这些网络的路由器组成<br>从功能组成看，计算机网络由通信子网和资源子网组成  </li>
+<li>计算机网络的功能：<br>数据通信。它是计算机网络最基本和最重要的功能<br>资源共享。<br>分布式处理。<br>提高可靠性。<br>负载均衡  </li>
+<li>计算机网络的分类：<br>按分布范围分类，可分为广域网（WAN）、城域网（MAN）、局域网（LAN）和个人区域网（PAN）。传统上，局域网使用广播技术，而广域网使用交换技术。<br>按传输技术分类，可分为广播式网络和点对点网络。广域网中的无线、卫星通信网络采用广播式通信技术。是否采用分组存储转发与路由选择机制（路由器的功能）是点对点式网络广播式网络的重要区别，广域网基本都属于点对点网络<br>按拓扑结构分类，可分为星形网络、总线形网络、环形网络和网状形网络。星形、总线形和环形网络多用于局域网，网状形网络多用于广域网（复杂，节点多）。环形网络中环中信号是单向传输<br>按使用者分类，可分为公用网和专用网。<br>按交换技术分类，可分为电路交换网络、报文交换网络（存储转发网络）和分组交换网络（包交换网络）。现在的主流网络都可以看成是分组交换网络<br>按传输介质分类，可分为有线网络和无线网络。  </li>
+<li>计算机网络的性能指标：<br>带宽（Bandwidth）。在计算机网络中，带宽表示网络的通信线路所能传送数据的能力，是数字信道所能传送的“最高数据率”的同义语，单位是“比特每秒”（b/s）<br>时延（Delay）。指数据（一个报文或分组）从网络（或链路）的一端传送到另一端所需要的总的时间，它由四个部分构成：发送时延、传播时延、处理时延和排队时延（课本展开）<br>时延带宽积。若发送端连续发送数据，在发送的第一个比特即将到达终点时，表示发送端已经发出的比特数。即时延带宽积=传播时延x信道带宽<br>往返时延（Round-Trip Time,RTT）。表示从发送端发送数据开始，到发送端收到来自接收端的确认（接收端收到数据后立即发送确认），总共经历的时延。在互联网中，往返时延还包括各中间节点的处理时延、排队时延以及转发数据时的发送时延<br>吞吐量（Throughput）。表示在单位时间内通过某个网络（或信道、接口）的数据量。吞吐量受到网络的带宽或网络的额定速率的限制<br>速率。主机传送数据的速率，也称为数据率或比特率。最高数据率为带宽<br>时延：发送时延。结点将分组的所有比特推（传输）向链路所需的时间，也就是从发送分组的第一个比特算起，到该分组的最后一个比特发送完毕所需的时间，因此也称为传输时延。计算公式为：发送时延 = 分组长度 / 信道宽带（带宽）<br>传播时延。一个比特从链路一端到另一端传播所需的时间。计算公式为：传播时延 = 信道长度 / 电磁波在信道上的传播速率<br>处理时延。数据在交换节点为存储转发而进行的一些必要的处理所花费的时间，比如，分析分组的首部、从分组中提取数据部分、进行差错检验或查找适当的路由等<br>排队时延。分组在进入路由器后要先在输入队列中排队等待处理。在路由器确定了转发端口后，还要在输出队列中排队等待转发<br>对于高速链路，提高的仅是数据发送速率而不是比特在链路上的传播速度<br>通信子网位于下三层，资源子网位于上三层<br>将计算机网络分为n层，从低层到高层依次为第1层、第2层…..第n层。第n层中的活动元素通常称为n层实体。不同机器上同一层称为对等层，同一层的实体叫做对等实体。n层实体实现的服务为n+1层利用。n层被称为服务提供者，n+1层是服务用户<br>上一层只能通过相邻层间的接口使用下一层的服务，而不能调用其它层的服务；下一层提供服务的实现细节对上一层透明  </li>
+<li>协议是控制两个或多个对等实体进行通信的规则的集合，也就是水平的<br>协议由语法、语义和同步三部分组成。语法规定了传输数据的格式；语义规定了所要完成的功能；同步规定了执行各种操作的条件、时序关系等  </li>
+<li>接口是同一节点内相邻两层间交互信息的连接点，是一个系统内部的规定<br>服务指下层为紧相邻的上层提供的功能调用，垂直的。  </li>
+<li>OSI将服务原语分为：请求、指示、响应和证实<br>面向连接服务和无连接服务<br>可靠服务和不可靠服务<br>有应答服务和无应答服务<br>OSI七层模型：自下而上依次为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。低三层称为通信子网，高三层称为资源子网，运输层呈上启下  </li>
+<li>会话层负责管理主机间的会话进程，包括建立、管理以及终止进程间的会话。会话层使用校验点可使通信会话在通信失效时从校验点继续恢复通信，实现数据同步；建立同步（SYN）也发生在会话层<br>表示层主要用于处理在两个通信系统中交换信息的表示方式。数据压缩、加密和解密也是表示层可提供的数据表示变换功能<br>传输层的复用和分用：复用就是多个应用层进程可同时使用下面传输层的服务，分用则指传输层把收到的信息分别交付给上面应用层中相应的进程  </li>
+<li>TCP/IP4层模型（国际标准）：网络接口层（对应OSI参考模型中的物理层和数据链路层）、网际层、传输层和应用层（对应OSI参考模型中的会话层、表示层和应用层）<br>OSI参考模型在网络层支持无连接和面向连接的通信，但在传输层仅有面向连接的通信。而TCP/IP模型认为可靠性是端到端的问题，因此它在网际层仅有一种无连接的通信模式，但在传输层支持无连接和面向连接两种模式  </li>
+<li>TCP/IP模型与OSI模型的相似之处：<br>都采取分层的体系结构<br>都是基于独立的协议栈的概念<br>都可以解决异构网络的互联<br>服务数据单元（SDU）+ 协议控制信息（PCI） = 协议数据单元（PDU）<br>PDU也是对等层之间传送的数据单位。物理层PDU为比特，链路层的PDU为帧，网络层的PDU为分组，传输层的PDU为报文段  </li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-深入理解计算机系统7" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -857,82 +925,6 @@
 </tbody>
 </table>
 <p>还可以编辑setUp()方法。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Python基础6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/04/Python基础6/" class="article-date">
-      <time datetime="2019-05-04T11:49:26.460Z" itemprop="datePublished">2019-05-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/04/Python基础6/">文件与代码测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#文件</p>
-<ol>
-<li>添加到文件。如果给文件添加内容，不是覆盖原有内容，可以用<strong>附加模式</strong>打开文件。比如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;programing.txt&apos;</span><br><span class="line">with open(filename, &apos;a&apos;) as file_ob:</span><br><span class="line">  file_ob.write(&quot;a.\n&quot;)</span><br><span class="line">  file_ob.write(&quot;b.\n)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>用实参a，将内容添加到末尾，而不是覆盖</p>
-<ol start="2">
-<li><p>异常发生后。编写一个try-except代码块。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">   print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">   print(&quot;Error&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是未创建文件导致的异常，仍旧可以使用try-except</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;a.txt&apos;</span><br><span class="line">try:</span><br><span class="line">with open(filename) as f_obj:</span><br><span class="line">contents = f_obj.read()</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">msg = &quot;Sorry, the file &quot; + filename + &quot; does not exist.&quot;</span><br><span class="line">print(msg)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分析文本。首先命令行输入<code>title = &quot;A B C    &quot;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;alice.txttry:with open(filename) as f_obj:contents = f_obj.read()except FileNotFoundError:msg = &quot;Sorry, the file &quot; + filename + &quot; does not exist.&quot;print(msg)</span><br><span class="line">else:</span><br><span class="line"># 计算文件大致包含多少个单词</span><br><span class="line"> words = contents.split() </span><br><span class="line">num_words = len(words) </span><br><span class="line"> print(&quot;The file &quot; + filename + &quot; has about &quot; + str(numwords) + &quot; words.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分析多个文件，在4的基础上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">filenames = [&apos;a.txt&apos;, &apos;b.txt&apos;, &apos;c.txt&apos;, &apos;d.txt&apos;]</span><br><span class="line">for filename in filenames:</span><br><span class="line">count_words(filename)</span><br><span class="line">```  </span><br><span class="line">note：如果希望**失败**时什么也不做，使用pass语句。**如果用户知道要分析哪些文件，可能希望在有文件没有分析时出现一条消息，将其中的原因告诉他们。如果用户只想看到结果，而并不知道要分析哪些文件，可能就无需在有些文件不存在时告知他们。向用户显示他不想看到的信息可能会降低程序的可用性。**</span><br><span class="line">6. 存储数据</span><br><span class="line">**模块json 能够将简单的Python数据结构转储到文件中，并在程序再次运行时加载该文件中的数据。**</span><br><span class="line">函数json.dump() 接受两个实参：要存储的数据以及可用于存储数据的文件对象</span><br><span class="line">7.重构。</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>import json<br>def get_stored_username():<br>“””如果存储了用户名，就获取它”””<br>–snip–<br>def get_new_username():<br>“””提示用户输入用户名”””<br>username = input(“What is your name? “)<br>filename = ‘username.json’<br>with open(filename, ‘w’) as f_obj:<br>json.dump(username, f_obj)<br>return username<br>def greet_user():<br>“””问候用户，并指出其名字”””<br>username = get_stored_username()<br>if username:<br>print(“Welcome back, “ + username + “!”)<br>else:<br>username = get_new_username()<br>print(“We’ll remember you when you come back, “ + username + “!”)<br>greet_user()<br><code>`</code><br>每个函数都执行单一的任务。调用greet_user() ，它打印一条合适的消息：要么欢迎老用户回来，要么问候新用户。为此，它首先调用get_stored_username() ，这个函数只负责获取存储的用户名，再在必要时调用get_new_username() ，这个函数只负责获取并存储新用户的用户名。<br>借此，编写出清晰而易于维护和扩展的代码。</p>
 
       
     </div>
