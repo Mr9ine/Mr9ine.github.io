@@ -260,6 +260,62 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/计算机网络2/" class="article-date">
+      <time datetime="2019-05-29T14:37:41.100Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/计算机网络2/">计算机网络笔记（二）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>模拟数据（模拟信号）和离散数据（离散信号）<br>串行传输和并行传输<br>基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）<br>宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）<br>单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）<br>码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数），单位是波特（Baud），码元速率与进制数无关<br>信息传输速率：单位时间内数字通信系统传输的二进制码元个数（比特数），单位是比特/秒（b/s）<br>奈奎斯特定理：在理想低通（没有噪声，带宽有限）的信道中，极限码元传输率为2W Baud。其中，W是信道的带宽，单位为Hz。若用V表示不同形式码元的个数，则极限数据率公式为： 理想低通信道下的极限数据传输率 =  2Wlog2(V)，单位为b/s<br>香农定理：香农定理给出了带宽受限且有高斯白噪声干扰的信道的极限数据传输率。计算公式为： 信道的极限数据传输速率=Wlog2（1 + S/N）。其中，W为信道的带宽，S为信道所传输信号的平均功率，N为信道内部的高斯噪声功率，S/N为信噪比，信噪比=10log10（S/N）<br>把数据变换为模拟信号的过程称为调制，把数据变换为数字信号的过程称为编码  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -834,97 +890,6 @@
 <li>C中的逻辑运算。|| &amp;&amp; !<br>与位级运算容易混淆。逻辑运算认为非0都可以表示TRUE。其次，如果第一个参数求值就能确定表达式的结果，&amp;&amp;和||就不会对第二个参数求值。</li>
 <li>移位运算。x&lt;&lt;k的含义。注意逻辑左移与右移的区别（左端补k个0；左端补k个最高位）</li>
 </ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Python基础7" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/05/Python基础7/" class="article-date">
-      <time datetime="2019-05-05T08:19:13.040Z" itemprop="datePublished">2019-05-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/05/Python基础7/">测试函数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Python标准库中的模块unittest 提供了代码测试工具。</p>
-<ol>
-<li>单元测试 用于核实函数的某个方面没有问题</li>
-<li>测试用例 是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。</li>
-<li>全覆盖式测试试 用例包含一整套单元测试，涵盖了各种可能的函数使用方式。<br>##example<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line">from name_function import get_formatted_name</span><br><span class="line">class NamesTestCase(unittest.TestCase):</span><br><span class="line">&quot;&quot;&quot;测试name_function.py&quot;&quot;&quot;</span><br><span class="line">def test_first_last_name(self):</span><br><span class="line">&quot;&quot;&quot;能够正确地处理像Janis Joplin这样的姓名吗？&quot;&quot;&quot; </span><br><span class="line">formatted_name = get_formatted_name(&apos;janis&apos;, &apos;joplin&apos;) </span><br><span class="line">self.assertEqual(formatted_name, &apos;Janis Joplin&apos;)</span><br><span class="line">unittest.main()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>一个<strong>断言</strong>方法。断言方法用来核实得到的结果是否与期望的结果一致。</p>
-<p>#测试类<br>常用断言方法</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">方法</th>
-<th style="text-align:left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">assertEqual(a,b)</td>
-<td style="text-align:left">核实a==b</td>
-</tr>
-<tr>
-<td style="text-align:left">assertNotEqual(a,b）</td>
-<td style="text-align:left">核实a!=b</td>
-</tr>
-<tr>
-<td style="text-align:left">assertTrue(x)</td>
-<td style="text-align:left">核实x为True</td>
-</tr>
-<tr>
-<td style="text-align:left">assertIn(item,list)</td>
-<td style="text-align:left">核实item在list中</td>
-</tr>
-</tbody>
-</table>
-<p>还可以编辑setUp()方法。</p>
 
       
     </div>
