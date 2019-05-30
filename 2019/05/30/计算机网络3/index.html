@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。  用Unix命令行编译这些代码linux&amp;gt; gcc -Og -o p p1.c p2.c命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的">
+<meta name="description" content="数字数据编码为数字信号：非归零码（NRZ），用低电平表示0，高电平表示1，或反之   曼彻斯特编码，将一个码元分成两个相等的间隔，前一个间隔为低电平后一个间隔为高电平表示码元1；码元0相反。以太网使用的编码方式为曼彻斯特编码   差分曼彻斯特编码，若码元为1，则前半个码元的电平与上一个码元的后半个码元的电平相同；若码元为0则相反。在码元中间也有电平跳转4B/5B编码，将欲发送数据流的每4位作为一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解计算机系统：程序的机器级表示">
-<meta property="og:url" content="http://yoursite.com/2019/05/09/深入理解计算机系统5/index.html">
+<meta property="og:title" content="计算机网络（三）">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/计算机网络3/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。  用Unix命令行编译这些代码linux&amp;gt; gcc -Og -o p p1.c p2.c命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的">
+<meta property="og:description" content="数字数据编码为数字信号：非归零码（NRZ），用低电平表示0，高电平表示1，或反之   曼彻斯特编码，将一个码元分成两个相等的间隔，前一个间隔为低电平后一个间隔为高电平表示码元1；码元0相反。以太网使用的编码方式为曼彻斯特编码   差分曼彻斯特编码，若码元为1，则前半个码元的电平与上一个码元的后半个码元的电平相同；若码元为0则相反。在码元中间也有电平跳转4B/5B编码，将欲发送数据流的每4位作为一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-09T10:20:36.000Z">
+<meta property="og:updated_time" content="2019-05-30T15:17:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解计算机系统：程序的机器级表示">
-<meta name="twitter:description" content="计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。  用Unix命令行编译这些代码linux&amp;gt; gcc -Og -o p p1.c p2.c命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的">
+<meta name="twitter:title" content="计算机网络（三）">
+<meta name="twitter:description" content="数字数据编码为数字信号：非归零码（NRZ），用低电平表示0，高电平表示1，或反之   曼彻斯特编码，将一个码元分成两个相等的间隔，前一个间隔为低电平后一个间隔为高电平表示码元1；码元0相反。以太网使用的编码方式为曼彻斯特编码   差分曼彻斯特编码，若码元为1，则前半个码元的电平与上一个码元的后半个码元的电平相同；若码元为0则相反。在码元中间也有电平跳转4B/5B编码，将欲发送数据流的每4位作为一">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>深入理解计算机系统：程序的机器级表示 | Mr9ine</title>
+<title>计算机网络（三） | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-深入理解计算机系统5" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-计算机网络3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/09/深入理解计算机系统5/" class="article-date">
-      <time datetime="2019-05-09T10:04:58.230Z" itemprop="datePublished">2019-05-09</time>
+      <a href="/2019/05/30/计算机网络3/" class="article-date">
+      <time datetime="2019-05-30T15:17:52.440Z" itemprop="datePublished">2019-05-30</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解计算机系统：程序的机器级表示
+      计算机网络（三）
     </h1>
   
 
@@ -293,21 +293,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>计算机执行机器代码，用字节序列编码低级的操作（处理数据、管理内存、读写存储设备数据）。<br>先前在用高级语言编程的时候，机器屏蔽了一些细节（机器级实现）。可以通过学习机器代码，最大化关键代码星等、了解漏洞如何出现如何防御等。</p>
-<ol>
-<li>用Unix命令行编译这些代码<br><code>linux&gt; gcc -Og -o p p1.c p2.c</code><br>命令gcc指的用GCC C编译器。编译选项-Og告诉编译器生成符合原始C代码整体结构的机器代码登记。<br>gcc命令调用了一整套的程序，将源代码转化成可执行代码。step1 预处理器扩展源代码，插入#include命令的文件，扩展#define声明 step2 编译器产生两个源文件的汇编代码，名字分别p1.s p2.s step3汇编器将汇编代码转化成二进制目标代码文件 p1.o p2.o step4 链接器将两个目标代码文件与实现库的代码合并，产生可执行代码文件p。</li>
-<li>机器级代码。ISA，机器级程序使用的内存地址使用虚拟地址。<br>example  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mulstore:</span><br><span class="line">  pushq %rbx</span><br><span class="line">  movq  %rdx, %rbx</span><br><span class="line">  call  mult2</span><br><span class="line">  movq  %rax,(%rbx)</span><br><span class="line">  popq  %rbx</span><br><span class="line">  ret</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>机器执行的程序知识一个字节序列。</p>
-<ol start="3">
-<li>格式的注解。</li>
-<li>数据格式。字（Word）表示16位。32位（双字），64位（四字）<br>C|汇编代码后缀<br>-|-<br>char|b<br>short|w<br>int|l<br>long|q</li>
-</ol>
-<p>数据传输四个变种：movb movw movl movq </p>
-<ol start="5">
-<li>操作数指示符。操作数指示一个操作中使用的源数据及目标放置结果的位置。操作数分为三种类型：立即数、寄存器（用ra表示寄存器a，R[ra]表示值）、内存引用（用有效地址访问M[Addr]表示从地址Addr开始的b个字节的引用）<br>不同的寻址模式，如Imm（r,r,s）。有效地址计算为Imm+R[r]+R[r]</li>
-<li>数据传输指令。<br>最频繁的还是将数据从一个位置到另一个位置。最简单的为 MOV类（movb movw movl movq）。<br>待续。</li>
+        <ol>
+<li>数字数据编码为数字信号：<br>非归零码（NRZ），用低电平表示0，高电平表示1，或反之  </li>
+<li>曼彻斯特编码，将一个码元分成两个相等的间隔，前一个间隔为低电平后一个间隔为高电平表示码元1；码元0相反。以太网使用的编码方式为曼彻斯特编码  </li>
+<li>差分曼彻斯特编码，若码元为1，则前半个码元的电平与上一个码元的后半个码元的电平相同；若码元为0则相反。在码元中间也有电平跳转<br>4B/5B编码，将欲发送数据流的每4位作为一组，然后按照4B/5B编码规则将其转换成相应的5位码。5位码共32种组合，但只采用其中的16种对应的16种不同的4位码，其它的16种作为控制码（帧的开始和结束、线路的状态信息等）或保留  </li>
+<li>数字数据调制为模拟信号：<br>幅移键控（ASK），通过改变载波信号的振幅来表示数字信号1和0<br>频移键控（FSK），通过改变载波信号的频率来表示数字信号1和0<br>相移键控（PSK），通过改变载波信号的相位来表示数字信号1和0  </li>
+<li>正交振幅调制（QAM），在频率相同的前提下，将ASK与PSK结合起来，形成叠加信号。  </li>
+<li>模拟数据编码为数字信号：主要包括三个步骤，抽样、量化和编码  </li>
+<li>采样定理（奈奎斯特定理）：假设原始信号中的最大频率为f，那么采样频率f（采样）必须大于或等于最大频率f的两倍  </li>
+<li>模拟数据调制成模拟信号：频分（FDM）复用技术  </li>
+<li>电路交换：在进行数据传输前，两个节点之间必须先建立一条专用（双方独占）的物理通信路径（由通信双方之间的交换设备和链路逐段连接而成），该线路在整个数据传输期间一直被独占，知道通信结束后才被释放  </li>
+<li>电路交换技术分为三个阶段：连接建立、数据传输和连接释放  </li>
+<li>当电路建立后，除了源节点和目的节点，电路上的任何节点都采取“直通式”接收数据和发送数据，即不会存在存储转发所耗费的时间  </li>
+<li>报文交换：数据交换的单位是报文，报文携带目标地址、源地址等信息。报文交换在交换节点采用的是存储转发的传输方式  </li>
 </ol>
 
       
@@ -317,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/09/深入理解计算机系统5/">深入理解计算机系统：程序的机器级表示</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/30/计算机网络3/">计算机网络（三）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-05-09, 18:04:58</p>
-        <p><span>最后更新:</span>2019-05-09, 18:20:36</p>
+        <p><span>发布时间:</span>2019-05-30, 23:17:52</p>
+        <p><span>最后更新:</span>2019-05-30, 23:17:54</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/09/深入理解计算机系统5/" title="深入理解计算机系统：程序的机器级表示">http://yoursite.com/2019/05/09/深入理解计算机系统5/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/09/深入理解计算机系统5/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/30/计算机网络3/" title="计算机网络（三）">http://yoursite.com/2019/05/30/计算机网络3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/30/计算机网络3/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -335,16 +333,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/12/Python基础8/">
-                    爬取网站
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/09/深入理解计算机系统4.1/">
-                    信息表示与处理的总结
+                <a href="/2019/05/29/计算机网络2/">
+                    计算机网络笔记（二）
                 </a>
             </div>
         
@@ -392,7 +384,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"深入理解计算机系统：程序的机器级表示　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"计算机网络（三）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -412,15 +404,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/12/Python基础8/" title="上一篇: 爬取网站">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/09/深入理解计算机系统4.1/" title="下一篇: 信息表示与处理的总结">
+            <a href="/2019/05/29/计算机网络2/" title="下一篇: 计算机网络笔记（二）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
