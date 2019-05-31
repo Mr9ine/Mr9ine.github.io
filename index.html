@@ -260,6 +260,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/31/计算机网络4/" class="article-date">
+      <time datetime="2019-05-31T13:36:57.590Z" itemprop="datePublished">2019-05-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/31/计算机网络4/">计算机网络（四）：物理层</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>双绞线绞合的作用：减少对相邻导线的电磁干扰</li>
+<li>使用双绞线通信，距离太远时，对于模拟传输，需要用放大镜放大衰减的信号；对于数字传输，要用中继器将失真的信号整形  </li>
+<li>同轴电缆：基带同轴电缆（50欧）和宽带同轴电缆（75欧）</li>
+<li>光纤：多模光纤的光源为发光二极管，单模光纤的光源为激光二极管</li>
+<li>无线传输介质：无线电波、微波、激光和红外线</li>
+<li>物理层接口的特性：<br>机械特性。规定物理连接时所采用的规格、引线的数目、引脚的数量和排列情况等<br>电气特性。规定传输二进制位时，线路上信号的电压高低、阻抗匹配、传输速率和距离限制等<br>功能特性。指明某条线上出现的某一电平的电压表示何种意义，接口部件的信号数（数据线、控制线、定时线等）的用途<br>规程特性。定义各条物理线路的工作规程和时序关系    </li>
+<li>常用的物理层接口标准有：EIARS-232-C、ADSL和SONET/SDH等</li>
+<li>中继器，又称为转发器，主要功能是将信号整形并放大再转发出去，其原理是信号再生（不是简单的将衰减的信号放大）。<br>中继器是局域网环境下用来扩大网络规模的最简单最廉价的互联设备。使用中继器连接起来的几个网段仍然是一个局域网。由于中继器工作在物理层，所以它不能连接两个具有不同速率的局域网。中继器两端的网络部分是网段，而不是子网</li>
+<li>“5-4-3”规则：互相串联的中继器个数不能超过4个，而且用4个中继器串联的5段通信介质中只有3个段可以挂接计算机，其余两个段只能用作扩展通信范围的链路段，不能挂接计算机  </li>
+<li>放大器和中继器都是起放大作用，只不过放大器放大的是模拟信号，原理是将衰减的信号放大；而中继器放大的是数字信号，原理是将衰减的信号整形再生  </li>
+<li>如果某个网络设备具有存储转发的功能，那么可以认为该设备可以连接两个不同的协议</li>
+<li>集线器（Hub）实际上是一个多端口的中继器，也工作在物理层。集线器会将整形再生后的信号转发到其他所有（除输入端口以外）处于工作状态的端口上。如果同时有两个或多个端口输入，则输出时发生冲突。</li>
+<li>由Hub组成的网络为共享式网络；Hub每个端口连接的网络部分是同一个网络的不同网段；Hub只能在半双工下工作；Hub不能分隔冲突域，所有集线器端口都属于同一个冲突域</li>
+<li>两个网段在物理层进行互联时要求：数据传输率要相同，但数据链路层协议可以不同。解析：数据传输率不同，可能导致数据溢出或数据传输低效率的情况；若只需要两个网段在物理层可以互联成功， 则表明两个网段之间可以互相传送物理层信号，并不需要保证有相同的数据链路层协议，但此时不可以互相传送数据链路层的帧</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -828,70 +899,6 @@
 <li>IEEE浮点表示<br><img src="https://i.imgur.com/Hxz1auG.jpg" alt="IEEE浮点表示"><br>分为三种情况，规格化、非规格化、特殊值。</li>
 <li>舍入。对于某x,能够找到最接近的匹配值，并用期望的浮点形式表示出来。<br>四种方式：向偶数舍入、向零舍入、向下舍入、向上舍入。除了向偶数舍入外，其余的都产生实际值的确界。</li>
 <li>运算分为单精度、双精度。具体P85</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深入理解计算机系统3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/06/深入理解计算机系统3/" class="article-date">
-      <time datetime="2019-05-06T10:06:59.850Z" itemprop="datePublished">2019-05-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/06/深入理解计算机系统3/">深入理解计算机系统（2）：</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ol>
-<li>补码编码（B2T）。最高位为1则为负。为0则为正。其中，补码的范围是不对称的。|TMin|=|TMax|+1。</li>
-<li>有符号数和无符号数之间的转换。强制类型转换结果保持位值不变，只是改变了解释的方式。</li>
-<li>当创建一个无符号常量，必须加上后缀字符U或者u。在0&lt;=x&lt;=TMax之内的x，数字有相同的无符号和补码表示。对这个范围以外的数值，转换需要加上或者减去2^w。具体公式见P51</li>
-<li>扩展一个数字的位表示。常见的运算是在不同的字长的整数之间转换，同时保持数值不变。显然，从较小的数据类型转换到较大的类型是可能的。<br>比如，无符号转换成更大的数据类型，简单的在开头增加0，称为<strong>零扩展</strong>。<br>将一个补码数字转换为一个更大的数据类型，可以执行一个符号扩展。即在表示中添加最高有效位的值。</li>
-<li>截断数字。当将w位的数截断为一个k位数字时，我们会丢弃稿w-k位。（截断当然可能会改变它的值，发生<strong>溢出</strong>）截断公式见P57</li>
-<li>整数运算。定义一种运算+（u w）:把整数和x+y截断为w位得到的结果，再把这个结果看做一个无符号数。公式见P61（2.11）<br>补码加法：将参数转换为无符号数，执行无符号数加法，再将结果转换为补码。</li>
-<li>补码的非。待续。</li>
 </ol>
 
       
