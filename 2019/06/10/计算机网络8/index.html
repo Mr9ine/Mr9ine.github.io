@@ -15,24 +15,17 @@
 
 
 
-<meta name="description" content="#接  补码的非。在范围TMin&amp;lt;=x&amp;lt;=TMax中每个数字x都有+（t,w）下的加法逆元（设“+”为一个交换性的二元运算，即对于所有x,y，x+y=y+x。若该集内存在一个元素0，使得对于所有x，x+0=0+x=x，则此元素是唯一的。如果对于一个给定的x，存在一个x’使得x+x’=x’+x=0，则称x’是x的加法逆元） 无符号乘法。 补码乘法。 先考虑乘以2的幂，即左移k位，高k位被">
+<meta name="description" content="网络层的功能：异构网络互联路由与转发。路由表的两大功能：路由选择和分组转发拥塞控制   判断网络是否进入拥塞状态的方法是观察网络的吞吐量与网络的负载的关系：如果随着网络负载的增加，网络的吞吐量明显小于正常的吞吐量，那么网络就可能进入了“轻度拥塞状态”；如果网络的吞吐量随着网络负载的增大反而下降，网络就可能进入拥塞状态；如果网络的负载继续增大，而网络的吞吐量下降到0，网络就可能进入了死锁状态 拥塞">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解计算机系统（3）">
-<meta property="og:url" content="http://yoursite.com/2019/05/08/深入理解计算机系统4/index.html">
+<meta property="og:title" content="计算机网络（八）：网络层">
+<meta property="og:url" content="http://yoursite.com/2019/06/10/计算机网络8/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="#接  补码的非。在范围TMin&amp;lt;=x&amp;lt;=TMax中每个数字x都有+（t,w）下的加法逆元（设“+”为一个交换性的二元运算，即对于所有x,y，x+y=y+x。若该集内存在一个元素0，使得对于所有x，x+0=0+x=x，则此元素是唯一的。如果对于一个给定的x，存在一个x’使得x+x’=x’+x=0，则称x’是x的加法逆元） 无符号乘法。 补码乘法。 先考虑乘以2的幂，即左移k位，高k位被">
+<meta property="og:description" content="网络层的功能：异构网络互联路由与转发。路由表的两大功能：路由选择和分组转发拥塞控制   判断网络是否进入拥塞状态的方法是观察网络的吞吐量与网络的负载的关系：如果随着网络负载的增加，网络的吞吐量明显小于正常的吞吐量，那么网络就可能进入了“轻度拥塞状态”；如果网络的吞吐量随着网络负载的增大反而下降，网络就可能进入拥塞状态；如果网络的负载继续增大，而网络的吞吐量下降到0，网络就可能进入了死锁状态 拥塞">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/oZaP4H9.jpg">
-<meta property="og:image" content="https://i.imgur.com/mR2mnV4.jpg">
-<meta property="og:image" content="https://i.imgur.com/fiY91qr.jpg">
-<meta property="og:image" content="https://i.imgur.com/Oyly8PJ.jpg">
-<meta property="og:image" content="https://i.imgur.com/nFLQjiZ.jpg">
-<meta property="og:image" content="https://i.imgur.com/Hxz1auG.jpg">
-<meta property="og:updated_time" content="2019-05-08T14:49:18.000Z">
+<meta property="og:updated_time" content="2019-06-10T14:26:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解计算机系统（3）">
-<meta name="twitter:description" content="#接  补码的非。在范围TMin&amp;lt;=x&amp;lt;=TMax中每个数字x都有+（t,w）下的加法逆元（设“+”为一个交换性的二元运算，即对于所有x,y，x+y=y+x。若该集内存在一个元素0，使得对于所有x，x+0=0+x=x，则此元素是唯一的。如果对于一个给定的x，存在一个x’使得x+x’=x’+x=0，则称x’是x的加法逆元） 无符号乘法。 补码乘法。 先考虑乘以2的幂，即左移k位，高k位被">
-<meta name="twitter:image" content="https://i.imgur.com/oZaP4H9.jpg">
+<meta name="twitter:title" content="计算机网络（八）：网络层">
+<meta name="twitter:description" content="网络层的功能：异构网络互联路由与转发。路由表的两大功能：路由选择和分组转发拥塞控制   判断网络是否进入拥塞状态的方法是观察网络的吞吐量与网络的负载的关系：如果随着网络负载的增加，网络的吞吐量明显小于正常的吞吐量，那么网络就可能进入了“轻度拥塞状态”；如果网络的吞吐量随着网络负载的增大反而下降，网络就可能进入拥塞状态；如果网络的负载继续增大，而网络的吞吐量下降到0，网络就可能进入了死锁状态 拥塞">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -64,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>深入理解计算机系统（3） | Mr9ine</title>
+<title>计算机网络（八）：网络层 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -264,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-深入理解计算机系统4" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-计算机网络8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/08/深入理解计算机系统4/" class="article-date">
-      <time datetime="2019-05-08T14:49:17.580Z" itemprop="datePublished">2019-05-08</time>
+      <a href="/2019/06/10/计算机网络8/" class="article-date">
+      <time datetime="2019-06-10T14:26:26.440Z" itemprop="datePublished">2019-06-10</time>
 </a>
 
 
@@ -283,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解计算机系统（3）
+      计算机网络（八）：网络层
     </h1>
   
 
@@ -300,19 +293,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#接</p>
-<ol>
-<li>补码的非。在范围TMin&lt;=x&lt;=TMax中每个数字x都有+（t,w）下的加法逆元（设“+”为一个交换性的二元运算，即对于所有x,y，x+y=y+x。若该集内存在一个元素0，使得对于所有x，x+0=0+x=x，则此元素是唯一的。如果对于一个给定的x，存在一个x’使得x+x’=x’+x=0，则称x’是x的加法逆元）<br><img src="https://i.imgur.com/oZaP4H9.jpg" alt="补码的非"></li>
-<li>无符号乘法。<br><img src="https://i.imgur.com/mR2mnV4.jpg" alt="无符号乘法"></li>
-<li>补码乘法。<br><img src="https://i.imgur.com/fiY91qr.jpg" alt="补码乘法"></li>
-<li>先考虑乘以2的幂，即左移k位，高k位被丢弃。除以2的幂，也就是逻辑右移k位。</li>
-<li>数字的有限字长限制了可能的值的取值范围，运算结果可能溢出。C语言中的某些规定可能会产生令人意想不到的行为。这种数据类型以出乎意料的方式出现。比如两正数相加会得到负数。<br>#浮点数</li>
-<li>浮点数表示形如V=x*2^y的有理数进行编码。</li>
-<li><strong>IEEE标准</strong>。<br>note:舍入（当一个数字不能被准确表示为标准格式时，就必须向上或者向下调整）</li>
-<li>二进制小数<br><img src="https://i.imgur.com/Oyly8PJ.jpg" alt="十进制表达"><br><img src="https://i.imgur.com/nFLQjiZ.jpg" alt="二进制表达"><br>很容易看出，二进制小数点左移一位相当于这个数被2除。而且这种表达方式使得一些分数只能近似的表示。</li>
-<li>IEEE浮点表示<br><img src="https://i.imgur.com/Hxz1auG.jpg" alt="IEEE浮点表示"><br>分为三种情况，规格化、非规格化、特殊值。</li>
-<li>舍入。对于某x,能够找到最接近的匹配值，并用期望的浮点形式表示出来。<br>四种方式：向偶数舍入、向零舍入、向下舍入、向上舍入。除了向偶数舍入外，其余的都产生实际值的确界。</li>
-<li>运算分为单精度、双精度。具体P85</li>
+        <ol>
+<li>网络层的功能：<br>异构网络互联<br>路由与转发。路由表的两大功能：路由选择和分组转发<br>拥塞控制  </li>
+<li>判断网络是否进入拥塞状态的方法是观察网络的吞吐量与网络的负载的关系：如果随着网络负载的增加，网络的吞吐量明显小于正常的吞吐量，那么网络就可能进入了“轻度拥塞状态”；如果网络的吞吐量随着网络负载的增大反而下降，网络就可能进入拥塞状态；如果网络的负载继续增大，而网络的吞吐量下降到0，网络就可能进入了死锁状态</li>
+<li>拥塞控制的方法：<br>开环控制。在设计网络时事先将有关发生拥塞的因素考虑周到，力求网络在工作时不产生拥塞。它是一种静态的预防方法，在做决定时不考虑当前网络的状态<br>闭环控制。采用监测网络系统，基于反馈环路，它是一种动态的方法</li>
+<li>静态路由算法（非自适应路由算法）：由网络管理员手工配置的路由信息。当网络的拓扑结构或链路的状态发生变化时，网络管理员需要手工去修改路由表中相关的静态路由信息。</li>
+<li>动态路由算法（自适应路由算法）：指路由器上的路由表项是通过相互连接的路由器之间彼此交换信息，然后按照一定的算法优化出来的，而这些路由信息是在一定时间间隙里不断更新，以适应不断变化的网络，以随时获得最优的寻路效果</li>
+<li>常用动态路由算法可分为两类：距离-向量路由算法（典例为RIP算法）和链路状态路由算法（典例为OSPF算法）<br>距离向量路由算法：所有的节点都定期地将它们的整个路由选择表传送给所有与之直接相邻的节点。路由选择表中包含：1.每条路径的目的地（另一节点） 2.路径的代价（也称距离）。</li>
+<li>距离向量算法中，所有节点都监听其他相邻节点传送来的路由选择更新信息，并在下列情况下更新它们的路由选择表：<br>被通告一条新的路由，该路由在本节点的路由表中不存在，此时本地系统加入这条新的路由<br>发送来的路由信息中有一条到达某个目的地的路由，该路由比当前使用的路由有较短的距离（较小的代价）。此种情况下，就用新路由替换路由表中达到目的地的那个现有路</li>
+<li>RIP算法采用“跳数”作为距离的度量。跳数指从源IP到目的IP所经过的路由个数，经过一个路由器跳数加1</li>
+<li>链路状态路由算法：要求每个参与该算法的节点都有完全的网络拓扑信息。首先，主动测试所有邻接节点的状态；然后，定期地将链路状态传播给所有其他的节点。使用Dijsktra最短路径算法计算路由</li>
+<li>链路状态路由算法三点特征：向本自治系统中所有路由器发送消息，使用的方式为洪泛法，即路由器通过所有端口向所有相邻的路由器发送信息，而每一个相邻路由器又将此信息发往其所有相邻路由器（但不再发给刚刚发来消息的那个路由器）<br>发送的信息是与该路由器相邻的所有路由器的链路状态，所谓“链路状态”，就是指本路由器都和哪些路由器相邻以及该链路的“度量”。对于OSPF算法，链路状态的“度量”主要用来表示费用、距离、时延、带宽等<br>只有当链路状态发生变化时，路由器才向所有路由器发送此消息  </li>
+<li>距离-向量路由算法与链路状态路由算法的比较：在距离-向量路由算法中，每个节点仅与它的直接邻居交谈，它为它的邻居提供了从自己到网络中所有其他节点的最低费用估计。在链路状态路由算法中，每个节点通过洪泛法的方式与其他所有节点交谈，但它仅告诉它们与它直接相连的链路的费用</li>
+<li>距离-向量路由算法可能遇到路由环路等问题。<br>因特网将整个互联网划分为许多较小的自治系统，一个自治系统里面包含很多局域网，每个自治系统有权自主地决定本系统内应采用何种路由选择协议</li>
+<li>一个自治系统内部所使用的路由选择协议称为内部网关协议（IGP），也称为域内路由选择，具体的协议有RIP和OSPF</li>
+<li>自治系统之间所使用的路由选择协议称为外部网关协议（EGP），也称为域间路由选择，具体的协议有BGP</li>
+<li>当使用层次路由时，OSPF将一个自治系统再划分为若干个区域，每个路由器都知道在本区域内如何把分组路由到目的地的细节，但不用知道其他区域的内部结构</li>
 </ol>
 
       
@@ -322,13 +318,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/08/深入理解计算机系统4/">深入理解计算机系统（3）</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/10/计算机网络8/">计算机网络（八）：网络层</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-05-08, 22:49:17</p>
-        <p><span>最后更新:</span>2019-05-08, 22:49:18</p>
+        <p><span>发布时间:</span>2019-06-10, 22:26:26</p>
+        <p><span>最后更新:</span>2019-06-10, 22:26:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/08/深入理解计算机系统4/" title="深入理解计算机系统（3）">http://yoursite.com/2019/05/08/深入理解计算机系统4/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/08/深入理解计算机系统4/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/10/计算机网络8/" title="计算机网络（八）：网络层">http://yoursite.com/2019/06/10/计算机网络8/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/10/计算机网络8/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -340,16 +336,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/09/深入理解计算机系统4.1/">
-                    信息表示与处理的总结
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/06/深入理解计算机系统3/">
-                    深入理解计算机系统（2）：
+                <a href="/2019/06/09/计算机网络7/">
+                    计算机网络（七）：（接）
                 </a>
             </div>
         
@@ -397,7 +387,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"深入理解计算机系统（3）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"计算机网络（八）：网络层　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -417,15 +407,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/09/深入理解计算机系统4.1/" title="上一篇: 信息表示与处理的总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/06/深入理解计算机系统3/" title="下一篇: 深入理解计算机系统（2）：">
+            <a href="/2019/06/09/计算机网络7/" title="下一篇: 计算机网络（七）：（接）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
