@@ -260,6 +260,87 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络9" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/14/计算机网络9/" class="article-date">
+      <time datetime="2019-06-14T14:57:28.110Z" itemprop="datePublished">2019-06-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/14/计算机网络9/">计算机与网络（九）：（接）网络层</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>主机号全为0，表示本网络本身</li>
+<li>主机号全为1，表示本网络的广播地址</li>
+<li>网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上</li>
+<li>32位全为0，即0.0.0.0，表示本网络上的本主机<br>32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对广播域的隔离，255.255.255.255等效为本网络的广播地址</li>
+<li>128.0和192.0.0这两个网络号不可指派<br>私有IP地址只用于LAN，不用于WAN连接；私有IP地址被LAN重复使用</li>
+<li>A类私有地址：1个A类网段，即10.0.0.0 ~ 10.255.255.255<br>B类私有地址：16个B类网段，即172.16.0.0 ~ 172.31.255.255<br>C类私有地址：256个网段，192.168.0.0 ~ 192.168.255.255  </li>
+<li>NAT转换表中存放着｛本地IP地址：端口｝到｛全球IP地址：端口｝的映射</li>
+<li>普通路由器在转发IP数据报时，不改变其源IP地址和目的地址。而NAT路由器在转发IP数据报时，一定要更换其IP地址（转换源IP地址或目的IP地址）。<br>普通路由器仅工作在网络层，而NAT路由器转发数据报时需要查看和转换传输层的端口号</li>
+<li>子网划分：从主机号借用若干个比特作为子网号，原网络号不变。三级IP地址 = ｛&lt;网络号&gt;，&lt;子网号&gt;，&lt;主机号&gt;｝</li>
+<li>无论是IPV4还是CIDR（无分类域间路由选择），都不能指派主机号为全0或全1的IP地址给主机<br>IP地址的子网掩码其实就是告诉你这个IP地址的前多少位是网络号+子网号  </li>
+<li>CIDR：IP = ｛&lt;网络前缀&gt;，&lt;主机号&gt;｝，消除了传统A,B,C类网络划分<br>CIDR斜线记法：IP地址/网络前缀所占比特数<br>CIDR地址块仍可以再划分子网  </li>
+<li>将网络前缀都相同的连续的IP地址组成“CIDR”地址块。一个CIDR地址块可以表示很多地址，这种地址的聚合称为路由聚合，或称为构成超网</li>
+<li>最长前缀匹配（最佳匹配）：在查找路由表时，应当从匹配结果中选择具有最长网络前缀的路由，因为网络前缀越长，其地址块就越小，因而路由就越具体</li>
+<li>通常用二叉线索存储CIDR路由表  </li>
+<li>IP数据报再被路由器转发时其数据链路层封装所使用的MAC地址是不断改变的</li>
+<li>ARP协议：地址解析协议。完成IP地址到MAC地址的映射</li>
+<li>每个主机都设有一个ARP高速缓存，存放本局域网上各主机和路由器的IP地址到MAC地址的映射表，称ARP表</li>
+<li>ARP工作在网络层，工作原理……<br>ARP请求分组是广播发送，但是ARP响应分组是单播传送</li>
+<li>DHCP协议：动态主机配置协议。DHCP协议是应用层协议，它是基于UDP的。</li>
+<li>DHCP协议工作原理：它使用客户/服务器方式。需要IP地址的主机在启动时向DHCP服务器广播发送发现报文，这时该主机称为DHCP客户。本网络上的所有主机都能收到此广播报文，但只有DHCP服务器才回答此广播报文。DHCP服务器先在其数据库中查找该计算机的配置信息，若找到，则返回找到的信息。若找不到，则从服务器的IP地址池中取一个地址分配给该计算机。DHCP服务器的回答报文叫提供报文</li>
+<li>DHCP具体工作过程：DHCP发现—》DHCP提供—-》DHCP请求—-》DHCP确认</li>
+<li>DHCP协议的客户端和服务端需要通过广播方式来进行交互，原因是DHCP协议执行期间，客户端和服务端都没有标明自己身份的IP地址，因此不可能通过单播形式进行交互。在传输层采用UDP同理分析</li>
+<li>ICMP：网际控制报文协议。ICMP报文作为IP层数据报的数据，加上数据报的首部，组成IP数据报发送出去。</li>
+<li>ICMP协议是IP层协议。ICMP报文种类有两种，即ICMP差错报告报文和ICMP询问报文</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -907,83 +988,9 @@
 
 
   
-    <article id="post-深入理解计算机系统6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/20/深入理解计算机系统6/" class="article-date">
-      <time datetime="2019-05-20T14:24:50.050Z" itemprop="datePublished">2019-05-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/深入理解计算机系统6/">程序的机器级表示</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ol>
-<li>操作数指示符。大多数指令都有一个或多个操作数，指示出一个操作中要使用的源数据值。<strong>熟记一些操作数格式，比如（b,i,s）等</strong></li>
-<li>数据传输指令。movb movw movl movq movabsq。其中源操作数指定的值是一个立即数，目的操作数指定一个位置（寄存器或者内存位置）。mov指令只会更新目的操作数指定的那些寄存器字节或者内存位置。<br>例如movl $0x4050,%eax</li>
-<li>例如 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movq (%rdi),%rax</span><br><span class="line">movq %rsi, (%rdi)</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>ret返回细节</p>
-<ol start="4">
-<li>压入和弹出栈数据。<br>跟之前学过的一样，遵循后进先出的原则。通过push操作把数据压入 pop操作删除数据。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subq $8,%rsp</span><br><span class="line">movq %rbq,(%rsp)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>这个操作等于pushq %rbq</p>
-<ol start="5">
-<li>算数和逻辑操作。有例如ADD的加法指令。操作分为四组：加载有效地址、一元操作、二元操作、移位。<br>leaq INC DEC NEG(取负) NOT ADD SUB SAL SHL SAR SHR</li>
-<li>加载有效地址。实际上leaq是movq指令的变形（从内存读到寄存器）<br>例如<br><code>leaq (%rdi,%rsi,4),%rax</code> #x+4*y<br>7.一元二元操作。一元操作（一个操作数即是源又是目的）二元操作（第二个操作数即是源又是目的）</li>
-<li>移位操作。先给出移位量，第二项给出移位的数。（可以进行逻辑左移右移），可以参看P132的例子。</li>
-<li>特殊的算数操作。imulq mulq（有无符号乘法） idivq divq（有无符号除法）</li>
-<li>控制，也就是除了直线代码行为之外的行为。<br>条件码（描述最近的算数或者逻辑操作的属性，可以检测这些寄存器来执行条件分支指令）。最常用的CF ZF SF OF</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

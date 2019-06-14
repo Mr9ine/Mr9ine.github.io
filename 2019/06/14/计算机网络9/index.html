@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="CSMA/CD协议适用于有线局域网 CSMA/CA协议：CA = Collision Avoidance，碰撞避免，广泛应用于无线局域网。碰撞避免并不是指协议可以完全避免碰撞，而是指协议的设计要尽量减少碰撞发生的概率 CSMA/CA还使用预约信道、ACK帧、RTS/CTS帧三种机制来实现碰撞避免CSMA/CA预约信道：发送方在发送数据的同时向其他站点通知自己传输数据需要的时间长度，以便让其他站点">
+<meta name="description" content="主机号全为0，表示本网络本身 主机号全为1，表示本网络的广播地址 网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上 32位全为0，即0.0.0.0，表示本网络上的本主机32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络（七）：（接）">
-<meta property="og:url" content="http://yoursite.com/2019/06/09/计算机网络7/index.html">
+<meta property="og:title" content="计算机与网络（九）：（接）网络层">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/计算机网络9/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="CSMA/CD协议适用于有线局域网 CSMA/CA协议：CA = Collision Avoidance，碰撞避免，广泛应用于无线局域网。碰撞避免并不是指协议可以完全避免碰撞，而是指协议的设计要尽量减少碰撞发生的概率 CSMA/CA还使用预约信道、ACK帧、RTS/CTS帧三种机制来实现碰撞避免CSMA/CA预约信道：发送方在发送数据的同时向其他站点通知自己传输数据需要的时间长度，以便让其他站点">
+<meta property="og:description" content="主机号全为0，表示本网络本身 主机号全为1，表示本网络的广播地址 网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上 32位全为0，即0.0.0.0，表示本网络上的本主机32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-09T14:08:08.000Z">
+<meta property="og:updated_time" content="2019-06-14T14:57:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络（七）：（接）">
-<meta name="twitter:description" content="CSMA/CD协议适用于有线局域网 CSMA/CA协议：CA = Collision Avoidance，碰撞避免，广泛应用于无线局域网。碰撞避免并不是指协议可以完全避免碰撞，而是指协议的设计要尽量减少碰撞发生的概率 CSMA/CA还使用预约信道、ACK帧、RTS/CTS帧三种机制来实现碰撞避免CSMA/CA预约信道：发送方在发送数据的同时向其他站点通知自己传输数据需要的时间长度，以便让其他站点">
+<meta name="twitter:title" content="计算机与网络（九）：（接）网络层">
+<meta name="twitter:description" content="主机号全为0，表示本网络本身 主机号全为1，表示本网络的广播地址 网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上 32位全为0，即0.0.0.0，表示本网络上的本主机32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>计算机网络（七）：（接） | Mr9ine</title>
+<title>计算机与网络（九）：（接）网络层 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-计算机网络7" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-计算机网络9" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/09/计算机网络7/" class="article-date">
-      <time datetime="2019-06-09T14:07:33.740Z" itemprop="datePublished">2019-06-09</time>
+      <a href="/2019/06/14/计算机网络9/" class="article-date">
+      <time datetime="2019-06-14T14:57:28.110Z" itemprop="datePublished">2019-06-14</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络（七）：（接）
+      计算机与网络（九）：（接）网络层
     </h1>
   
 
@@ -294,33 +294,30 @@
       
           
         <ol>
-<li>CSMA/CD协议适用于有线局域网</li>
-<li>CSMA/CA协议：CA = Collision Avoidance，碰撞避免，广泛应用于无线局域网。碰撞避免并不是指协议可以完全避免碰撞，而是指协议的设计要尽量减少碰撞发生的概率</li>
-<li>CSMA/CA还使用预约信道、ACK帧、RTS/CTS帧三种机制来实现碰撞避免<br>CSMA/CA预约信道：发送方在发送数据的同时向其他站点通知自己传输数据需要的时间长度，以便让其他站点在这段时间内不发送数据，从而避免碰撞<br>CSMA/CA ACK帧</li>
-<li>CSMA/CA RTS/CTS帧：可选的碰撞避免机制，主要用于解决无线网中“隐蔽站”的问题</li>
-<li>CSMA/CD通过电缆中电压的变化来检测，而CSMA/CA采用能量检测、载波检测和能量载波混合检测三种检测信道空闲的方式</li>
-<li>轮询访问介质访问控制：典型为令牌传递协议，主要用在令牌环局域网。帧在环上传送时，不管该帧是否是发给本站点的，所有站点都进行转发，直到该帧回到它的始发站，并由该始发站撤销该帧。帧的目的站除转发帧外，应针对该帧维持一个副本，并通过在帧的尾部设置“响应比特”来指示已收到此副本</li>
-<li>只有拿到令牌才能发送数据帧，而令牌只有一个，因此令牌传递协议不会发生冲突；一次只能发送一帧</li>
-<li>局域网的特性主要由三个要素决定：拓扑结构、传输介质和介质访问控制方式，其中最重要的为介质访问控制方式</li>
-<li>常见的局域网拓扑结构：星形结构、环形结构、总线形结构和环形和总线形结合的复合型结构</li>
-<li>局域网可以使用双绞线、铜缆和光纤等多种传输介质，其中双绞线为主流传输介质</li>
-<li>局域网的介质访问控制方式主要有：CSMA/CD、令牌总线和令牌环。其中前两种方法主要用于总线型局域网，令牌环主要用于环形局域网</li>
-<li>以太网（IEEE802.3，目前使用范围最广的局域网）—–逻辑拓扑是总线型结构，物理拓扑是星形或拓展星形结构。</li>
-<li>令牌环（IEEE802.5）:逻辑拓扑是环形结构，物理拓扑是星形结构<br>FDDI（IEEE802.8，光纤分布数字接口）:逻辑拓扑是环形结构，物理拓扑是星形结构<br>IEEE802标准定义的局域网参考模型只对应于OSI参考模型的数据链路层和物理层，并将数据链路层拆分为两个子层：逻辑链路控制LLC子层和媒体接入控制MAC子层。</li>
-<li>以太网MAC帧格式两种标准：DIX Etheernet V2标准和IEEE 802.3标准</li>
-<li>高速以太网：速率达到或超过100Mb/s的以太网<br>100BASE-T以太网：使用CSMA/CD协议，既支持全双工又支持半双工方式；在全双工方式下不使用CSMA/CD协议<br>吉比特以太网：允许在1Gb/s下用全双工和半双工两种方式工作。<br>吉比特以太网：使用光纤作为传输媒体。只工作在全双工方式，没有争用问题。  </li>
-<li>在无线局域网（802.11）中，即使在发送过程中发生了碰撞，也要把整个帧发送完毕。而在有线局域网中，发送冲突则节点立即停止发送数据  </li>
-<li>802.11标准规定无线局域网最小构件是基本服务集（BSS）。一个基本服务集包括一个基站（接入点，AP）和若干个移动站</li>
-<li>交换机在单个网络中转发分组，路由器在多个网络构成的互联网中转发分组</li>
-<li>局域网使用的协议主要在数据链路层（还有少量在物理层），而广域网使用的协议主要在网络层 </li>
-<li>广域网数据链路层控制协议：PPP协议和HDLC协议<br>PPP协议：串行线路，面向字节。由三个部分组成：链路控制协议LCP、网络控制协议NCP以及一个将IP数据报封装到串行链路的方法。<br>PPP提供差错检测但不提供纠错功能，只保证无差错接收（通过硬件进行CRC校验）。它是不可靠的传输协议，不使用序号和确认机制<br>PPP只支持点对点的链路通信，不支持多点线路；PPP只支持全双工链路  PPP的两端可以运行不同的网络层协议，但仍然可以使用同一个PPP进行通信<br>HDLC协议：面向比特；全双工通信；所有帧采用CRC校验，对信息帧进行顺序编号<br>HDLC用于链路的两种基本配置：非平衡配置和平衡配置<br>HDLC站的类型：主站、从站和复合站<br>HDLC数据操作方式：正常响应方式、异步平衡方式和异步响应方式<br>HDLC三类帧：信息帧、监督帧和无编号帧  </li>
-<li>两个或多个以太网通过网桥连接起来后，原来的每个以太网称为一个网段。  </li>
-<li>网络1和网络2通过网桥连接后，网桥接收网络1发送的数据帧，检查数据帧中的地址，如果是网络2的地址，就转发给网络2；如果是网络1的地址，就将其丢弃。因为源站和目的站处于同一个网段，目的站能够直接收到这个帧而不需要借助网桥的转发</li>
-<li>一般情况下，存储转发类设备都可以进行协议转换，即连接的两个网段可以使用不同的协议  </li>
-<li>网桥只适合于用户数不多和通信量不太大的局域网，否则有时还会因传播过多的广播信息而产生网络拥塞，这就是所谓的广播风暴<br>透明网桥（选择的不是最佳路由）：它接收与之相连的所有LAN传送的每一帧，到达帧的路由选择过程取决于源LAN和目的LAN。<br><strong>源LAN和目的LAN相同，则丢弃该帧,源LAN和目的LAN不同，则转发该帧, 目的LAN未知，则扩散该帧</strong></li>
-<li>透明网桥采用自学习算法处理收到的帧并构造转发表；透明网桥使用了一种生成树算法（无环），以确保每个源到每个目的地只有唯一的路径<br>源路由网桥（选择的是最佳路由）：路由选择由发送数据帧的源站负责。为了找到最佳路由，源站以广播的方式向目的站发送一个发现帧作为探测用。<br>网桥的端口一般连接局域网，而交换机的端口一般直接与局域网中的主机相连</li>
-<li>以太网交换机就是一个多端口的网桥。利用以太网交换机还可以很方便地实现虚拟局域网（VLAN），VLAN不仅可以隔离冲突域，也可以隔离广播域<br>以太网交换机一般具有多种速率的端口<br>以太网交换机主要采用两种交换模式，即直通式和存储转发式<br>直通式交换机：只检查帧的目的地址。速度很快，但无法支持不同速率的端口的交换  </li>
-<li>存储转发式交换机：先将接收到的帧缓存到高速缓存器中，并检查数据是否正确，确认无误后通过查找表转换成输出端口将该帧发送出去。如果发现帧有错，将其丢弃。支持不同速度端口间的转换<br>第三章所学就是一个上层boss的秘书，帮忙传送一些文件并给以标号。</li>
+<li>主机号全为0，表示本网络本身</li>
+<li>主机号全为1，表示本网络的广播地址</li>
+<li>网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上</li>
+<li>32位全为0，即0.0.0.0，表示本网络上的本主机<br>32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对广播域的隔离，255.255.255.255等效为本网络的广播地址</li>
+<li>128.0和192.0.0这两个网络号不可指派<br>私有IP地址只用于LAN，不用于WAN连接；私有IP地址被LAN重复使用</li>
+<li>A类私有地址：1个A类网段，即10.0.0.0 ~ 10.255.255.255<br>B类私有地址：16个B类网段，即172.16.0.0 ~ 172.31.255.255<br>C类私有地址：256个网段，192.168.0.0 ~ 192.168.255.255  </li>
+<li>NAT转换表中存放着｛本地IP地址：端口｝到｛全球IP地址：端口｝的映射</li>
+<li>普通路由器在转发IP数据报时，不改变其源IP地址和目的地址。而NAT路由器在转发IP数据报时，一定要更换其IP地址（转换源IP地址或目的IP地址）。<br>普通路由器仅工作在网络层，而NAT路由器转发数据报时需要查看和转换传输层的端口号</li>
+<li>子网划分：从主机号借用若干个比特作为子网号，原网络号不变。三级IP地址 = ｛&lt;网络号&gt;，&lt;子网号&gt;，&lt;主机号&gt;｝</li>
+<li>无论是IPV4还是CIDR（无分类域间路由选择），都不能指派主机号为全0或全1的IP地址给主机<br>IP地址的子网掩码其实就是告诉你这个IP地址的前多少位是网络号+子网号  </li>
+<li>CIDR：IP = ｛&lt;网络前缀&gt;，&lt;主机号&gt;｝，消除了传统A,B,C类网络划分<br>CIDR斜线记法：IP地址/网络前缀所占比特数<br>CIDR地址块仍可以再划分子网  </li>
+<li>将网络前缀都相同的连续的IP地址组成“CIDR”地址块。一个CIDR地址块可以表示很多地址，这种地址的聚合称为路由聚合，或称为构成超网</li>
+<li>最长前缀匹配（最佳匹配）：在查找路由表时，应当从匹配结果中选择具有最长网络前缀的路由，因为网络前缀越长，其地址块就越小，因而路由就越具体</li>
+<li>通常用二叉线索存储CIDR路由表  </li>
+<li>IP数据报再被路由器转发时其数据链路层封装所使用的MAC地址是不断改变的</li>
+<li>ARP协议：地址解析协议。完成IP地址到MAC地址的映射</li>
+<li>每个主机都设有一个ARP高速缓存，存放本局域网上各主机和路由器的IP地址到MAC地址的映射表，称ARP表</li>
+<li>ARP工作在网络层，工作原理……<br>ARP请求分组是广播发送，但是ARP响应分组是单播传送</li>
+<li>DHCP协议：动态主机配置协议。DHCP协议是应用层协议，它是基于UDP的。</li>
+<li>DHCP协议工作原理：它使用客户/服务器方式。需要IP地址的主机在启动时向DHCP服务器广播发送发现报文，这时该主机称为DHCP客户。本网络上的所有主机都能收到此广播报文，但只有DHCP服务器才回答此广播报文。DHCP服务器先在其数据库中查找该计算机的配置信息，若找到，则返回找到的信息。若找不到，则从服务器的IP地址池中取一个地址分配给该计算机。DHCP服务器的回答报文叫提供报文</li>
+<li>DHCP具体工作过程：DHCP发现—》DHCP提供—-》DHCP请求—-》DHCP确认</li>
+<li>DHCP协议的客户端和服务端需要通过广播方式来进行交互，原因是DHCP协议执行期间，客户端和服务端都没有标明自己身份的IP地址，因此不可能通过单播形式进行交互。在传输层采用UDP同理分析</li>
+<li>ICMP：网际控制报文协议。ICMP报文作为IP层数据报的数据，加上数据报的首部，组成IP数据报发送出去。</li>
+<li>ICMP协议是IP层协议。ICMP报文种类有两种，即ICMP差错报告报文和ICMP询问报文</li>
 </ol>
 
       
@@ -330,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/09/计算机网络7/">计算机网络（七）：（接）</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/14/计算机网络9/">计算机与网络（九）：（接）网络层</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-06-09, 22:07:33</p>
-        <p><span>最后更新:</span>2019-06-09, 22:08:08</p>
+        <p><span>发布时间:</span>2019-06-14, 22:57:28</p>
+        <p><span>最后更新:</span>2019-06-14, 22:57:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/09/计算机网络7/" title="计算机网络（七）：（接）">http://yoursite.com/2019/06/09/计算机网络7/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/09/计算机网络7/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/14/计算机网络9/" title="计算机与网络（九）：（接）网络层">http://yoursite.com/2019/06/14/计算机网络9/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/14/计算机网络9/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -348,16 +345,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/06/10/计算机网络8/">
-                    计算机网络（八）：网络层
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/05/计算机网络6/">
-                    计算机网络（六）：（接）数据链路层
+                <a href="/2019/06/10/计算机网络8/">
+                    计算机网络（八）：网络层
                 </a>
             </div>
         
@@ -405,7 +396,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"计算机网络（七）：（接）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"计算机与网络（九）：（接）网络层　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -425,15 +416,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/10/计算机网络8/" title="上一篇: 计算机网络（八）：网络层">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/05/计算机网络6/" title="下一篇: 计算机网络（六）：（接）数据链路层">
+            <a href="/2019/06/10/计算机网络8/" title="下一篇: 计算机网络（八）：网络层">
                 <i class="fa fa-angle-right"></i>
             </a>
         

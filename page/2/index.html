@@ -260,6 +260,80 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-深入理解计算机系统6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/20/深入理解计算机系统6/" class="article-date">
+      <time datetime="2019-05-20T14:24:50.050Z" itemprop="datePublished">2019-05-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/深入理解计算机系统6/">程序的机器级表示</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>操作数指示符。大多数指令都有一个或多个操作数，指示出一个操作中要使用的源数据值。<strong>熟记一些操作数格式，比如（b,i,s）等</strong></li>
+<li>数据传输指令。movb movw movl movq movabsq。其中源操作数指定的值是一个立即数，目的操作数指定一个位置（寄存器或者内存位置）。mov指令只会更新目的操作数指定的那些寄存器字节或者内存位置。<br>例如movl $0x4050,%eax</li>
+<li>例如 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movq (%rdi),%rax</span><br><span class="line">movq %rsi, (%rdi)</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>ret返回细节</p>
+<ol start="4">
+<li>压入和弹出栈数据。<br>跟之前学过的一样，遵循后进先出的原则。通过push操作把数据压入 pop操作删除数据。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subq $8,%rsp</span><br><span class="line">movq %rbq,(%rsp)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个操作等于pushq %rbq</p>
+<ol start="5">
+<li>算数和逻辑操作。有例如ADD的加法指令。操作分为四组：加载有效地址、一元操作、二元操作、移位。<br>leaq INC DEC NEG(取负) NOT ADD SUB SAL SHL SAR SHR</li>
+<li>加载有效地址。实际上leaq是movq指令的变形（从内存读到寄存器）<br>例如<br><code>leaq (%rdi,%rsi,4),%rax</code> #x+4*y<br>7.一元二元操作。一元操作（一个操作数即是源又是目的）二元操作（第二个操作数即是源又是目的）</li>
+<li>移位操作。先给出移位量，第二项给出移位的数。（可以进行逻辑左移右移），可以参看P132的例子。</li>
+<li>特殊的算数操作。imulq mulq（有无符号乘法） idivq divq（有无符号除法）</li>
+<li>控制，也就是除了直线代码行为之外的行为。<br>条件码（描述最近的算数或者逻辑操作的属性，可以检测这些寄存器来执行条件分支指令）。最常用的CF ZF SF OF</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Python基础8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -880,91 +954,9 @@
 
 
   
-    <article id="post-Python基础5" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/30/Python基础5/" class="article-date">
-      <time datetime="2019-04-30T04:25:08.240Z" itemprop="datePublished">2019-04-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/30/Python基础5/">文件和异常</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#文件</p>
-<ol>
-<li><p>读文件。作为练习，首先存储一个PI.txt文件，然后在同一目录下，输入如下语句然后存储。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(&apos;PI.txt&apos;)as file_object:</span><br><span class="line">    contents = file_object.read()</span><br><span class="line">    print(contents)</span><br></pre></td></tr></table></figure>
-<p>Note：</p>
-<ol>
-<li>同一文件夹下。</li>
-<li>不同文件夹下，需要给定路径，比如<br><code>with open(&#39;text_files/filename.txt&#39;) as file_object:</code></li>
-<li>逐行读取，比如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;pi_digits.txt&apos;</span><br><span class="line">with open(filename) as file_object:</span><br><span class="line"> for line in file_object:</span><br><span class="line"> print(line)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>如果想要去除空白行，使用rstrip函数</p>
-</li>
-<li><p>使用文件内容。当文件读入内存中后，就可以以任何方式使用数据了。<strong>如果代码数目大，也可处理，python没有限制处理量</strong><br>一个例子：判断一串数字在不在所存文件里</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;pi.txt&apos;</span><br><span class="line">with open(filename) as file_object:</span><br><span class="line">  lines = file_object.readlines()</span><br><span class="line">pi_string = &apos;&apos;</span><br><span class="line">for line in lines:</span><br><span class="line">pi_string += line.rstrip()</span><br><span class="line">number = input(&quot;Enter some numbers, in the form mmddyy: &quot;) </span><br><span class="line"> if number in pi_string:</span><br><span class="line">print(&quot;Your number appears in the first million digits of pi!&quot;)</span><br><span class="line">else:</span><br><span class="line">print(&quot;Your number does not appear in the first million digits of pi.&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>写入文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;program.txt&apos;</span><br><span class="line">with open(filename, &apos;w&apos;) as file_object:</span><br><span class="line">  file_object.write(&quot; Okay.&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>note：第一个实参是打开的文件名称，第二个’w’ <strong>写入模式</strong>打开这个文件。<br>如果写入多行，就多几行write.()，可以仍旧用\n换行。<br>如果要给文件添加内容，而不是覆盖原有的内容，可以附加模式 打开文件。以附加模式打开文件时，Python不会在返回文件对象前清空文件，而写入到文件的行都将添加到文件末尾。如果指定的文件不存在，Python将创建一个空文件，如<br><code>with open(filename, &#39;a&#39;) as file_object:</code></p>
-<p>#异常<br>每当发生让Python不知所措的错误时，它都会创建一个异常对象。<strong>如果编写了处理该异常的代码，程序将继续运行；如果未对异常进行处理，程序将停止，并显示一个traceback，其中包含有关异常的报告。</strong></p>
-<ol>
-<li>可以编写try-except代码块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">print(&quot;You can&apos;t divide by zero!&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>如果try 代码块中的代码运行起来没有问题，Python将跳过except 代码块；如果try 代码块中的代码导致了错误，Python将查找这样的except 代码块，并运行其中的代码，即其中指定的错误与引发的错误相同</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
