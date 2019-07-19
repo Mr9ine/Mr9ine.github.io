@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="模拟数据（模拟信号）和离散数据（离散信号）串行传输和并行传输基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数">
+<meta name="description" content="在C/S模型中，服务器总是处于打开状态（除非某人把它关了） 常见的使用C/S模型的应用包括Web、文件传输（FTP）、远程登录和电子邮件等  C/S模型的主要特点：网络中各计算机的地位不平等，服务器可以通过对用户权限的限制来达到管理客户机的目的客户机相互之间不能通信可扩展性不佳。受服务器硬件和网络带宽的限制，服务器支持的客户机数有限   P2P模型：整个网络中的传输内容不再被保存在中心服务器上，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络笔记（二）">
-<meta property="og:url" content="http://yoursite.com/2019/05/29/计算机网络2/index.html">
+<meta property="og:title" content="计算机网络（十三）：应用层">
+<meta property="og:url" content="http://yoursite.com/2019/07/01/计算机网络13/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="模拟数据（模拟信号）和离散数据（离散信号）串行传输和并行传输基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数">
+<meta property="og:description" content="在C/S模型中，服务器总是处于打开状态（除非某人把它关了） 常见的使用C/S模型的应用包括Web、文件传输（FTP）、远程登录和电子邮件等  C/S模型的主要特点：网络中各计算机的地位不平等，服务器可以通过对用户权限的限制来达到管理客户机的目的客户机相互之间不能通信可扩展性不佳。受服务器硬件和网络带宽的限制，服务器支持的客户机数有限   P2P模型：整个网络中的传输内容不再被保存在中心服务器上，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-29T14:37:42.000Z">
+<meta property="og:updated_time" content="2019-07-01T02:29:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络笔记（二）">
-<meta name="twitter:description" content="模拟数据（模拟信号）和离散数据（离散信号）串行传输和并行传输基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数">
+<meta name="twitter:title" content="计算机网络（十三）：应用层">
+<meta name="twitter:description" content="在C/S模型中，服务器总是处于打开状态（除非某人把它关了） 常见的使用C/S模型的应用包括Web、文件传输（FTP）、远程登录和电子邮件等  C/S模型的主要特点：网络中各计算机的地位不平等，服务器可以通过对用户权限的限制来达到管理客户机的目的客户机相互之间不能通信可扩展性不佳。受服务器硬件和网络带宽的限制，服务器支持的客户机数有限   P2P模型：整个网络中的传输内容不再被保存在中心服务器上，">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>计算机网络笔记（二） | Mr9ine</title>
+<title>计算机网络（十三）：应用层 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-计算机网络2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-计算机网络13" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/29/计算机网络2/" class="article-date">
-      <time datetime="2019-05-29T14:37:41.100Z" itemprop="datePublished">2019-05-29</time>
+      <a href="/2019/07/01/计算机网络13/" class="article-date">
+      <time datetime="2019-07-01T02:29:53.000Z" itemprop="datePublished">2019-07-01</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络笔记（二）
+      计算机网络（十三）：应用层
     </h1>
   
 
@@ -293,7 +293,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>模拟数据（模拟信号）和离散数据（离散信号）<br>串行传输和并行传输<br>基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）<br>宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）<br>单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）<br>码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数），单位是波特（Baud），码元速率与进制数无关<br>信息传输速率：单位时间内数字通信系统传输的二进制码元个数（比特数），单位是比特/秒（b/s）<br>奈奎斯特定理：在理想低通（没有噪声，带宽有限）的信道中，极限码元传输率为2W Baud。其中，W是信道的带宽，单位为Hz。若用V表示不同形式码元的个数，则极限数据率公式为： 理想低通信道下的极限数据传输率 =  2Wlog2(V)，单位为b/s<br>香农定理：香农定理给出了带宽受限且有高斯白噪声干扰的信道的极限数据传输率。计算公式为： 信道的极限数据传输速率=Wlog2（1 + S/N）。其中，W为信道的带宽，S为信道所传输信号的平均功率，N为信道内部的高斯噪声功率，S/N为信噪比，信噪比=10log10（S/N）<br>把数据变换为模拟信号的过程称为调制，把数据变换为数字信号的过程称为编码  </p>
+        <ol>
+<li>在C/S模型中，服务器总是处于打开状态（除非某人把它关了）</li>
+<li>常见的使用C/S模型的应用包括Web、文件传输（FTP）、远程登录和电子邮件等 </li>
+<li>C/S模型的主要特点：<br>网络中各计算机的地位不平等，服务器可以通过对用户权限的限制来达到管理客户机的目的<br>客户机相互之间不能通信<br>可扩展性不佳。受服务器硬件和网络带宽的限制，服务器支持的客户机数有限  </li>
+<li>P2P模型：整个网络中的传输内容不再被保存在中心服务器上，每个节点都同时具有下载、上传的功能，其权利和义务都是大体对等的</li>
+<li>在P2P模型中，各计算机没有固定的客户机和服务器的划分。任意一对计算机称为对等方，直接相互通信。</li>
+<li>实际上，P2P本质上仍然是使用C/S模式，每个节点既作为客户机去访问其他节点的资源，也作为服务器去提供资源给其他节点访问。  </li>
+<li>与C/S模型相比，P2P模型的优点主要体现在：<br>减轻了服务器的计算压力<br>多个客户机之间可直接共享文档<br>可扩展性好<br>网络健壮性强  </li>
+<li>P2P模型的缺点：在获取服务的同时，还要给其他节点提供服务，因此会占用较多的内存，影响整机运行速度</li>
+<li>DNS系统采用C/S模型，其协议运行在UDP之上，使用53号端口</li>
+<li>级别最低的域名写在最左边，级别最高的顶级域名写在最右边。</li>
+</ol>
 
       
     </div>
@@ -302,13 +313,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/29/计算机网络2/">计算机网络笔记（二）</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/01/计算机网络13/">计算机网络（十三）：应用层</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-05-29, 22:37:41</p>
-        <p><span>最后更新:</span>2019-05-29, 22:37:42</p>
+        <p><span>发布时间:</span>2019-07-01, 10:29:53</p>
+        <p><span>最后更新:</span>2019-07-01, 10:29:53</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/29/计算机网络2/" title="计算机网络笔记（二）">http://yoursite.com/2019/05/29/计算机网络2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/29/计算机网络2/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/01/计算机网络13/" title="计算机网络（十三）：应用层">http://yoursite.com/2019/07/01/计算机网络13/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/07/01/计算机网络13/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -321,15 +332,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/30/计算机网络3/">
-                    计算机网络（三）
+                <a href="/2019/07/06/计算机网络14/">
+                    计算机网络（十四）：（接）应用层
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/27/计算机网络1/">
-                    计算机网络（一）
+                <a href="/2019/06/25/计算机网络12/">
+                    计算机网络（十二）：（接）传输层
                 </a>
             </div>
         
@@ -377,7 +388,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"计算机网络笔记（二）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"计算机网络（十三）：应用层　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -397,7 +408,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/30/计算机网络3/" title="上一篇: 计算机网络（三）">
+            <a href="/2019/07/06/计算机网络14/" title="上一篇: 计算机网络（十四）：（接）应用层">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -405,7 +416,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/27/计算机网络1/" title="下一篇: 计算机网络（一）">
+            <a href="/2019/06/25/计算机网络12/" title="下一篇: 计算机网络（十二）：（接）传输层">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -260,6 +260,345 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/31/计算机网络4/" class="article-date">
+      <time datetime="2019-05-31T13:36:57.590Z" itemprop="datePublished">2019-05-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/31/计算机网络4/">计算机网络（四）：物理层</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>双绞线绞合的作用：减少对相邻导线的电磁干扰</li>
+<li>使用双绞线通信，距离太远时，对于模拟传输，需要用放大镜放大衰减的信号；对于数字传输，要用中继器将失真的信号整形  </li>
+<li>同轴电缆：基带同轴电缆（50欧）和宽带同轴电缆（75欧）</li>
+<li>光纤：多模光纤的光源为发光二极管，单模光纤的光源为激光二极管</li>
+<li>无线传输介质：无线电波、微波、激光和红外线</li>
+<li>物理层接口的特性：<br>机械特性。规定物理连接时所采用的规格、引线的数目、引脚的数量和排列情况等<br>电气特性。规定传输二进制位时，线路上信号的电压高低、阻抗匹配、传输速率和距离限制等<br>功能特性。指明某条线上出现的某一电平的电压表示何种意义，接口部件的信号数（数据线、控制线、定时线等）的用途<br>规程特性。定义各条物理线路的工作规程和时序关系    </li>
+<li>常用的物理层接口标准有：EIARS-232-C、ADSL和SONET/SDH等</li>
+<li>中继器，又称为转发器，主要功能是将信号整形并放大再转发出去，其原理是信号再生（不是简单的将衰减的信号放大）。<br>中继器是局域网环境下用来扩大网络规模的最简单最廉价的互联设备。使用中继器连接起来的几个网段仍然是一个局域网。由于中继器工作在物理层，所以它不能连接两个具有不同速率的局域网。中继器两端的网络部分是网段，而不是子网</li>
+<li>“5-4-3”规则：互相串联的中继器个数不能超过4个，而且用4个中继器串联的5段通信介质中只有3个段可以挂接计算机，其余两个段只能用作扩展通信范围的链路段，不能挂接计算机  </li>
+<li>放大器和中继器都是起放大作用，只不过放大器放大的是模拟信号，原理是将衰减的信号放大；而中继器放大的是数字信号，原理是将衰减的信号整形再生  </li>
+<li>如果某个网络设备具有存储转发的功能，那么可以认为该设备可以连接两个不同的协议</li>
+<li>集线器（Hub）实际上是一个多端口的中继器，也工作在物理层。集线器会将整形再生后的信号转发到其他所有（除输入端口以外）处于工作状态的端口上。如果同时有两个或多个端口输入，则输出时发生冲突。</li>
+<li>由Hub组成的网络为共享式网络；Hub每个端口连接的网络部分是同一个网络的不同网段；Hub只能在半双工下工作；Hub不能分隔冲突域，所有集线器端口都属于同一个冲突域</li>
+<li>两个网段在物理层进行互联时要求：数据传输率要相同，但数据链路层协议可以不同。解析：数据传输率不同，可能导致数据溢出或数据传输低效率的情况；若只需要两个网段在物理层可以互联成功， 则表明两个网段之间可以互相传送物理层信号，并不需要保证有相同的数据链路层协议，但此时不可以互相传送数据链路层的帧</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/30/计算机网络3/" class="article-date">
+      <time datetime="2019-05-30T15:17:52.440Z" itemprop="datePublished">2019-05-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/30/计算机网络3/">计算机网络（三）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>数字数据编码为数字信号：<br>非归零码（NRZ），用低电平表示0，高电平表示1，或反之  </li>
+<li>曼彻斯特编码，将一个码元分成两个相等的间隔，前一个间隔为低电平后一个间隔为高电平表示码元1；码元0相反。以太网使用的编码方式为曼彻斯特编码  </li>
+<li>差分曼彻斯特编码，若码元为1，则前半个码元的电平与上一个码元的后半个码元的电平相同；若码元为0则相反。在码元中间也有电平跳转<br>4B/5B编码，将欲发送数据流的每4位作为一组，然后按照4B/5B编码规则将其转换成相应的5位码。5位码共32种组合，但只采用其中的16种对应的16种不同的4位码，其它的16种作为控制码（帧的开始和结束、线路的状态信息等）或保留  </li>
+<li>数字数据调制为模拟信号：<br>幅移键控（ASK），通过改变载波信号的振幅来表示数字信号1和0<br>频移键控（FSK），通过改变载波信号的频率来表示数字信号1和0<br>相移键控（PSK），通过改变载波信号的相位来表示数字信号1和0  </li>
+<li>正交振幅调制（QAM），在频率相同的前提下，将ASK与PSK结合起来，形成叠加信号。  </li>
+<li>模拟数据编码为数字信号：主要包括三个步骤，抽样、量化和编码  </li>
+<li>采样定理（奈奎斯特定理）：假设原始信号中的最大频率为f，那么采样频率f（采样）必须大于或等于最大频率f的两倍  </li>
+<li>模拟数据调制成模拟信号：频分（FDM）复用技术  </li>
+<li>电路交换：在进行数据传输前，两个节点之间必须先建立一条专用（双方独占）的物理通信路径（由通信双方之间的交换设备和链路逐段连接而成），该线路在整个数据传输期间一直被独占，知道通信结束后才被释放  </li>
+<li>电路交换技术分为三个阶段：连接建立、数据传输和连接释放  </li>
+<li>当电路建立后，除了源节点和目的节点，电路上的任何节点都采取“直通式”接收数据和发送数据，即不会存在存储转发所耗费的时间  </li>
+<li>报文交换：数据交换的单位是报文，报文携带目标地址、源地址等信息。报文交换在交换节点采用的是存储转发的传输方式  </li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/计算机网络2/" class="article-date">
+      <time datetime="2019-05-29T14:37:41.100Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/计算机网络2/">计算机网络笔记（二）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>模拟数据（模拟信号）和离散数据（离散信号）<br>串行传输和并行传输<br>基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）<br>宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）<br>单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）<br>码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数），单位是波特（Baud），码元速率与进制数无关<br>信息传输速率：单位时间内数字通信系统传输的二进制码元个数（比特数），单位是比特/秒（b/s）<br>奈奎斯特定理：在理想低通（没有噪声，带宽有限）的信道中，极限码元传输率为2W Baud。其中，W是信道的带宽，单位为Hz。若用V表示不同形式码元的个数，则极限数据率公式为： 理想低通信道下的极限数据传输率 =  2Wlog2(V)，单位为b/s<br>香农定理：香农定理给出了带宽受限且有高斯白噪声干扰的信道的极限数据传输率。计算公式为： 信道的极限数据传输速率=Wlog2（1 + S/N）。其中，W为信道的带宽，S为信道所传输信号的平均功率，N为信道内部的高斯噪声功率，S/N为信噪比，信噪比=10log10（S/N）<br>把数据变换为模拟信号的过程称为调制，把数据变换为数字信号的过程称为编码  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/27/计算机网络1/" class="article-date">
+      <time datetime="2019-05-27T14:19:03.690Z" itemprop="datePublished">2019-05-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/27/计算机网络1/">计算机网络（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><ol>
+<li>计算机网络是一些互联的、自治的计算机系统的集合</li>
+<li>计算机网络的组成：<br>从组成部分看，计算机网络主要由硬件、软件和协议组成<br>从工作方式看，计算机网络可分为和边缘部分核心部分。边缘部分由供用户直接使用的主机组成，核心部分由大量的网络和连接这些网络的路由器组成<br>从功能组成看，计算机网络由通信子网和资源子网组成  </li>
+<li>计算机网络的功能：<br>数据通信。它是计算机网络最基本和最重要的功能<br>资源共享。<br>分布式处理。<br>提高可靠性。<br>负载均衡  </li>
+<li>计算机网络的分类：<br>按分布范围分类，可分为广域网（WAN）、城域网（MAN）、局域网（LAN）和个人区域网（PAN）。传统上，局域网使用广播技术，而广域网使用交换技术。<br>按传输技术分类，可分为广播式网络和点对点网络。广域网中的无线、卫星通信网络采用广播式通信技术。是否采用分组存储转发与路由选择机制（路由器的功能）是点对点式网络广播式网络的重要区别，广域网基本都属于点对点网络<br>按拓扑结构分类，可分为星形网络、总线形网络、环形网络和网状形网络。星形、总线形和环形网络多用于局域网，网状形网络多用于广域网（复杂，节点多）。环形网络中环中信号是单向传输<br>按使用者分类，可分为公用网和专用网。<br>按交换技术分类，可分为电路交换网络、报文交换网络（存储转发网络）和分组交换网络（包交换网络）。现在的主流网络都可以看成是分组交换网络<br>按传输介质分类，可分为有线网络和无线网络。  </li>
+<li>计算机网络的性能指标：<br>带宽（Bandwidth）。在计算机网络中，带宽表示网络的通信线路所能传送数据的能力，是数字信道所能传送的“最高数据率”的同义语，单位是“比特每秒”（b/s）<br>时延（Delay）。指数据（一个报文或分组）从网络（或链路）的一端传送到另一端所需要的总的时间，它由四个部分构成：发送时延、传播时延、处理时延和排队时延（课本展开）<br>时延带宽积。若发送端连续发送数据，在发送的第一个比特即将到达终点时，表示发送端已经发出的比特数。即时延带宽积=传播时延x信道带宽<br>往返时延（Round-Trip Time,RTT）。表示从发送端发送数据开始，到发送端收到来自接收端的确认（接收端收到数据后立即发送确认），总共经历的时延。在互联网中，往返时延还包括各中间节点的处理时延、排队时延以及转发数据时的发送时延<br>吞吐量（Throughput）。表示在单位时间内通过某个网络（或信道、接口）的数据量。吞吐量受到网络的带宽或网络的额定速率的限制<br>速率。主机传送数据的速率，也称为数据率或比特率。最高数据率为带宽<br>时延：发送时延。结点将分组的所有比特推（传输）向链路所需的时间，也就是从发送分组的第一个比特算起，到该分组的最后一个比特发送完毕所需的时间，因此也称为传输时延。计算公式为：发送时延 = 分组长度 / 信道宽带（带宽）<br>传播时延。一个比特从链路一端到另一端传播所需的时间。计算公式为：传播时延 = 信道长度 / 电磁波在信道上的传播速率<br>处理时延。数据在交换节点为存储转发而进行的一些必要的处理所花费的时间，比如，分析分组的首部、从分组中提取数据部分、进行差错检验或查找适当的路由等<br>排队时延。分组在进入路由器后要先在输入队列中排队等待处理。在路由器确定了转发端口后，还要在输出队列中排队等待转发<br>对于高速链路，提高的仅是数据发送速率而不是比特在链路上的传播速度<br>通信子网位于下三层，资源子网位于上三层<br>将计算机网络分为n层，从低层到高层依次为第1层、第2层…..第n层。第n层中的活动元素通常称为n层实体。不同机器上同一层称为对等层，同一层的实体叫做对等实体。n层实体实现的服务为n+1层利用。n层被称为服务提供者，n+1层是服务用户<br>上一层只能通过相邻层间的接口使用下一层的服务，而不能调用其它层的服务；下一层提供服务的实现细节对上一层透明  </li>
+<li>协议是控制两个或多个对等实体进行通信的规则的集合，也就是水平的<br>协议由语法、语义和同步三部分组成。语法规定了传输数据的格式；语义规定了所要完成的功能；同步规定了执行各种操作的条件、时序关系等  </li>
+<li>接口是同一节点内相邻两层间交互信息的连接点，是一个系统内部的规定<br>服务指下层为紧相邻的上层提供的功能调用，垂直的。  </li>
+<li>OSI将服务原语分为：请求、指示、响应和证实<br>面向连接服务和无连接服务<br>可靠服务和不可靠服务<br>有应答服务和无应答服务<br>OSI七层模型：自下而上依次为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。低三层称为通信子网，高三层称为资源子网，运输层呈上启下  </li>
+<li>会话层负责管理主机间的会话进程，包括建立、管理以及终止进程间的会话。会话层使用校验点可使通信会话在通信失效时从校验点继续恢复通信，实现数据同步；建立同步（SYN）也发生在会话层<br>表示层主要用于处理在两个通信系统中交换信息的表示方式。数据压缩、加密和解密也是表示层可提供的数据表示变换功能<br>传输层的复用和分用：复用就是多个应用层进程可同时使用下面传输层的服务，分用则指传输层把收到的信息分别交付给上面应用层中相应的进程  </li>
+<li>TCP/IP4层模型（国际标准）：网络接口层（对应OSI参考模型中的物理层和数据链路层）、网际层、传输层和应用层（对应OSI参考模型中的会话层、表示层和应用层）<br>OSI参考模型在网络层支持无连接和面向连接的通信，但在传输层仅有面向连接的通信。而TCP/IP模型认为可靠性是端到端的问题，因此它在网际层仅有一种无连接的通信模式，但在传输层支持无连接和面向连接两种模式  </li>
+<li>TCP/IP模型与OSI模型的相似之处：<br>都采取分层的体系结构<br>都是基于独立的协议栈的概念<br>都可以解决异构网络的互联<br>服务数据单元（SDU）+ 协议控制信息（PCI） = 协议数据单元（PDU）<br>PDU也是对等层之间传送的数据单位。物理层PDU为比特，链路层的PDU为帧，网络层的PDU为分组，传输层的PDU为报文段  </li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-深入理解计算机系统7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/21/深入理解计算机系统7/" class="article-date">
+      <time datetime="2019-05-21T15:54:32.890Z" itemprop="datePublished">2019-05-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/21/深入理解计算机系统7/">（接）程序的机器级表示</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h1><ol>
+<li>条件码</li>
+<li>访问条件码。三种方法。SET语句（将一个字节设置为0或者1）</li>
+<li>跳转指令。跳转会导致执行切换到程序的一个全新位置。其中跳转目标为目的指令的地址。分为直接跳转和间接跳转。间接跳转写法是*后。<br>P139 3-15 jump指令集合。<br><img src="https://i.imgur.com/xTkxtmr.png" alt="jump"></li>
+<li><p>跳转指令的编码  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> movq %rdi,%rax</span><br><span class="line"> jmp  .L2</span><br><span class="line">L2:sarq %rax</span><br><span class="line"> testq %rax,%rax</span><br><span class="line"> rep;ret</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件控制实现条件分支<br>比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void cond(long a,long*p)</span><br><span class="line">&#123; </span><br><span class="line">  if(p&amp;&amp;a&gt;*p)</span><br><span class="line">    *p=a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>汇编代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cond:</span><br><span class="line"> testq %rsi,%rsi</span><br><span class="line"> je    .L1</span><br><span class="line"> cmpq  %rdi,(%rsi)</span><br><span class="line"> jge   .L1</span><br><span class="line"> movq  %rdi,(%rsi)</span><br><span class="line">.L1:</span><br><span class="line"> rep;ret</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>用条件传送来实现条件分支<br>熟悉comv指令</li>
+<li>循环<br>do while   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">     body</span><br><span class="line">     t=test-exp</span><br><span class="line">     if(t)</span><br><span class="line">     goto loop;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>while<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">    body</span><br><span class="line">test:</span><br><span class="line">    t=test-exp</span><br><span class="line">    if(t)    </span><br><span class="line">    goto loop;</span><br></pre></td></tr></table></figure></p>
+<p>for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">init exp</span><br><span class="line">while(test-exp)&#123;</span><br><span class="line">body</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>根据以上逻辑可以写出</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-深入理解计算机系统6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -560,373 +899,6 @@
 <li>IEEE浮点表示<br><img src="https://i.imgur.com/Hxz1auG.jpg" alt="IEEE浮点表示"><br>分为三种情况，规格化、非规格化、特殊值。</li>
 <li>舍入。对于某x,能够找到最接近的匹配值，并用期望的浮点形式表示出来。<br>四种方式：向偶数舍入、向零舍入、向下舍入、向上舍入。除了向偶数舍入外，其余的都产生实际值的确界。</li>
 <li>运算分为单精度、双精度。具体P85</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深入理解计算机系统3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/06/深入理解计算机系统3/" class="article-date">
-      <time datetime="2019-05-06T10:06:59.850Z" itemprop="datePublished">2019-05-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/06/深入理解计算机系统3/">深入理解计算机系统（2）：</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ol>
-<li>补码编码（B2T）。最高位为1则为负。为0则为正。其中，补码的范围是不对称的。|TMin|=|TMax|+1。</li>
-<li>有符号数和无符号数之间的转换。强制类型转换结果保持位值不变，只是改变了解释的方式。</li>
-<li>当创建一个无符号常量，必须加上后缀字符U或者u。在0&lt;=x&lt;=TMax之内的x，数字有相同的无符号和补码表示。对这个范围以外的数值，转换需要加上或者减去2^w。具体公式见P51</li>
-<li>扩展一个数字的位表示。常见的运算是在不同的字长的整数之间转换，同时保持数值不变。显然，从较小的数据类型转换到较大的类型是可能的。<br>比如，无符号转换成更大的数据类型，简单的在开头增加0，称为<strong>零扩展</strong>。<br>将一个补码数字转换为一个更大的数据类型，可以执行一个符号扩展。即在表示中添加最高有效位的值。</li>
-<li>截断数字。当将w位的数截断为一个k位数字时，我们会丢弃稿w-k位。（截断当然可能会改变它的值，发生<strong>溢出</strong>）截断公式见P57</li>
-<li>整数运算。定义一种运算+（u w）:把整数和x+y截断为w位得到的结果，再把这个结果看做一个无符号数。公式见P61（2.11）<br>补码加法：将参数转换为无符号数，执行无符号数加法，再将结果转换为补码。</li>
-<li>补码的非。待续。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深入理解计算机系统2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/05/深入理解计算机系统2/" class="article-date">
-      <time datetime="2019-05-05T09:54:21.680Z" itemprop="datePublished">2019-05-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/05/深入理解计算机系统2/">深入理解计算机系统（1）：信息的表示与处理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#NOTE</p>
-<ol>
-<li>三种数字表示。无符号；补码；浮点数。</li>
-<li>大多数计算机使用八位的块作为最小的可寻址的内存单位。每个字节由唯一的数字标识，称为地址。所有可能的地址称为 虚拟地址空间。</li>
-<li>十六进制（简写为hex），C语言中，以0x或者0X开头，A-F可以大写也可以是小写，还可以是混合。<strong>主要有十六进制转化成二进制的要点</strong>，如果总位数不是4的倍数，最左边的一组可以少于4位，前面用0补，然后每4位转换。<br>十进制和十六进制的转化，反复除16取余。<br>一些例题。</li>
-<li>字数据的大小。每台计算机有一个字长。指明指针数据的标称大小（normal size）。对于w位的机器，虚拟地址范围0～2^w-1。<br><code>-m32 prog.c</code> 可以32位也可以64位。<br><code>-m64 prog.c</code> 只可以在64位。</li>
-<li>寻址与字节顺序。最低有效字节在最前面的方式，称为小端法。最高有效字节在最前面的方式，称为大端法。</li>
-<li>布尔代数。几种基本规则。比如布尔运算～非，|为OR，&amp;为AND，⊕ 异或运算（<strong>P或者Q为真但是不同时为真，成立</strong>）<br>几种运算比如<br>0110<br>&amp;1100<br>——————<br>0100</li>
-<li>C中的逻辑运算。|| &amp;&amp; !<br>与位级运算容易混淆。逻辑运算认为非0都可以表示TRUE。其次，如果第一个参数求值就能确定表达式的结果，&amp;&amp;和||就不会对第二个参数求值。</li>
-<li>移位运算。x&lt;&lt;k的含义。注意逻辑左移与右移的区别（左端补k个0；左端补k个最高位）</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Python基础7" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/05/Python基础7/" class="article-date">
-      <time datetime="2019-05-05T08:19:13.040Z" itemprop="datePublished">2019-05-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/05/Python基础7/">测试函数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Python标准库中的模块unittest 提供了代码测试工具。</p>
-<ol>
-<li>单元测试 用于核实函数的某个方面没有问题</li>
-<li>测试用例 是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。良好的测试用例考虑到了函数可能收到的各种输入，包含针对所有这些情形的测试。</li>
-<li>全覆盖式测试试 用例包含一整套单元测试，涵盖了各种可能的函数使用方式。<br>##example<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line">from name_function import get_formatted_name</span><br><span class="line">class NamesTestCase(unittest.TestCase):</span><br><span class="line">&quot;&quot;&quot;测试name_function.py&quot;&quot;&quot;</span><br><span class="line">def test_first_last_name(self):</span><br><span class="line">&quot;&quot;&quot;能够正确地处理像Janis Joplin这样的姓名吗？&quot;&quot;&quot; </span><br><span class="line">formatted_name = get_formatted_name(&apos;janis&apos;, &apos;joplin&apos;) </span><br><span class="line">self.assertEqual(formatted_name, &apos;Janis Joplin&apos;)</span><br><span class="line">unittest.main()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>一个<strong>断言</strong>方法。断言方法用来核实得到的结果是否与期望的结果一致。</p>
-<p>#测试类<br>常用断言方法</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">方法</th>
-<th style="text-align:left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">assertEqual(a,b)</td>
-<td style="text-align:left">核实a==b</td>
-</tr>
-<tr>
-<td style="text-align:left">assertNotEqual(a,b）</td>
-<td style="text-align:left">核实a!=b</td>
-</tr>
-<tr>
-<td style="text-align:left">assertTrue(x)</td>
-<td style="text-align:left">核实x为True</td>
-</tr>
-<tr>
-<td style="text-align:left">assertIn(item,list)</td>
-<td style="text-align:left">核实item在list中</td>
-</tr>
-</tbody>
-</table>
-<p>还可以编辑setUp()方法。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Python基础6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/04/Python基础6/" class="article-date">
-      <time datetime="2019-05-04T11:49:26.460Z" itemprop="datePublished">2019-05-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/04/Python基础6/">文件与代码测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#文件</p>
-<ol>
-<li>添加到文件。如果给文件添加内容，不是覆盖原有内容，可以用<strong>附加模式</strong>打开文件。比如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;programing.txt&apos;</span><br><span class="line">with open(filename, &apos;a&apos;) as file_ob:</span><br><span class="line">  file_ob.write(&quot;a.\n&quot;)</span><br><span class="line">  file_ob.write(&quot;b.\n)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>用实参a，将内容添加到末尾，而不是覆盖</p>
-<ol start="2">
-<li><p>异常发生后。编写一个try-except代码块。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">   print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">   print(&quot;Error&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是未创建文件导致的异常，仍旧可以使用try-except</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;a.txt&apos;</span><br><span class="line">try:</span><br><span class="line">with open(filename) as f_obj:</span><br><span class="line">contents = f_obj.read()</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">msg = &quot;Sorry, the file &quot; + filename + &quot; does not exist.&quot;</span><br><span class="line">print(msg)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分析文本。首先命令行输入<code>title = &quot;A B C    &quot;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filename = &apos;alice.txttry:with open(filename) as f_obj:contents = f_obj.read()except FileNotFoundError:msg = &quot;Sorry, the file &quot; + filename + &quot; does not exist.&quot;print(msg)</span><br><span class="line">else:</span><br><span class="line"># 计算文件大致包含多少个单词</span><br><span class="line"> words = contents.split() </span><br><span class="line">num_words = len(words) </span><br><span class="line"> print(&quot;The file &quot; + filename + &quot; has about &quot; + str(numwords) + &quot; words.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分析多个文件，在4的基础上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">filenames = [&apos;a.txt&apos;, &apos;b.txt&apos;, &apos;c.txt&apos;, &apos;d.txt&apos;]</span><br><span class="line">for filename in filenames:</span><br><span class="line">count_words(filename)</span><br><span class="line">```  </span><br><span class="line">note：如果希望**失败**时什么也不做，使用pass语句。**如果用户知道要分析哪些文件，可能希望在有文件没有分析时出现一条消息，将其中的原因告诉他们。如果用户只想看到结果，而并不知道要分析哪些文件，可能就无需在有些文件不存在时告知他们。向用户显示他不想看到的信息可能会降低程序的可用性。**</span><br><span class="line">6. 存储数据</span><br><span class="line">**模块json 能够将简单的Python数据结构转储到文件中，并在程序再次运行时加载该文件中的数据。**</span><br><span class="line">函数json.dump() 接受两个实参：要存储的数据以及可用于存储数据的文件对象</span><br><span class="line">7.重构。</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>import json<br>def get_stored_username():<br>“””如果存储了用户名，就获取它”””<br>–snip–<br>def get_new_username():<br>“””提示用户输入用户名”””<br>username = input(“What is your name? “)<br>filename = ‘username.json’<br>with open(filename, ‘w’) as f_obj:<br>json.dump(username, f_obj)<br>return username<br>def greet_user():<br>“””问候用户，并指出其名字”””<br>username = get_stored_username()<br>if username:<br>print(“Welcome back, “ + username + “!”)<br>else:<br>username = get_new_username()<br>print(“We’ll remember you when you come back, “ + username + “!”)<br>greet_user()<br><code>`</code><br>每个函数都执行单一的任务。调用greet_user() ，它打印一条合适的消息：要么欢迎老用户回来，要么问候新用户。为此，它首先调用get_stored_username() ，这个函数只负责获取存储的用户名，再在必要时调用get_new_username() ，这个函数只负责获取并存储新用户的用户名。<br>借此，编写出清晰而易于维护和扩展的代码。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深入理解计算机系统1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/03/深入理解计算机系统1/" class="article-date">
-      <time datetime="2019-05-03T10:03:27.320Z" itemprop="datePublished">2019-05-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/03/深入理解计算机系统1/">深入理解计算机系统笔记（0）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#Note:</p>
-<ol>
-<li>大部分计算机系统都是用ASCII标准来表示文本字符，这种方式其实使用唯一的单字节大小的整数值表示每个字符，如经典的hello.c</li>
-<li>程序被其他程序翻译成不同的格式。<strong>从源文件到目标文件的转化是由编译器驱动程序完成的</strong><br>主要过程有预处理、编译、汇编、链接阶段。</li>
-<li>系统的硬件组成：总线（传送定长的字节块），I/O设备（每个I/O都通过一个控制器与总线项链）、主存（临时储存设备）、处理器（任何时候，PC都指向主存中的某条机器语言指令，也就是含有该指令的地址）</li>
-<li>运行程序的过程。</li>
-<li>高速缓存作用。之前学习过操作系统，就不展开。<strong>意识到高速缓存存储器存在的应用程序员可以利用高速缓存将程序的性能提高一个数量级</strong>  </li>
-<li>存储设备形成的层次结构：从上到下，设备访问速度越来越慢，容量越来越大，每字节的造价越来越便宜。主要思想是：<strong>上一层的存储器作为低一层存储器的高速缓存</strong></li>
-<li>把操作系统看做应用程序和硬件之间的一层软件。其中进程概念在之前的操作系统学习中学习过，当操作系统决定把控制权从当前进程转移到某个新进程时，就会进行<strong>上下文切换（保存当前进程的上下文，恢复进程的上下文，然后将控制权传递到新进程，新进程就会从上次停止的地方开始）</strong></li>
-<li>虚拟内存。为每个进程提供了一个假象，即每个进程都在独占使用主存。每个进程看到的内存都是一致的，成为虚拟地址空间。</li>
-<li>文件，即字节序列。每个I/O设备，包括磁盘、键盘、显示器，甚至是网络都可以看做文件。<br>##tips：</li>
-<li>Amdahl定律：主要思想，对系统某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度。主要观点：想要显著加速整个系统，必须提升全系统中相当大的部分的速度。</li>
-<li>并发与并行。老概念。并发（同时多个），并行。超线程（同时多线程）：允许一个CPU执行多个控制流技术。通过流水线可以实现指令级并发。如果处理器可以达到比一个周期一条指令更快的执行速率，就称为超标量处理器。还有一种SIMD并行（单指令、多数据）</li>
-<li>抽象。除去之前学习过的一些科目中介绍的抽象，增加<strong>虚拟机</strong>的抽象，即对整个计算机的抽象。</li>
 </ol>
 
       

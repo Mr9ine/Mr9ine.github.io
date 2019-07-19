@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="模拟数据（模拟信号）和离散数据（离散信号）串行传输和并行传输基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数">
+<meta name="description" content="##TCP报文首部一些字段的意义：  序号字段。占4字节，TCP连接中传送的数据流中的每一个字节都编上一个序号，序号字段的值则指的是本报文段所发送的数据的第一个字节的序号 确认号字段。占4字节，是期望收到对方的下一个报文段的数据的第一个字节的序号。与数据链路层的ACK不同 数据偏移。占4位，即首部长度，单位是4字节。与IP数据报分片的数据偏移不同 紧急位URG。当URG=1时，表明紧急指针字段有效">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络笔记（二）">
-<meta property="og:url" content="http://yoursite.com/2019/05/29/计算机网络2/index.html">
+<meta property="og:title" content="计算机网络（十一）：（接）传输层">
+<meta property="og:url" content="http://yoursite.com/2019/06/20/计算机网络11/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="模拟数据（模拟信号）和离散数据（离散信号）串行传输和并行传输基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数">
+<meta property="og:description" content="##TCP报文首部一些字段的意义：  序号字段。占4字节，TCP连接中传送的数据流中的每一个字节都编上一个序号，序号字段的值则指的是本报文段所发送的数据的第一个字节的序号 确认号字段。占4字节，是期望收到对方的下一个报文段的数据的第一个字节的序号。与数据链路层的ACK不同 数据偏移。占4位，即首部长度，单位是4字节。与IP数据报分片的数据偏移不同 紧急位URG。当URG=1时，表明紧急指针字段有效">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-29T14:37:42.000Z">
+<meta property="og:updated_time" content="2019-06-20T08:30:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络笔记（二）">
-<meta name="twitter:description" content="模拟数据（模拟信号）和离散数据（离散信号）串行传输和并行传输基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数">
+<meta name="twitter:title" content="计算机网络（十一）：（接）传输层">
+<meta name="twitter:description" content="##TCP报文首部一些字段的意义：  序号字段。占4字节，TCP连接中传送的数据流中的每一个字节都编上一个序号，序号字段的值则指的是本报文段所发送的数据的第一个字节的序号 确认号字段。占4字节，是期望收到对方的下一个报文段的数据的第一个字节的序号。与数据链路层的ACK不同 数据偏移。占4位，即首部长度，单位是4字节。与IP数据报分片的数据偏移不同 紧急位URG。当URG=1时，表明紧急指针字段有效">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>计算机网络笔记（二） | Mr9ine</title>
+<title>计算机网络（十一）：（接）传输层 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-计算机网络2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-计算机网络11" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/29/计算机网络2/" class="article-date">
-      <time datetime="2019-05-29T14:37:41.100Z" itemprop="datePublished">2019-05-29</time>
+      <a href="/2019/06/20/计算机网络11/" class="article-date">
+      <time datetime="2019-06-20T08:30:50.000Z" itemprop="datePublished">2019-06-20</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      计算机网络笔记（二）
+      计算机网络（十一）：（接）传输层
     </h1>
   
 
@@ -293,7 +293,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>模拟数据（模拟信号）和离散数据（离散信号）<br>串行传输和并行传输<br>基带信号：将数字信号1和0直接用两种不同的电压表示，然后传送到数字信道上去传输（称为基带传输）<br>宽带信号：将基带信号进行调制后形成的频分复用模拟信号，然后传送到模拟信道上去传输（称为宽带传输）<br>单工通信（仅需一条信道）、半双工通信（需两条信道）、双工通信（需两条信道）<br>码元传输速率：单位时间内数字通信系统所传输的码元个数（也可称为信号变化的次数），单位是波特（Baud），码元速率与进制数无关<br>信息传输速率：单位时间内数字通信系统传输的二进制码元个数（比特数），单位是比特/秒（b/s）<br>奈奎斯特定理：在理想低通（没有噪声，带宽有限）的信道中，极限码元传输率为2W Baud。其中，W是信道的带宽，单位为Hz。若用V表示不同形式码元的个数，则极限数据率公式为： 理想低通信道下的极限数据传输率 =  2Wlog2(V)，单位为b/s<br>香农定理：香农定理给出了带宽受限且有高斯白噪声干扰的信道的极限数据传输率。计算公式为： 信道的极限数据传输速率=Wlog2（1 + S/N）。其中，W为信道的带宽，S为信道所传输信号的平均功率，N为信道内部的高斯噪声功率，S/N为信噪比，信噪比=10log10（S/N）<br>把数据变换为模拟信号的过程称为调制，把数据变换为数字信号的过程称为编码  </p>
+        <p>##TCP报文首部一些字段的意义：</p>
+<ol>
+<li>序号字段。占4字节，TCP连接中传送的数据流中的每一个字节都编上一个序号，序号字段的值则指的是本报文段所发送的数据的第一个字节的序号</li>
+<li>确认号字段。占4字节，是期望收到对方的下一个报文段的数据的第一个字节的序号。与数据链路层的ACK不同</li>
+<li>数据偏移。占4位，即首部长度，单位是4字节。与IP数据报分片的数据偏移不同</li>
+<li>紧急位URG。当URG=1时，表明紧急指针字段有效。数据从第一个字节到紧急指针所指字节就是紧急数据</li>
+<li>确认位ACK。只有当ACK=1时确认号字段才有效，当ACK=0时，确认号无效。TCP规定，在连接建立后，所有传送的报文段都必须把ACK置为1</li>
+<li>推送位PSH。接收TCP收到PSH=1的报文段，就尽快地交付接收应用进程，而不再等到整个缓存都填满了后再向上交付</li>
+<li>复位位RST。当RST=1时，表明TCP连接中出现严重差错（如由于主机崩溃或其他原因），必须释放连接，然后再重新建立连接</li>
+<li>同部位SYN。同步SYN=1表示这是一个连接请求或连接接收报文。当SYN=1,ACK=0时，表明这是一个连接请求报文；当SYN=1,ACK=1时，表示这是一个连接接收报文</li>
+<li>终止位FIN。FIN=1表示此报文段的发送方的数据已发送完毕，并要求释放连接</li>
+<li>窗口字段。占2字节，指出了现在运行对方发送的数据量，可动态变化。与数据链路层的窗口还是有很大不同的</li>
+<li>检验和。占2字节，检验范围包括首部和数据。检验方法同UDP检验和，只需把伪首部的第四个协议字段改为6即可。UDP协议字段是17</li>
+<li>紧急指针字段。占16位，指出本报文段中紧急数据共有多少个字节</li>
+</ol>
 
       
     </div>
@@ -302,13 +316,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/29/计算机网络2/">计算机网络笔记（二）</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/20/计算机网络11/">计算机网络（十一）：（接）传输层</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-05-29, 22:37:41</p>
-        <p><span>最后更新:</span>2019-05-29, 22:37:42</p>
+        <p><span>发布时间:</span>2019-06-20, 16:30:50</p>
+        <p><span>最后更新:</span>2019-06-20, 16:30:50</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/29/计算机网络2/" title="计算机网络笔记（二）">http://yoursite.com/2019/05/29/计算机网络2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/29/计算机网络2/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/20/计算机网络11/" title="计算机网络（十一）：（接）传输层">http://yoursite.com/2019/06/20/计算机网络11/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/20/计算机网络11/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -321,15 +335,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/30/计算机网络3/">
-                    计算机网络（三）
+                <a href="/2019/06/25/计算机网络12/">
+                    计算机网络（十二）：（接）传输层
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/27/计算机网络1/">
-                    计算机网络（一）
+                <a href="/2019/06/18/计算机网络10/">
+                    计算机与网络（十）：传输层
                 </a>
             </div>
         
@@ -377,7 +391,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"计算机网络笔记（二）　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"计算机网络（十一）：（接）传输层　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -397,7 +411,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/30/计算机网络3/" title="上一篇: 计算机网络（三）">
+            <a href="/2019/06/25/计算机网络12/" title="上一篇: 计算机网络（十二）：（接）传输层">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -405,7 +419,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/27/计算机网络1/" title="下一篇: 计算机网络（一）">
+            <a href="/2019/06/18/计算机网络10/" title="下一篇: 计算机与网络（十）：传输层">
                 <i class="fa fa-angle-right"></i>
             </a>
         
