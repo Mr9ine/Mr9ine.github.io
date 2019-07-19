@@ -260,6 +260,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-论文报告0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/10/论文报告0/" class="article-date">
+      <time datetime="2019-07-10T10:23:53.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/10/论文报告0/">论文报告</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>随着无线局域网的广泛使用，有很多攻击者伪造一些rogue APs，造成敏感信息的泄露，加上rogue AP容易布置，所以更加增加了对无线使用者的威胁。三篇论文都围绕此主题从不同的角度方法进行检测（detect）</p>
+<h2 id="一、A-client-side-detection-mechanism-for-evil-twin"><a href="#一、A-client-side-detection-mechanism-for-evil-twin" class="headerlink" title="一、A client-side detection mechanism for evil twin"></a>一、A client-side detection mechanism for evil twin</h2><ol>
+<li>随着无线局域网的广泛使用本篇论文主要讨论解决检测evil twin的问题。文中提出有两种解决方向，一种是基于管理权限的，一种是基于用户角度的。本文主要是讨论用户角度。</li>
+<li>原理：在Windows或者绝大多数操作系统中，可以运行monitor 模式，这个模式好处在于可以不需要连接任何AP就可以检测出无限流量。因为evil twin需要连接合法的AP连接网络，所以evil twin需要两种无限适配器，一个用来吸引用户，一个用来连接合法的AP，所以传输包是一个evil twin攻击的最基本的现象，ET detector就是基础此性质。<br>ET detector 被动的观察检测AP是否传输了无限包。</li>
+<li>过程：首先初始化系统，浏览出SSID BSSID加密类型等信息，在排除相同的SSID的AP后，选择具有相同SSID的AP进行检测。然后通过检测节点捕获包，ET detector利用结果数字与确认数字计算哈希索引，利用攻击者不会改变结果数字与确认数字的属性，检测是否其他哈希桶内也有相同的哈希索引。如果在局域网内，只有一个用户，可以使用类似于手机的设备进行。</li>
+<li>缺点与未来工作：缺点就是攻击者使用类3G/4G网络等不同渠道传输包，则ET detector不能检测到这类rogueAP。而且这个方法基于可以运行monitor模式的系统，未来需要在不同SSID的情况下进行功能扩展。<h2 id="二、CETAD：Detecting-Evil-Twin-Access-Point-Attacks-in-Wireless-Hotspots"><a href="#二、CETAD：Detecting-Evil-Twin-Access-Point-Attacks-in-Wireless-Hotspots" class="headerlink" title="二、CETAD：Detecting Evil Twin Access Point Attacks in Wireless Hotspots"></a>二、CETAD：Detecting Evil Twin Access Point Attacks in Wireless Hotspots</h2></li>
+<li>为了应对evil twin的攻击，本文在用户角度提出了CETAD，仅仅利用APP就可利用公共服务器检测出evil twin AP。</li>
+<li>原理：当多AP布置在热点内时，往往通过相同的ISP连接到互联网。因此除了相同的SSID还有相似的网络参数（ISP name、Global IP Address、RTT）。本文的检测原理就是在legitimate与evil AP之间的类似的ISP不同的RTT值和RTT的标准差等信息进行区别。<br>本文划分了多种Hotspot类型，有单AP、多AP的情况。其中多AP拥有相同的SSID。而且还区分了多种Evil Twin 攻击类型，包括通过攻击者使用移动网络、使用被攻击者相同的AP。在无攻击的时候，legitimate和evil AP有相同的ISP IP address和相似的RTT；在Mobi攻击时候，二者的IP address ISP不同 RTT值也可能不同；在Multihop攻击的时候，RTT不同。利用这些差异进行legitimate AP与Evil Twin的区分。</li>
+<li>过程：总体分为安全数据收集阶段与检测阶段。首先浏览无限热点检测需要的SSID的可用AP（设置一个较低的信号临界值，大于信号临界值的AP收集信息），连接一个AP然后收集DHCP信息，通过连接公共服务器收集ISP信息，通过创建HTTPS连接收集RTT信息。在检测阶段首先查看ISP信息是否相同来区别Mobi攻击，然后利用基于时间的RTT值来检测Multiple攻击。</li>
+<li>优点：只需要用安装APP的形式，不需要提前训练与安装任何附加的硬件即可实现探测。而且在不同的角度进行探测可以增加探测成功的概率。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络14" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -896,77 +962,6 @@
 <li>纯ALOHA协议：当网络中的任何一个站点需要发送数据时，可以不进行任何检测就发送数据。如果在一段时间内没有收到确认，该站点就认为传输过程中发生了冲突。发送站点需要随机等待一段时间后再发送数据，直至发送成功</li>
 <li>时隙ALOHA协议：将时间划分一段段等长的时隙，规定只能在每个时隙开始时才能发送一个帧。碰撞后重传策略与纯ALOHA协议相似</li>
 <li>载波侦听多路访问（Carrier Sense Multiple Access，CSMA）协议：每个站点在发送前都先侦听一下公用的信道，发现信道空闲后再发送。有三种不同的CSMA协议</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络5" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/06/04/计算机网络5/" class="article-date">
-      <time datetime="2019-06-04T14:24:25.240Z" itemprop="datePublished">2019-06-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/04/计算机网络5/">计算机网络（五）：数据链路层</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ol>
-<li>数据链路层的功能：<br>为网络层提供服务；链路管理；帧定界、帧同步和透明传输；流量控制；差错控制</li>
-<li>数据链路层可以为网络层提供的服务有：<br>无确认的无连接服务<br>有确认的无连接服务<br>有确认的面向连接服务（有连接则一定有确认）  </li>
-<li>透明传输：不管所传数据是什么样的比特组合，都应当能在链路上传送</li>
-<li>流量控制：限制发送方的数据流量，使其发送速率不致超过接收方的接收能力（由滑动窗口提供反馈机制）</li>
-<li>对于数据链路层来说，控制的是相邻两节点之间数据链路上的流量，而对于运输层来说，控制的则是源端到目的端之间的流量</li>
-<li>数据链路层中传输数据出现的错误分为位错和帧错（一个帧包含多个位）</li>
-<li>通常采用循环冗余校验（CRC）方式发现位错，通过自动重传请求（ARQ）方式重传出错的帧<br>帧错指帧的丢失、重复或失序等错误。在数据链路层引入定时器和编号机制，保证每一帧最终都能有且仅有一次正确地交付给目的节点</li>
-<li>组帧时既要加首部也要加尾部</li>
-<li>组帧的四种方法：<br>字符计数法。在帧头部使用一个计数字段来标明帧内字符数（计数字段提供的字节数包含自身所占用的一个字节）<br>字符填充的首位定界符法。使用特定的字符来定界一帧的开始和结束。为了使信息位中出现的特殊字符不被误判为帧的首尾定界符，可以在特殊字符前面填充一个转义字符来加以区分<br>比特填充的首尾标志法。比特填充法允许数据帧包含任意个数的比特，也允许每个字符的编码包含任意个数的比特。它使用01111110来标志一帧的开始和结束，发送方的数据链路层在信息位中遇到5个连续的“1”时，将自动在其后插入一个0；接收方则执行逆操作。比特填充容易由硬件来实现，性能优于字符填充方法。<br>违规编码法。在物理层比特编码时通常采用违规编码法  </li>
-<li>目前较常用的组帧方法时比特填充法和违规编码法</li>
-<li>进行差错控制的编码技术主要有两类：自动重传请求（ARQ）和前向纠错（FEC）。在ARQ方式中，接收端检测出差错时，就设法通知发送端重发，直到接收到正确的码字为止；在FEC方式中，接收端不但能发现差错，而且能确定二进制数码的错误位置，从而加以纠正。因此，差错控制又分为检错编码和纠错编码</li>
-<li>检错编码都是采用冗余编码技术。其核心思想是在有效数据（信息位）被发送之前，先按某种关系附加上一定的冗余位，构成一个符合某一规则的码字后再发送。当要发送的有效数据变化时，相应的冗余位也随之变化，使得码字遵从不变的规则。</li>
-<li>常见的检错编码有奇偶校验码和循环冗余码<br>奇偶校验码：由n-1位信息元和1位校验元组成，如果是奇校验码，在附加上一个校验元以后，码长为n的码字中“1”的个数为奇数；如果是偶校验码，在附加上一个校验元以后，码长为n的码字中“1”的个数为偶数</li>
-<li>计算循环冗余码过程：假设一个帧的比特序列为101001，双方链路层商量好的多项式G（x）系数序列为1101（最高次为3），则首先将帧的比特序列变为101001000，然后计算101001000 % 1101，其结果为FCS，附在101001之后，发送<br>最常见的纠错编码时海明码，它能发现双比特错误，但只能纠正单比特错误。</li>
 </ol>
 
       

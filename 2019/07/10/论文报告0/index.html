@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="主机号全为0，表示本网络本身 主机号全为1，表示本网络的广播地址 网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上 32位全为0，即0.0.0.0，表示本网络上的本主机32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对">
+<meta name="description" content="随着无线局域网的广泛使用，有很多攻击者伪造一些rogue APs，造成敏感信息的泄露，加上rogue AP容易布置，所以更加增加了对无线使用者的威胁。三篇论文都围绕此主题从不同的角度方法进行检测（detect） 一、A client-side detection mechanism for evil twin 随着无线局域网的广泛使用本篇论文主要讨论解决检测evil twin的问题。文中提出有两种">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机与网络（九）：（接）网络层">
-<meta property="og:url" content="http://yoursite.com/2019/06/14/计算机网络9/index.html">
+<meta property="og:title" content="论文报告">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/论文报告0/index.html">
 <meta property="og:site_name" content="Mr9ine">
-<meta property="og:description" content="主机号全为0，表示本网络本身 主机号全为1，表示本网络的广播地址 网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上 32位全为0，即0.0.0.0，表示本网络上的本主机32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对">
+<meta property="og:description" content="随着无线局域网的广泛使用，有很多攻击者伪造一些rogue APs，造成敏感信息的泄露，加上rogue AP容易布置，所以更加增加了对无线使用者的威胁。三篇论文都围绕此主题从不同的角度方法进行检测（detect） 一、A client-side detection mechanism for evil twin 随着无线局域网的广泛使用本篇论文主要讨论解决检测evil twin的问题。文中提出有两种">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-14T14:57:30.000Z">
+<meta property="og:updated_time" content="2019-07-10T10:23:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机与网络（九）：（接）网络层">
-<meta name="twitter:description" content="主机号全为0，表示本网络本身 主机号全为1，表示本网络的广播地址 网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上 32位全为0，即0.0.0.0，表示本网络上的本主机32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对">
+<meta name="twitter:title" content="论文报告">
+<meta name="twitter:description" content="随着无线局域网的广泛使用，有很多攻击者伪造一些rogue APs，造成敏感信息的泄露，加上rogue AP容易布置，所以更加增加了对无线使用者的威胁。三篇论文都围绕此主题从不同的角度方法进行检测（detect） 一、A client-side detection mechanism for evil twin 随着无线局域网的广泛使用本篇论文主要讨论解决检测evil twin的问题。文中提出有两种">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>计算机与网络（九）：（接）网络层 | Mr9ine</title>
+<title>论文报告 | Mr9ine</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-计算机网络9" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-论文报告0" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/14/计算机网络9/" class="article-date">
-      <time datetime="2019-06-14T14:57:28.110Z" itemprop="datePublished">2019-06-14</time>
+      <a href="/2019/07/10/论文报告0/" class="article-date">
+      <time datetime="2019-07-10T10:23:53.000Z" itemprop="datePublished">2019-07-10</time>
 </a>
 
 
@@ -276,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      计算机与网络（九）：（接）网络层
+      论文报告
     </h1>
   
 
@@ -293,31 +293,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
-<li>主机号全为0，表示本网络本身</li>
-<li>主机号全为1，表示本网络的广播地址</li>
-<li>网络号为127为环回测试地址。127.0.0.0网络保留作为环路自检地址，此地址表示任意主机本身，目的地址为环回地址的IP数据报永远不会出现在任何网络上</li>
-<li>32位全为0，即0.0.0.0，表示本网络上的本主机<br>32位全为1，即255.255.255.255，表示整个TCP/IP网络的广播地址，又称受限广播地址。实际使用时，由于路由器对广播域的隔离，255.255.255.255等效为本网络的广播地址</li>
-<li>128.0和192.0.0这两个网络号不可指派<br>私有IP地址只用于LAN，不用于WAN连接；私有IP地址被LAN重复使用</li>
-<li>A类私有地址：1个A类网段，即10.0.0.0 ~ 10.255.255.255<br>B类私有地址：16个B类网段，即172.16.0.0 ~ 172.31.255.255<br>C类私有地址：256个网段，192.168.0.0 ~ 192.168.255.255  </li>
-<li>NAT转换表中存放着｛本地IP地址：端口｝到｛全球IP地址：端口｝的映射</li>
-<li>普通路由器在转发IP数据报时，不改变其源IP地址和目的地址。而NAT路由器在转发IP数据报时，一定要更换其IP地址（转换源IP地址或目的IP地址）。<br>普通路由器仅工作在网络层，而NAT路由器转发数据报时需要查看和转换传输层的端口号</li>
-<li>子网划分：从主机号借用若干个比特作为子网号，原网络号不变。三级IP地址 = ｛&lt;网络号&gt;，&lt;子网号&gt;，&lt;主机号&gt;｝</li>
-<li>无论是IPV4还是CIDR（无分类域间路由选择），都不能指派主机号为全0或全1的IP地址给主机<br>IP地址的子网掩码其实就是告诉你这个IP地址的前多少位是网络号+子网号  </li>
-<li>CIDR：IP = ｛&lt;网络前缀&gt;，&lt;主机号&gt;｝，消除了传统A,B,C类网络划分<br>CIDR斜线记法：IP地址/网络前缀所占比特数<br>CIDR地址块仍可以再划分子网  </li>
-<li>将网络前缀都相同的连续的IP地址组成“CIDR”地址块。一个CIDR地址块可以表示很多地址，这种地址的聚合称为路由聚合，或称为构成超网</li>
-<li>最长前缀匹配（最佳匹配）：在查找路由表时，应当从匹配结果中选择具有最长网络前缀的路由，因为网络前缀越长，其地址块就越小，因而路由就越具体</li>
-<li>通常用二叉线索存储CIDR路由表  </li>
-<li>IP数据报再被路由器转发时其数据链路层封装所使用的MAC地址是不断改变的</li>
-<li>ARP协议：地址解析协议。完成IP地址到MAC地址的映射</li>
-<li>每个主机都设有一个ARP高速缓存，存放本局域网上各主机和路由器的IP地址到MAC地址的映射表，称ARP表</li>
-<li>ARP工作在网络层，工作原理……<br>ARP请求分组是广播发送，但是ARP响应分组是单播传送</li>
-<li>DHCP协议：动态主机配置协议。DHCP协议是应用层协议，它是基于UDP的。</li>
-<li>DHCP协议工作原理：它使用客户/服务器方式。需要IP地址的主机在启动时向DHCP服务器广播发送发现报文，这时该主机称为DHCP客户。本网络上的所有主机都能收到此广播报文，但只有DHCP服务器才回答此广播报文。DHCP服务器先在其数据库中查找该计算机的配置信息，若找到，则返回找到的信息。若找不到，则从服务器的IP地址池中取一个地址分配给该计算机。DHCP服务器的回答报文叫提供报文</li>
-<li>DHCP具体工作过程：DHCP发现—》DHCP提供—-》DHCP请求—-》DHCP确认</li>
-<li>DHCP协议的客户端和服务端需要通过广播方式来进行交互，原因是DHCP协议执行期间，客户端和服务端都没有标明自己身份的IP地址，因此不可能通过单播形式进行交互。在传输层采用UDP同理分析</li>
-<li>ICMP：网际控制报文协议。ICMP报文作为IP层数据报的数据，加上数据报的首部，组成IP数据报发送出去。</li>
-<li>ICMP协议是IP层协议。ICMP报文种类有两种，即ICMP差错报告报文和ICMP询问报文</li>
+        <p>随着无线局域网的广泛使用，有很多攻击者伪造一些rogue APs，造成敏感信息的泄露，加上rogue AP容易布置，所以更加增加了对无线使用者的威胁。三篇论文都围绕此主题从不同的角度方法进行检测（detect）</p>
+<h2 id="一、A-client-side-detection-mechanism-for-evil-twin"><a href="#一、A-client-side-detection-mechanism-for-evil-twin" class="headerlink" title="一、A client-side detection mechanism for evil twin"></a>一、A client-side detection mechanism for evil twin</h2><ol>
+<li>随着无线局域网的广泛使用本篇论文主要讨论解决检测evil twin的问题。文中提出有两种解决方向，一种是基于管理权限的，一种是基于用户角度的。本文主要是讨论用户角度。</li>
+<li>原理：在Windows或者绝大多数操作系统中，可以运行monitor 模式，这个模式好处在于可以不需要连接任何AP就可以检测出无限流量。因为evil twin需要连接合法的AP连接网络，所以evil twin需要两种无限适配器，一个用来吸引用户，一个用来连接合法的AP，所以传输包是一个evil twin攻击的最基本的现象，ET detector就是基础此性质。<br>ET detector 被动的观察检测AP是否传输了无限包。</li>
+<li>过程：首先初始化系统，浏览出SSID BSSID加密类型等信息，在排除相同的SSID的AP后，选择具有相同SSID的AP进行检测。然后通过检测节点捕获包，ET detector利用结果数字与确认数字计算哈希索引，利用攻击者不会改变结果数字与确认数字的属性，检测是否其他哈希桶内也有相同的哈希索引。如果在局域网内，只有一个用户，可以使用类似于手机的设备进行。</li>
+<li>缺点与未来工作：缺点就是攻击者使用类3G/4G网络等不同渠道传输包，则ET detector不能检测到这类rogueAP。而且这个方法基于可以运行monitor模式的系统，未来需要在不同SSID的情况下进行功能扩展。<h2 id="二、CETAD：Detecting-Evil-Twin-Access-Point-Attacks-in-Wireless-Hotspots"><a href="#二、CETAD：Detecting-Evil-Twin-Access-Point-Attacks-in-Wireless-Hotspots" class="headerlink" title="二、CETAD：Detecting Evil Twin Access Point Attacks in Wireless Hotspots"></a>二、CETAD：Detecting Evil Twin Access Point Attacks in Wireless Hotspots</h2></li>
+<li>为了应对evil twin的攻击，本文在用户角度提出了CETAD，仅仅利用APP就可利用公共服务器检测出evil twin AP。</li>
+<li>原理：当多AP布置在热点内时，往往通过相同的ISP连接到互联网。因此除了相同的SSID还有相似的网络参数（ISP name、Global IP Address、RTT）。本文的检测原理就是在legitimate与evil AP之间的类似的ISP不同的RTT值和RTT的标准差等信息进行区别。<br>本文划分了多种Hotspot类型，有单AP、多AP的情况。其中多AP拥有相同的SSID。而且还区分了多种Evil Twin 攻击类型，包括通过攻击者使用移动网络、使用被攻击者相同的AP。在无攻击的时候，legitimate和evil AP有相同的ISP IP address和相似的RTT；在Mobi攻击时候，二者的IP address ISP不同 RTT值也可能不同；在Multihop攻击的时候，RTT不同。利用这些差异进行legitimate AP与Evil Twin的区分。</li>
+<li>过程：总体分为安全数据收集阶段与检测阶段。首先浏览无限热点检测需要的SSID的可用AP（设置一个较低的信号临界值，大于信号临界值的AP收集信息），连接一个AP然后收集DHCP信息，通过连接公共服务器收集ISP信息，通过创建HTTPS连接收集RTT信息。在检测阶段首先查看ISP信息是否相同来区别Mobi攻击，然后利用基于时间的RTT值来检测Multiple攻击。</li>
+<li>优点：只需要用安装APP的形式，不需要提前训练与安装任何附加的硬件即可实现探测。而且在不同的角度进行探测可以增加探测成功的概率。</li>
 </ol>
 
       
@@ -327,13 +312,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/14/计算机网络9/">计算机与网络（九）：（接）网络层</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/10/论文报告0/">论文报告</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Xu</a></p>
-        <p><span>发布时间:</span>2019-06-14, 22:57:28</p>
-        <p><span>最后更新:</span>2019-06-14, 22:57:30</p>
+        <p><span>发布时间:</span>2019-07-10, 18:23:53</p>
+        <p><span>最后更新:</span>2019-07-10, 18:23:53</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/14/计算机网络9/" title="计算机与网络（九）：（接）网络层">http://yoursite.com/2019/06/14/计算机网络9/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/14/计算机网络9/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/10/论文报告0/" title="论文报告">http://yoursite.com/2019/07/10/论文报告0/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/07/10/论文报告0/　　作者: Xu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -345,16 +330,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/06/18/计算机网络10/">
-                    计算机与网络（十）：传输层
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/10/计算机网络8/">
-                    计算机网络（八）：网络层
+                <a href="/2019/07/06/计算机网络14/">
+                    计算机网络（十四）：（接）应用层
                 </a>
             </div>
         
@@ -366,7 +345,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、A-client-side-detection-mechanism-for-evil-twin"><span class="toc-number">1.</span> <span class="toc-text">一、A client-side detection mechanism for evil twin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、CETAD：Detecting-Evil-Twin-Access-Point-Attacks-in-Wireless-Hotspots"><span class="toc-number">2.</span> <span class="toc-text">二、CETAD：Detecting Evil Twin Access Point Attacks in Wireless Hotspots</span></a></li></ol>
         
     </div>
     <style>
@@ -402,7 +381,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"计算机与网络（九）：（接）网络层　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"论文报告　| Mr9ine　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,15 +401,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/18/计算机网络10/" title="上一篇: 计算机与网络（十）：传输层">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/10/计算机网络8/" title="下一篇: 计算机网络（八）：网络层">
+            <a href="/2019/07/06/计算机网络14/" title="下一篇: 计算机网络（十四）：（接）应用层">
                 <i class="fa fa-angle-right"></i>
             </a>
         

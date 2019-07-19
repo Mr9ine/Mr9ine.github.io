@@ -260,6 +260,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/04/计算机网络5/" class="article-date">
+      <time datetime="2019-06-04T14:24:25.240Z" itemprop="datePublished">2019-06-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/04/计算机网络5/">计算机网络（五）：数据链路层</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>数据链路层的功能：<br>为网络层提供服务；链路管理；帧定界、帧同步和透明传输；流量控制；差错控制</li>
+<li>数据链路层可以为网络层提供的服务有：<br>无确认的无连接服务<br>有确认的无连接服务<br>有确认的面向连接服务（有连接则一定有确认）  </li>
+<li>透明传输：不管所传数据是什么样的比特组合，都应当能在链路上传送</li>
+<li>流量控制：限制发送方的数据流量，使其发送速率不致超过接收方的接收能力（由滑动窗口提供反馈机制）</li>
+<li>对于数据链路层来说，控制的是相邻两节点之间数据链路上的流量，而对于运输层来说，控制的则是源端到目的端之间的流量</li>
+<li>数据链路层中传输数据出现的错误分为位错和帧错（一个帧包含多个位）</li>
+<li>通常采用循环冗余校验（CRC）方式发现位错，通过自动重传请求（ARQ）方式重传出错的帧<br>帧错指帧的丢失、重复或失序等错误。在数据链路层引入定时器和编号机制，保证每一帧最终都能有且仅有一次正确地交付给目的节点</li>
+<li>组帧时既要加首部也要加尾部</li>
+<li>组帧的四种方法：<br>字符计数法。在帧头部使用一个计数字段来标明帧内字符数（计数字段提供的字节数包含自身所占用的一个字节）<br>字符填充的首位定界符法。使用特定的字符来定界一帧的开始和结束。为了使信息位中出现的特殊字符不被误判为帧的首尾定界符，可以在特殊字符前面填充一个转义字符来加以区分<br>比特填充的首尾标志法。比特填充法允许数据帧包含任意个数的比特，也允许每个字符的编码包含任意个数的比特。它使用01111110来标志一帧的开始和结束，发送方的数据链路层在信息位中遇到5个连续的“1”时，将自动在其后插入一个0；接收方则执行逆操作。比特填充容易由硬件来实现，性能优于字符填充方法。<br>违规编码法。在物理层比特编码时通常采用违规编码法  </li>
+<li>目前较常用的组帧方法时比特填充法和违规编码法</li>
+<li>进行差错控制的编码技术主要有两类：自动重传请求（ARQ）和前向纠错（FEC）。在ARQ方式中，接收端检测出差错时，就设法通知发送端重发，直到接收到正确的码字为止；在FEC方式中，接收端不但能发现差错，而且能确定二进制数码的错误位置，从而加以纠正。因此，差错控制又分为检错编码和纠错编码</li>
+<li>检错编码都是采用冗余编码技术。其核心思想是在有效数据（信息位）被发送之前，先按某种关系附加上一定的冗余位，构成一个符合某一规则的码字后再发送。当要发送的有效数据变化时，相应的冗余位也随之变化，使得码字遵从不变的规则。</li>
+<li>常见的检错编码有奇偶校验码和循环冗余码<br>奇偶校验码：由n-1位信息元和1位校验元组成，如果是奇校验码，在附加上一个校验元以后，码长为n的码字中“1”的个数为奇数；如果是偶校验码，在附加上一个校验元以后，码长为n的码字中“1”的个数为偶数</li>
+<li>计算循环冗余码过程：假设一个帧的比特序列为101001，双方链路层商量好的多项式G（x）系数序列为1101（最高次为3），则首先将帧的比特序列变为101001000，然后计算101001000 % 1101，其结果为FCS，附在101001之后，发送<br>最常见的纠错编码时海明码，它能发现双比特错误，但只能纠正单比特错误。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -831,75 +902,6 @@
       
           
         <p>计算机将信息编码为位，组织成字节序列，有不同的编码方式用来表示整数、实数等。但是不同的计算机模型在数据中有不同的约定。大多数对于整数使用补码编码，而对于浮点数使用IEEEE标准。<br>首先是相同长度的无符号和有符号整数之间进行强制类型转换。T2U U2T等函数。又由于编码长度有限，超出范围发生溢出。对于浮点数的操作，有单精度双精度，还可以表示正负无穷和NaN的特殊形式，但是浮点数不支持结合性。<br>为什么之前在运行C语言程序的时候会容易得出与经验不符的结果甚至报错，由此可知。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深入理解计算机系统4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/08/深入理解计算机系统4/" class="article-date">
-      <time datetime="2019-05-08T14:49:17.580Z" itemprop="datePublished">2019-05-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/08/深入理解计算机系统4/">深入理解计算机系统（3）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#接</p>
-<ol>
-<li>补码的非。在范围TMin&lt;=x&lt;=TMax中每个数字x都有+（t,w）下的加法逆元（设“+”为一个交换性的二元运算，即对于所有x,y，x+y=y+x。若该集内存在一个元素0，使得对于所有x，x+0=0+x=x，则此元素是唯一的。如果对于一个给定的x，存在一个x’使得x+x’=x’+x=0，则称x’是x的加法逆元）<br><img src="https://i.imgur.com/oZaP4H9.jpg" alt="补码的非"></li>
-<li>无符号乘法。<br><img src="https://i.imgur.com/mR2mnV4.jpg" alt="无符号乘法"></li>
-<li>补码乘法。<br><img src="https://i.imgur.com/fiY91qr.jpg" alt="补码乘法"></li>
-<li>先考虑乘以2的幂，即左移k位，高k位被丢弃。除以2的幂，也就是逻辑右移k位。</li>
-<li>数字的有限字长限制了可能的值的取值范围，运算结果可能溢出。C语言中的某些规定可能会产生令人意想不到的行为。这种数据类型以出乎意料的方式出现。比如两正数相加会得到负数。<br>#浮点数</li>
-<li>浮点数表示形如V=x*2^y的有理数进行编码。</li>
-<li><strong>IEEE标准</strong>。<br>note:舍入（当一个数字不能被准确表示为标准格式时，就必须向上或者向下调整）</li>
-<li>二进制小数<br><img src="https://i.imgur.com/Oyly8PJ.jpg" alt="十进制表达"><br><img src="https://i.imgur.com/nFLQjiZ.jpg" alt="二进制表达"><br>很容易看出，二进制小数点左移一位相当于这个数被2除。而且这种表达方式使得一些分数只能近似的表示。</li>
-<li>IEEE浮点表示<br><img src="https://i.imgur.com/Hxz1auG.jpg" alt="IEEE浮点表示"><br>分为三种情况，规格化、非规格化、特殊值。</li>
-<li>舍入。对于某x,能够找到最接近的匹配值，并用期望的浮点形式表示出来。<br>四种方式：向偶数舍入、向零舍入、向下舍入、向上舍入。除了向偶数舍入外，其余的都产生实际值的确界。</li>
-<li>运算分为单精度、双精度。具体P85</li>
-</ol>
 
       
     </div>
